@@ -1,0 +1,22 @@
+proxies:
+  - name: 🐔LAX家宽SS
+    type: ss
+    server: 38.83.41.166
+    port: 34691
+    password: "dYk2fq9esb02p2YoU7dd0XVgD7q+4CJxYRyQcx4C2Wk="
+    cipher: 2022-blake3-aes-256-gcm
+    
+  - name: 🐔LAX家宽TJ
+    type: trojan
+    server: "www.jntm.art"
+    port: 443
+    password: "a9dc2e9a-e7de-492c-911e-bb835d9043f1"
+    network: "ws"
+    udp: true
+    sni: "www.jntm.art"
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: "/a9dc2e9a-e7de-492c-911e-bb835d9043f1"
+      headers:
+        Host: "www.jntm.art"
