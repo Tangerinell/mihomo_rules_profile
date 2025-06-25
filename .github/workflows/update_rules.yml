@@ -51,7 +51,7 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: 覆盖 master 分支
+      - name: overwrite master
         if: steps.commit.outputs.changed == 'true'
         run: |
           git fetch origin
