@@ -2,9 +2,8 @@ name: Auto Update Remote Rules
 
 on:
   workflow_dispatch:
-
   schedule:
-    - cron: "15 6 * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
   update:
