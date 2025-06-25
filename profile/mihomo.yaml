@@ -525,7 +525,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/PikPak.yaml'
     path: './rule_set/pikpak.yaml'
 
   stream:
@@ -533,7 +533,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GlobalMedia.yaml'
     path: './rule_set/stream.yaml'
 
   telegram:
@@ -541,7 +541,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Telegram.yaml'
     path: './rule_set/telegram.yaml'
 
   apple:
@@ -549,7 +549,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Apple.yaml'
     path: './rule_set/apple.yaml'
 
   microsoft:
@@ -557,7 +557,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Microsoft.yaml'
     path: './rule_set/microsoft.yaml'
 
   lan:
@@ -565,31 +565,15 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
     path: './rule_set/lan.yaml'
-
-  china_noip:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP.yaml'
-    path: './rule_set/china_noip.yaml'
-
-  china_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml'
-    path: './rule_set/china_ip.yaml'
 
   steam:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/steam.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Steam.yaml'
     path: './rule_set/steam.yaml'
 
   steam_cn:
@@ -597,7 +581,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/steam_cn.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/SteamCN.yaml'
     path: './rule_set/steam_cn.yaml'
 
   discord:
@@ -605,7 +589,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Discord.yaml'
     path: './rule_set/discord.yaml'
 
   spotify:
@@ -613,7 +597,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Spotify.yaml'
     path: './rule_set/spotify.yaml'
 
   tiktok:
@@ -621,7 +605,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/TikTok.yaml'
     path: './rule_set/tiktok.yaml'
 
   openai:
@@ -629,7 +613,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/OpenAI.yaml'
     path: './rule_set/openai.yaml'
 
   roblox:
@@ -637,7 +621,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Roblox/Roblox.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Roblox.yaml'
     path: './rule_set/roblox.yaml'
 
   epic:
@@ -645,7 +629,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/epic.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Epic.yaml'
     path: './rule_set/epic.yaml'
 
   google:
@@ -653,7 +637,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Google.yaml'
     path: './rule_set/google.yaml'
 
   github:
@@ -661,7 +645,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GitHub.yaml'
     path: './rule_set/github.yaml'
 
   youtube:
@@ -669,7 +653,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/YouTube.yaml'
     path: './rule_set/youtube.yaml'
 
   todesk:
@@ -685,7 +669,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Pornhub.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Pornhub.yaml'
     path: './rule_set/pornhub.yaml'
 
 # Rules
@@ -745,8 +729,6 @@ rules:
 
   ### Main
   # China
-  - RULE-SET,china_ip,➡️直连
-  - RULE-SET,china_noip,➡️直连
   - GEOSITE,cn,➡️直连
   - GEOIP,CN,➡️直连
 
