@@ -1,0 +1,68 @@
+name: Auto Update Remote Rules
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout remote_rules
+        uses: actions/checkout@v4
+        with:
+          ref: remote_rules
+
+      - name: download
+        run: |
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml -o rules/YouTube.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml -o rules/GitHub.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml -o rules/Google.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Roblox/Roblox.yaml -o rules/Roblox.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml -o rules/OpenAI.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml -o rules/TikTok.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml -o rules/Spotify.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml -o rules/Discord.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml -o rules/ChinaIPs_IP.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP.yaml -o rules/ChinaMaxNoIP.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan.yaml -o rules/Lan.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml -o rules/Microsoft.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml -o rules/Apple.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml -o rules/Telegram.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml -o rules/GlobalMedia.yaml
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml -o rules/PikPak.yaml
+
+      - name: global config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: commit
+        id: commit
+        run: |
+          git add rules/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "auto: update rules"
+            git push origin remote_rules
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 覆盖 master 分支
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          git fetch origin
+          git checkout master
+          git checkout origin/remote_rules -- rules/
+          git add -A
+          git commit -m "auto: overwrite master with remote_rules"
+          git push origin master
+      
+      
+      
+      
+      
+      
