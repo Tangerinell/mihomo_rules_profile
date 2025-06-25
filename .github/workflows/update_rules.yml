@@ -44,6 +44,7 @@ jobs:
       - name: commit
         id: commit
         run: |
+          rm -rf ./*
           git add rules/
           if git diff --cached --quiet; then
             echo "No changes to commit"
