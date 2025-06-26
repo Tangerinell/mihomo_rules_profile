@@ -16,14 +16,14 @@ proxy-providers:
       interval: 300
     path: ./proxy_provider/providers-1.yaml
     override:
-      additional-prefix: 🐂
+      additional-prefix: 🐔
     proxy: 🌐代理
   Node-2:
     type: http
     interval: 43200
     health-check:
       enable: true
-      url: https://鸡你太美2.com
+      url: http://鸡你太美2.com
       interval: 300
     url: https://z3j2r.no-mad-world.club/link/8zgZi2zg9o3DdLdB?clash=3&extend=1
     path: ./proxy_provider/providers-2.yaml
@@ -98,61 +98,14 @@ dns:
     - +.local
     - +.market.xiaomi.com
   respect-rules: true
-  default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 223.6.6.6
-    - tcp://119.29.29.29
-    - tcp://223.5.5.5
-    - tcp://223.6.6.6
   nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 223.6.6.6
-    - tcp://223.5.5.5
-    - tcp://223.6.6.6
-    - tls://dns.google:853
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - tls://dns.alidns.com
-    - tls://223.5.5.5
-    - tls://223.6.6.6
-    - tls://dot.pub
-    - tls://1.12.12.12
-    - tls://120.53.53.53
-    - https://dns.google/dns-query
-    - https://8.8.8.8/dns-query
-    - https://8.8.4.4/dns-query
-    - https://dns.alidns.com/dns-query
     - https://223.5.5.5/dns-query
-    - https://223.6.6.6/dns-query
     - https://doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
+    - https://dns.google/dns-query
   proxy-server-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 223.6.6.6
-    - tcp://223.5.5.5
-    - tcp://223.6.6.6
-    - tls://dns.google:853
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - tls://dns.alidns.com
-    - tls://223.5.5.5
-    - tls://223.6.6.6
-    - tls://dot.pub
-    - tls://1.12.12.12
-    - tls://120.53.53.53
-    - https://dns.google/dns-query
-    - https://8.8.8.8/dns-query
-    - https://8.8.4.4/dns-query
-    - https://dns.alidns.com/dns-query
     - https://223.5.5.5/dns-query
-    - https://223.6.6.6/dns-query
     - https://doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
+    - https://dns.google/dns-query
 sniffer:
   enable: true
   sniff:
