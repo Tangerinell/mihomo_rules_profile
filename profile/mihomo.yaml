@@ -22,6 +22,14 @@ proxy-providers:
       additional-prefix: "🐔"
     proxy: 🌐代理
 
+  Node-2:
+    <<: *NodeParam
+    url: "https://鸡你太美2.com"
+    path: './proxy_provider/providers-2.yaml'
+    override:
+      additional-prefix: "🐒"
+    proxy: 🌐代理
+
   land:
     type: file
     path: './proxy_provider/land.yaml'
@@ -104,14 +112,61 @@ dns:
     - "+.local"
     - "+.market.xiaomi.com"
   respect-rules: true
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+    - tcp://119.29.29.29
+    - tcp://223.5.5.5
+    - tcp://223.6.6.6
   nameserver:
-    - https://223.5.5.5/dns-query
-    - https://doh.pub/dns-query
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+    - tcp://223.5.5.5
+    - tcp://223.6.6.6
+    - tls://dns.google:853
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
+    - tls://dns.alidns.com
+    - tls://223.5.5.5
+    - tls://223.6.6.6
+    - tls://dot.pub
+    - tls://1.12.12.12
+    - tls://120.53.53.53
     - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https://8.8.4.4/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+    - https://doh.pub/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
   proxy-server-nameserver:
-    - https://223.5.5.5/dns-query
-    - https://doh.pub/dns-query
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+    - tcp://223.5.5.5
+    - tcp://223.6.6.6
+    - tls://dns.google:853
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
+    - tls://dns.alidns.com
+    - tls://223.5.5.5
+    - tls://223.6.6.6
+    - tls://dot.pub
+    - tls://1.12.12.12
+    - tls://120.53.53.53
     - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https://8.8.4.4/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+    - https://doh.pub/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
 
 # Sniffer Configuration
 sniffer:
@@ -318,9 +373,10 @@ proxy-groups:
     <<: *Select
     filter: *FilterAll
     proxies: [🌐代理, ➡️直连, ⛔阻断, 🔗链式代理, 🟢自动选择, 🟣自动选择, 🟦手动选择, 🟨手动选择, 
-              🇺🇸自动选择, 🇺🇸手动选择, 🇸🇬自动选择, 🇸🇬手动选择, 🇯🇵自动选择, 🇯🇵手动选择, 🇰🇷自动选择, 🇰🇷手动选择, 
+              🇯🇵自动选择, 🇯🇵手动选择, 🇰🇷自动选择, 🇰🇷手动选择, 🇹🇼自动选择, 🇹🇼手动选择,
               🇭🇰自动选择, 🇭🇰手动选择, 🇦🇺自动选择, 🇦🇺手动选择, 🇬🇧自动选择, 🇬🇧手动选择, 
-              🇫🇷自动选择, 🇫🇷手动选择, 🇩🇪自动选择, 🇩🇪手动选择, 🇹🇼自动选择, 🇹🇼手动选择]
+              🇫🇷自动选择, 🇫🇷手动选择, 🇩🇪自动选择, 🇩🇪手动选择, 🇸🇬自动选择, 🇸🇬手动选择,
+              🇺🇸自动选择, 🇺🇸手动选择]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png'
 
   - name: Spotify
