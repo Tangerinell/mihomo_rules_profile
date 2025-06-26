@@ -23,7 +23,7 @@ proxy-providers:
     interval: 43200
     health-check:
       enable: true
-      url: http://鸡你太美2.com
+      url: https://鸡你太美2.com
       interval: 300
     url: https://z3j2r.no-mad-world.club/link/8zgZi2zg9o3DdLdB?clash=3&extend=1
     path: ./proxy_provider/providers-2.yaml
