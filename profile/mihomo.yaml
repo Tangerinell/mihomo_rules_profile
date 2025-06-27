@@ -10,22 +10,22 @@ NodeParam: &NodeParam
 # Proxy Providers
 proxy-providers:
   Node-1:
-    type: http
     url: "https://鸡你太美.com"
+    type: http
     interval: 43200
     health-check:
       enable: true
       url: 'http://connectivitycheck.platform.hicloud.com/generate_204'
       interval: 300
-    path: './proxy_provider/providers-1.yaml'
+    path: './proxy_provider/providers_1.yaml'
     override:
       additional-prefix: "🐔"
     proxy: 🌐代理
 
   Node-2:
-    <<: *NodeParam
     url: "https://鸡你太美2.com"
-    path: './proxy_provider/providers-2.yaml'
+    <<: *NodeParam
+    path: './proxy_provider/providers_2.yaml'
     override:
       additional-prefix: "🐒"
     proxy: 🌐代理
@@ -113,20 +113,20 @@ dns:
     - "+.market.xiaomi.com"
   respect-rules: true
   default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 223.6.6.6
-    - tcp://119.29.29.29
-    - tcp://223.5.5.5
-    - tcp://223.6.6.6
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
   nameserver:
-    - https://223.5.5.5/dns-query
-    - https://doh.pub/dns-query
+    - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.114dns.com/dns-query
   proxy-server-nameserver:
-    - https://223.5.5.5/dns-query
-    - https://doh.pub/dns-query
+    - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.114dns.com/dns-query
 
 # Sniffer Configuration
 sniffer:
