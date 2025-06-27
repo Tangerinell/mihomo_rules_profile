@@ -120,13 +120,11 @@ dns:
     - https://dns.google/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - https://doh.114dns.com/dns-query
   proxy-server-nameserver:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - https://doh.114dns.com/dns-query
 
 # Sniffer Configuration
 sniffer:
