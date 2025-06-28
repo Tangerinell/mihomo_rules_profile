@@ -744,7 +744,7 @@ rules:
   ### Main
   # China
   - GEOSITE,cn,➡️直连
-  - GEOIP,CN,➡️直连
+  - GEOIP,cn,➡️直连
 
   # LAN
   - RULE-SET,lan,➡️直连
