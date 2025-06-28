@@ -3,7 +3,7 @@ NodeParam: &NodeParam
     interval: 43200
     health-check:
         enable: true
-        url: 'http://connectivitycheck.platform.hicloud.com/generate_204'
+        url: 'http://cp.cloudflare.com/generate_204'
         interval: 300
 
 # Proxy Providers
@@ -183,14 +183,14 @@ sniffer:
 # Proxy Group Templates
 Select: &Select
   type: select
-  url: 'http://connectivitycheck.platform.hicloud.com/generate_204'
+  url: 'http://cp.cloudflare.com/generate_204'
   disable-udp: false
   hidden: false 
   include-all: true
 
 Auto: &Auto
   type: url-test
-  url: 'http://connectivitycheck.platform.hicloud.com/generate_204'
+  url: 'http://cp.cloudflare.com/generate_204'
   interval: 300
   tolerance: 50
   disable-udp: false

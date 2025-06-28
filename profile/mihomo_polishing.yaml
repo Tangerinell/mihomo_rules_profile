@@ -3,7 +3,7 @@ NodeParam:
   interval: 43200
   health-check:
     enable: true
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
 proxy-providers:
   Node-1:
@@ -147,13 +147,13 @@ sniffer:
     - +.push.apple.com
 Select:
   type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  url: http://cp.cloudflare.com/generate_204
   disable-udp: false
   hidden: false
   include-all: true
 Auto:
   type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  url: http://cp.cloudflare.com/generate_204
   interval: 300
   tolerance: 50
   disable-udp: false
@@ -245,7 +245,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png
   - name: Pornhub
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -282,7 +282,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pornhub_2.png
   - name: Tiktok
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -319,7 +319,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png
   - name: Steam
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -356,7 +356,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
   - name: Epic
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -393,7 +393,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png
   - name: Telegram
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -430,7 +430,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
   - name: GitHub
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -467,7 +467,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
   - name: Google
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -504,7 +504,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png
   - name: YouTube
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -541,7 +541,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png
   - name: Discord
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -578,7 +578,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png
   - name: Spotify
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -615,7 +615,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
   - name: OpenAI
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -652,7 +652,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
   - name: Streaming
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -689,7 +689,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
   - name: Apple
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -726,7 +726,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
   - name: Microsoft
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -763,7 +763,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: Roblox
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -800,7 +800,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Game.png
   - name: 前置机
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -843,7 +843,7 @@ proxy-groups:
       - 落地机
   - name: 🇺🇸自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -852,7 +852,7 @@ proxy-groups:
     filter: ^(?=.*(美国|US|United States|America|🇺🇸)).*$
   - name: 🇭🇰自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -861,7 +861,7 @@ proxy-groups:
     filter: ^(?=.*(香港|HK|Hong|🇭🇰)).*$
   - name: 🇯🇵自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -870,7 +870,7 @@ proxy-groups:
     filter: ^(?=.*(日本|JP|Japan|🇯🇵)).*$
   - name: 🇰🇷自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -879,16 +879,16 @@ proxy-groups:
     filter: ^(?=.*(韩国|韓|KR|Korea|🇰🇷)).*$
   - name: 🇸🇬自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(🐔🇸🇬)).*$
+    filter: ^(?=.*(新加坡|狮城|SG|Singapore|🇸🇬)).*$
   - name: 🇦🇺自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -897,7 +897,7 @@ proxy-groups:
     filter: ^(?=.*(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)).*$
   - name: 🇬🇧自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -906,7 +906,7 @@ proxy-groups:
     filter: ^(?=.*(英国|UK|United Kingdom|🇬🇧)).*$
   - name: 🇫🇷自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -915,7 +915,7 @@ proxy-groups:
     filter: ^(?=.*(法国|FR|France|🇫🇷)).*$
   - name: 🇩🇪自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -924,7 +924,7 @@ proxy-groups:
     filter: ^(?=.*(德国|DE|Germany|🇩🇪)).*$
   - name: 🇹🇼自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -933,7 +933,7 @@ proxy-groups:
     filter: ^(?=.*(台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳)).*$
   - name: 🇺🇸手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -941,7 +941,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇭🇰手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -949,7 +949,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -957,7 +957,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇰🇷手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -965,15 +965,15 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
   - name: 🇸🇬手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(🐔🇸🇬)).*$
+    filter: ^(?=.*(新加坡|狮城|SG|Singapore|🇸🇬)).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇦🇺手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -981,7 +981,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png
   - name: 🇬🇧手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -989,7 +989,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png
   - name: 🇫🇷手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -997,7 +997,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png
   - name: 🇩🇪手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -1005,7 +1005,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png
   - name: 🇹🇼手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -1013,7 +1013,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🧩手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -1023,7 +1023,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Puzzle.png
   - name: 📋手动选择
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
@@ -1031,7 +1031,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
   - name: 📋自动选择
     type: url-test
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
     disable-udp: false
@@ -1040,7 +1040,7 @@ proxy-groups:
     filter: ^(?=.*(.))(?!.*((?i)群|剩余|时间|有效|禁止|发布|节点|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$
   - name: 📋检查全部
     type: select
-    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     disable-udp: false
     hidden: false
     include-all: true
