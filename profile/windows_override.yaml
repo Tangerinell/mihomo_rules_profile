@@ -1,0 +1,15 @@
+rule-providers:
+  todesk:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🌐代理
+    url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Todesk.yaml
+    path: ./rule_set/todesk.yaml
+
++rules:
+  - PROCESS-NAME,cs2.exe,➡️直连
+  - PROCESS-NAME,Overcooked2.exe,➡️直连
+  - PROCESS-NAME,left4dead2.exe,➡️直连
+  - PROCESS-NAME,PartyAnimals.exe,➡️直连
+  - RULE-SET,todesk,➡️直连

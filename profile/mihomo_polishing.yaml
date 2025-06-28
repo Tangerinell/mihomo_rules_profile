@@ -1166,13 +1166,6 @@ rule-providers:
     proxy: 🌐代理
     url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/YouTube.yaml
     path: ./rule_set/youtube.yaml
-  todesk:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Todesk.yaml
-    path: ./rule_set/todesk.yaml
   pornhub:
     type: http
     behavior: classical
@@ -1182,7 +1175,6 @@ rule-providers:
     path: ./rule_set/pornhub.yaml
 rules:
   - RULE-SET,pornhub,Pornhub
-  - RULE-SET,todesk,➡️直连
   - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
   - RULE-SET,github,GitHub

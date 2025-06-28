@@ -670,14 +670,6 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/YouTube.yaml'
     path: './rule_set/youtube.yaml'
 
-  todesk:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Todesk.yaml'
-    path: './rule_set/todesk.yaml'
-
   pornhub:
     type: http
     behavior: classical
@@ -691,9 +683,6 @@ rules:
   ### External Rule
   # Pornhub
   - RULE-SET,pornhub,Pornhub
-
-  # ToDesk
-  - RULE-SET,todesk,➡️直连
 
   # YouTube
   - RULE-SET,youtube,YouTube
