@@ -146,20 +146,20 @@ sniffer:
   skip-domain:
     - Mijia Cloud
     - +.push.apple.com
-FilterHK: ^(?=.*(香港|HK|Hong|🇭🇰))(?!.*(?i)(?:🔗)).*$
-FilterJP: ^(?=.*(日本|JP|Japan|🇯🇵))(?!.*(?i)(?:🔗)).*$
-FilterKR: ^(?=.*(韩国|韓|KR|Korea|🇰🇷))(?!.*(?i)(?:🔗)).*$
-FilterSG: ^(?=.*(新加坡|狮城|SG|Singapore|🇸🇬))(?!.*(?i)(?:🔗)).*$
-FilterUS: ^(?=.*(美国|US|United States|America|🇺🇸))(?!.*(?i)(?:🔗)).*$
-FilterUK: ^(?=.*(英国|UK|United Kingdom|🇬🇧))(?!.*(?i)(?:🔗)).*$
-FilterAU: ^(?=.*(澳大利亚|澳洲|AUS|au|Australia|🇦🇺))(?!.*(?i)(?:🔗)).*$
-FilterFR: ^(?=.*(法国|FR|France|🇫🇷))(?!.*(?i)(?:🔗)).*$
-FilterDE: ^(?=.*(德国|DE|Germany|🇩🇪))(?!.*(?i)(?:🔗)).*$
-FilterTW: ^(?=.*(台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳))(?!.*(?i)(?:🔗)).*$
-FilterOthers: ^(?!.*(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
+FilterHK: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
+FilterJP: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
+FilterKR: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
+FilterSG: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
+FilterUS: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
+FilterUK: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
+FilterAU: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
+FilterFR: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
+FilterDE: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
+FilterTW: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
+FilterOthers: ^(?!.*((?i)(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
   States|America|🇺🇸|德国|DE|Germany|🇩🇪|英国|UK|United
-  Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺))(?!.*(?i)(?:🔗)).*$
-FilterAll: ^(?!.*(?i)(?:🔗)).*$
+  Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
+FilterAll: ^(?!.*((?i)(🔗))).*$
 Select:
   type: select
   url: https://cp.cloudflare.com
@@ -264,7 +264,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -301,7 +301,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -338,7 +338,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -375,7 +375,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -412,7 +412,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -449,7 +449,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -486,7 +486,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -523,7 +523,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -560,7 +560,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -597,7 +597,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -634,7 +634,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -671,7 +671,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -708,7 +708,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -745,7 +745,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -782,7 +782,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - ➡️直连
@@ -821,7 +821,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(美国|US|United States|America|🇺🇸))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
   - name: 🇭🇰自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -830,7 +830,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(香港|HK|Hong|🇭🇰))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
   - name: 🇯🇵自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -839,7 +839,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(日本|JP|Japan|🇯🇵))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
   - name: 🇰🇷自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -848,7 +848,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(韩国|韓|KR|Korea|🇰🇷))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
   - name: 🇸🇬自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -857,7 +857,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(新加坡|狮城|SG|Singapore|🇸🇬))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
   - name: 🇦🇺自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -866,7 +866,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(澳大利亚|澳洲|AUS|au|Australia|🇦🇺))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
   - name: 🇬🇧自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -875,7 +875,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(英国|UK|United Kingdom|🇬🇧))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
   - name: 🇫🇷自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -884,7 +884,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(法国|FR|France|🇫🇷))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
   - name: 🇩🇪自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -893,7 +893,7 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(德国|DE|Germany|🇩🇪))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
   - name: 🇹🇼自动选择
     type: url-test
     url: https://cp.cloudflare.com
@@ -902,14 +902,14 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?=.*(台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
   - name: 🇸🇬手动选择
     type: select
     url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(新加坡|狮城|SG|Singapore|🇸🇬))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇺🇸手动选择
     type: select
@@ -917,7 +917,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(美国|US|United States|America|🇺🇸))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇭🇰手动选择
     type: select
@@ -925,7 +925,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(香港|HK|Hong|🇭🇰))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵手动选择
     type: select
@@ -933,7 +933,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(日本|JP|Japan|🇯🇵))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇰🇷手动选择
     type: select
@@ -941,7 +941,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(韩国|韓|KR|Korea|🇰🇷))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
   - name: 🇦🇺手动选择
     type: select
@@ -949,7 +949,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(澳大利亚|澳洲|AUS|au|Australia|🇦🇺))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png
   - name: 🇬🇧手动选择
     type: select
@@ -957,7 +957,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(英国|UK|United Kingdom|🇬🇧))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png
   - name: 🇫🇷手动选择
     type: select
@@ -965,7 +965,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(法国|FR|France|🇫🇷))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png
   - name: 🇩🇪手动选择
     type: select
@@ -973,7 +973,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(德国|DE|Germany|🇩🇪))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png
   - name: 🇹🇼手动选择
     type: select
@@ -981,7 +981,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?=.*(台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳))(?!.*(?i)(?:🔗)).*$
+    filter: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🧩手动其他
     type: select
@@ -989,9 +989,9 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|🇨🇳|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
+    filter: ^(?!.*((?i)(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
       States|America|🇺🇸|德国|DE|Germany|🇩🇪|英国|UK|United
-      Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺))(?!.*(?i)(?:🔗)).*$
+      Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Puzzle.png
   - name: 📋手动全部
     type: select
@@ -999,7 +999,7 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
   - name: 📋自动全部
     type: url-test
@@ -1009,14 +1009,14 @@ proxy-groups:
     disable-udp: false
     hidden: true
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
   - name: 前置机
     type: select
     url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*(?i)(?:🔗)).*$
+    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🟢自动选择
       - 🟣自动选择
