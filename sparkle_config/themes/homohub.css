@@ -4,7 +4,6 @@
     white-space: nowrap;
 }
 
-
 .border-primary-foreground>.bg-white {
     background-color: hsl(var(--heroui-primary-foreground));
 }
@@ -116,9 +115,9 @@ html {
     --heroui-line-height-small: 1.25rem !important;
     --heroui-line-height-medium: 1.5rem !important;
     --heroui-line-height-large: 1.75rem !important;
-    --heroui-radius-small: 8px !important;
-    --heroui-radius-medium: 12px !important;
-    --heroui-radius-large: 14px !important;
+    --heroui-radius-small: 4px !important;
+    --heroui-radius-medium: 6px !important;
+    --heroui-radius-large: 8px !important;
     --heroui-border-width-small: 1px !important;
     --heroui-border-width-medium: 2px !important;
     --heroui-border-width-large: 3px !important;
