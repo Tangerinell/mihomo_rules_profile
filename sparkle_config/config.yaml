@@ -6,8 +6,8 @@ useWindowFrame: false
 proxyInTray: false
 maxLogDays: 7
 proxyCols: "4"
-connectionDirection: asc
-connectionOrderBy: time
+connectionDirection: desc
+connectionOrderBy: downloadSpeed
 useSubStore: false
 proxyDisplayMode: full
 proxyDisplayOrder: default
@@ -21,11 +21,11 @@ siderOrder:
   - tun
   - proxy
   - resource
-  - profile
+  - override
   - connection
+  - profile
   - mihomo
   - rule
-  - override
   - dns
   - sniff
   - log
@@ -1380,5 +1380,9 @@ customTheme: homohub.css
 showWindowShortcut: Alt+V
 diffWorkDir: true
 resourceCardStatus: col-span-2
-ruleCardStatus: col-span-2
+ruleCardStatus: col-span-1
 proxyCardStatus: col-span-2
+showFloatingWindow: false
+disableTray: false
+overrideCardStatus: col-span-2
+delayTestUrl: http://cp.cloudflare.com/generate_204
