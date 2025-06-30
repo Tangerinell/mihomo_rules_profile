@@ -1385,4 +1385,5 @@ proxyCardStatus: col-span-2
 showFloatingWindow: false
 disableTray: false
 overrideCardStatus: col-span-2
-delayTestUrl: http://cp.cloudflare.com/generate_204
+delayTestUrl: https://cp.cloudflare.com
+sysproxyCardStatus: col-span-1
