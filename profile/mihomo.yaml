@@ -521,11 +521,9 @@ proxy-groups:
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Airport.png'
 
   - name: 落地机
-    type: select
-    url: 'https://cp.cloudflare.com'
+    <<: *Select
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Airport.png'
-    use: 
-    - LandNode
+    filter: '^(?=.*(🔗)).*$'
 
   - name: 🔗链式代理
     type: select
