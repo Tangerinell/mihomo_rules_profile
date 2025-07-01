@@ -1,3 +1,4 @@
+#Clash.Meta(mihomo)
 NodeParam:
   type: http
   interval: 43200
@@ -115,8 +116,10 @@ dns:
     - +.market.xiaomi.com
   respect-rules: true
   default-nameserver:
-    - tls://1.1.1.1:853
-    - tls://8.8.8.8:853
+    - 1.1.1.1
+    - 8.8.8.8
+    - 2606:4700:4700::1111
+    - 2001:4860:4860::8888
   nameserver:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
@@ -127,12 +130,6 @@ dns:
     - https://dns.google/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  fallback:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: cn
   nameserver-policy:
     geosite:!cn:
       - https://cloudflare-dns.com/dns-query
