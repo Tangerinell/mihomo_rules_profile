@@ -339,7 +339,7 @@ proxy-groups:
               🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png'
 
-  - name: Steam
+  - name: Cloudflare
     <<: *Select
     filter: *FilterAll
     proxies: [🌐代理, 🔗链式代理, ➡️直连, ⛔阻断, 
@@ -350,7 +350,7 @@ proxy-groups:
               🇦🇺自动选择, 🇦🇺手动选择, 🇩🇪自动选择, 🇩🇪手动选择, 
               🇬🇧自动选择, 🇬🇧手动选择, 🇫🇷自动选择, 🇫🇷手动选择, 
               🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png'
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cloudflare.png'
 
   - name: Epic
     <<: *Select
@@ -364,6 +364,19 @@ proxy-groups:
               🇬🇧自动选择, 🇬🇧手动选择, 🇫🇷自动选择, 🇫🇷手动选择, 
               🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png'
+
+  - name: Steam
+    <<: *Select
+    filter: *FilterAll
+    proxies: [🌐代理, 🔗链式代理, ➡️直连, ⛔阻断, 
+              🟢自动选择, 🟣自动选择, 🟨手动选择, 🟦手动选择, 
+              📋自动全部, 📋手动全部, 🧩自动其他, 🧩手动其他, 
+              🇯🇵自动选择, 🇯🇵手动选择, 🇰🇷自动选择, 🇰🇷手动选择, 
+              🇹🇼自动选择, 🇹🇼手动选择,🇭🇰自动选择, 🇭🇰手动选择, 
+              🇦🇺自动选择, 🇦🇺手动选择, 🇩🇪自动选择, 🇩🇪手动选择, 
+              🇬🇧自动选择, 🇬🇧手动选择, 🇫🇷自动选择, 🇫🇷手动选择, 
+              🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png'
 
   - name: Telegram
     <<: *Select
@@ -429,6 +442,19 @@ proxy-groups:
               🇬🇧自动选择, 🇬🇧手动选择, 🇫🇷自动选择, 🇫🇷手动选择, 
               🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png'
+
+  - name: Netflix
+    <<: *Select
+    filter: *FilterAll
+    proxies: [🌐代理, 🔗链式代理, ➡️直连, ⛔阻断, 
+              🟢自动选择, 🟣自动选择, 🟨手动选择, 🟦手动选择, 
+              📋自动全部, 📋手动全部, 🧩自动其他, 🧩手动其他, 
+              🇯🇵自动选择, 🇯🇵手动选择, 🇰🇷自动选择, 🇰🇷手动选择, 
+              🇹🇼自动选择, 🇹🇼手动选择,🇭🇰自动选择, 🇭🇰手动选择, 
+              🇦🇺自动选择, 🇦🇺手动选择, 🇩🇪自动选择, 🇩🇪手动选择, 
+              🇬🇧自动选择, 🇬🇧手动选择, 🇫🇷自动选择, 🇫🇷手动选择, 
+              🇸🇬自动选择, 🇸🇬手动选择, 🇺🇸自动选择, 🇺🇸手动选择]
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png'
 
   - name: OpenAI
     <<: *Select
@@ -743,9 +769,31 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Pornhub.yaml'
     path: './rule_set/pornhub.yaml'
 
+  cloudflare:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Cloudflare.yaml'
+    path: './rule_set/cloudflare.yaml'
+
+  netflix:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml'
+    path: './rule_set/netflix.yaml'
+
 # Rules
 rules:
   ### External Rule
+  # Netflix
+  - RULE-SET,netflix,Netflix
+
+  # Cloudflare
+  - RULE-SET,cloudflare,Cloudflare
+
   # Pornhub
   - RULE-SET,pornhub,Pornhub
 
