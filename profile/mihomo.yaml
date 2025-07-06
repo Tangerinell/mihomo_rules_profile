@@ -120,7 +120,6 @@ dns:
   fake-ip-filter:
     - "+.lan"
     - "+.local"
-    - "+.market.xiaomi.com"
   respect-rules: true
   default-nameserver:
     - 1.1.1.1
@@ -142,7 +141,6 @@ dns:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
 
-
 # Sniffer Configuration
 sniffer:
   enable: true
@@ -151,7 +149,6 @@ sniffer:
       ports:
         - 80
         - 8080-8880
-      override-destination: true
     TLS:
       ports:
         - 443
@@ -160,9 +157,6 @@ sniffer:
       ports:
         - 443
         - 8443
-  skip-domain:
-    - "Mijia Cloud"
-    - "+.push.apple.com"
 
 # Node Filters
 FilterHK: &FilterHK 
