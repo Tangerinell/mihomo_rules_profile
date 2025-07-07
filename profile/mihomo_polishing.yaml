@@ -1,4 +1,3 @@
-#Clash.Meta(mihomo)
 NodeParam:
   type: http
   interval: 43200
@@ -33,23 +32,6 @@ proxy-providers:
     override:
       additional-prefix: 🐒
     filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  LandNode:
-    type: file
-    health-check:
-      enable: true
-      url: https://cp.cloudflare.com
-      interval: 300
-    override:
-      additional-prefix: 🔗
-      dialer-proxy: 前置机
-    path: ./proxy_provider/LandNode.yaml
-  OtherNode:
-    type: file
-    health-check:
-      enable: true
-      url: https://cp.cloudflare.com
-      interval: 300
-    path: ./proxy_provider/OtherNode.yaml
 mixed-port: 7890
 socks-port: 0
 port: 0
@@ -384,6 +366,47 @@ proxy-groups:
       - 🇺🇸自动选择
       - 🇺🇸手动选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png
+  - name: Netflix
+    type: select
+    url: https://cp.cloudflare.com
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?!.*((?i)(🔗))).*$
+    proxies:
+      - 🌐代理
+      - 🔗链式代理
+      - ➡️直连
+      - ⛔阻断
+      - 🟢自动选择
+      - 🟣自动选择
+      - 🟨手动选择
+      - 🟦手动选择
+      - 📋自动全部
+      - 📋手动全部
+      - 🧩自动其他
+      - 🧩手动其他
+      - 🇯🇵自动选择
+      - 🇯🇵手动选择
+      - 🇰🇷自动选择
+      - 🇰🇷手动选择
+      - 🇹🇼自动选择
+      - 🇹🇼手动选择
+      - 🇭🇰自动选择
+      - 🇭🇰手动选择
+      - 🇦🇺自动选择
+      - 🇦🇺手动选择
+      - 🇩🇪自动选择
+      - 🇩🇪手动选择
+      - 🇬🇧自动选择
+      - 🇬🇧手动选择
+      - 🇫🇷自动选择
+      - 🇫🇷手动选择
+      - 🇸🇬自动选择
+      - 🇸🇬手动选择
+      - 🇺🇸自动选择
+      - 🇺🇸手动选择
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: YouTube
     type: select
     url: https://cp.cloudflare.com
@@ -794,47 +817,6 @@ proxy-groups:
       - 🇺🇸自动选择
       - 🇺🇸手动选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-  - name: Netflix
-    type: select
-    url: https://cp.cloudflare.com
-    disable-udp: false
-    hidden: false
-    include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
-    proxies:
-      - 🌐代理
-      - 🔗链式代理
-      - ➡️直连
-      - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
-      - 🟨手动选择
-      - 🟦手动选择
-      - 📋自动全部
-      - 📋手动全部
-      - 🧩自动其他
-      - 🧩手动其他
-      - 🇯🇵自动选择
-      - 🇯🇵手动选择
-      - 🇰🇷自动选择
-      - 🇰🇷手动选择
-      - 🇹🇼自动选择
-      - 🇹🇼手动选择
-      - 🇭🇰自动选择
-      - 🇭🇰手动选择
-      - 🇦🇺自动选择
-      - 🇦🇺手动选择
-      - 🇩🇪自动选择
-      - 🇩🇪手动选择
-      - 🇬🇧自动选择
-      - 🇬🇧手动选择
-      - 🇫🇷自动选择
-      - 🇫🇷手动选择
-      - 🇸🇬自动选择
-      - 🇸🇬手动选择
-      - 🇺🇸自动选择
-      - 🇺🇸手动选择
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: OpenAI
     type: select
     url: https://cp.cloudflare.com
