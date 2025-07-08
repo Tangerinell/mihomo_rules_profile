@@ -73,7 +73,7 @@ secret: ""
 external-ui-url: 'https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip'
 external-controller-cors:
   allow-origins:
-    - '*'
+    - "*"
   allow-private-network: true
 
 profile:
@@ -102,8 +102,8 @@ tun:
   auto-detect-interface: true
   auto-redirect: false
   dns-hijack:
-    - "any:53"
-    - "tcp://any:53"
+    - any:53
+    - tcp://any:53
   strict-route: true
   mtu: 1500
   route-exclude-address: []
@@ -134,10 +134,6 @@ dns:
     - https://dns.google/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  nameserver-policy:
-    geosite:!cn:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
 
 # Sniffer Configuration
 sniffer:
