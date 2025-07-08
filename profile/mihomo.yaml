@@ -1,38 +1,39 @@
 #Clash.Meta(mihomo)
 NodeParam: &NodeParam
-    type: http
     interval: 43200
     health-check:
         enable: true
-        url: 'https://cp.cloudflare.com'
+        url: 'https://www.gstatic.com/generate_204'
         interval: 300
+        timeout: 5000
+        lazy: true
+        expected-status: 204
 
 # Proxy Providers
 proxy-providers:
   Node-1:
     url: "https://鸡你太美.com"
+    type: http
     <<: *NodeParam
     path: './proxy_provider/providers_1.yaml'
     proxy: 🌐代理
     override:
-      additional-prefix: "🐔"
+      additional-prefix: "1🐔"
     filter: '^(?!.*(?i)(?:NEVER_MATCH)).*$'
 
   Node-2:
     url: "https://鸡你太美2.com"
+    type: http
     <<: *NodeParam
     path: './proxy_provider/providers_2.yaml'
     proxy: 🌐代理
     override:
-      additional-prefix: "🐒"
+      additional-prefix: "2🐒"
     filter: '^(?!.*(?i)(?:NEVER_MATCH)).*$'
 
   LandNode:
     type: file
-    health-check:
-        enable: true
-        url: 'https://cp.cloudflare.com'
-        interval: 300
+    <<: *NodeParam
     override:
       additional-prefix: "🔗"
       dialer-proxy: 前置机
@@ -40,10 +41,7 @@ proxy-providers:
 
   OtherNode:
     type: file
-    health-check:
-        enable: true
-        url: 'https://cp.cloudflare.com'
-        interval: 300
+    <<: *NodeParam
     path: './proxy_provider/OtherNode.yaml'
 
 # Global Configuration
@@ -198,15 +196,17 @@ FilterAll: &FilterAll
 # Proxy Group Templates
 Select: &Select
   type: select
-  url: 'https://cp.cloudflare.com'
   disable-udp: false
-  hidden: false 
+  hidden: false
   include-all: true
 
 Auto: &Auto
   type: url-test
-  url: 'https://cp.cloudflare.com'
+  url: 'https://www.gstatic.com/generate_204'
+  expected-status: 204
   interval: 300
+  timeout: 5000
+  lazy: true
   tolerance: 50
   disable-udp: false
   hidden: true

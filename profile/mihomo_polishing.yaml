@@ -1,10 +1,3 @@
-NodeParam:
-  type: http
-  interval: 43200
-  health-check:
-    enable: true
-    url: https://cp.cloudflare.com
-    interval: 300
 proxy-providers:
   Node-1:
     url: https://鸡你太美.com
@@ -12,12 +5,15 @@ proxy-providers:
     interval: 43200
     health-check:
       enable: true
-      url: https://cp.cloudflare.com
+      url: https://www.gstatic.com/generate_204
       interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
     path: ./proxy_provider/providers_1.yaml
     proxy: 🌐代理
     override:
-      additional-prefix: 🐔
+      additional-prefix: 1🐔
     filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
   Node-2:
     url: https://鸡你太美2.com
@@ -25,13 +21,41 @@ proxy-providers:
     interval: 43200
     health-check:
       enable: true
-      url: https://cp.cloudflare.com
+      url: https://www.gstatic.com/generate_204
       interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
     path: ./proxy_provider/providers_2.yaml
     proxy: 🌐代理
     override:
-      additional-prefix: 🐒
+      additional-prefix: 2🐒
     filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  LandNode:
+    type: file
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    override:
+      additional-prefix: 🔗
+      dialer-proxy: 前置机
+    path: ./proxy_provider/LandNode.yaml
+  OtherNode:
+    type: file
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    path: ./proxy_provider/OtherNode.yaml
 mixed-port: 7890
 socks-port: 0
 port: 0
@@ -130,34 +154,6 @@ sniffer:
       ports:
         - 443
         - 8443
-FilterHK: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
-FilterJP: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
-FilterKR: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
-FilterSG: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
-FilterUS: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
-FilterUK: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
-FilterAU: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
-FilterFR: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
-FilterDE: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
-FilterTW: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
-FilterOthers: ^(?!.*((?i)(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
-  States|America|🇺🇸|德国|DE|Germany|🇩🇪|英国|UK|United
-  Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
-FilterAll: ^(?!.*((?i)(🔗))).*$
-Select:
-  type: select
-  url: https://cp.cloudflare.com
-  disable-udp: false
-  hidden: false
-  include-all: true
-Auto:
-  type: url-test
-  url: https://cp.cloudflare.com
-  interval: 300
-  tolerance: 50
-  disable-udp: false
-  hidden: true
-  include-all: true
 proxy-groups:
   - name: 🌐代理
     type: select
@@ -248,7 +244,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png
   - name: 🧩手动其他
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -258,8 +253,11 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Puzzle.png
   - name: 🧩自动其他
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -269,7 +267,6 @@ proxy-groups:
       Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
   - name: 📋手动全部
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -277,8 +274,11 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
   - name: 📋自动全部
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -286,7 +286,6 @@ proxy-groups:
     filter: ^(?!.*((?i)(🔗))).*$
   - name: Pornhub
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -327,7 +326,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pornhub_2.png
   - name: Tiktok
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -368,7 +366,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png
   - name: Netflix
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -409,7 +406,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: YouTube
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -450,7 +446,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png
   - name: Streaming
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -491,7 +486,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
   - name: Cloudflare
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -532,7 +526,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cloudflare.png
   - name: Epic
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -573,7 +566,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png
   - name: Steam
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -614,7 +606,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
   - name: Telegram
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -655,7 +646,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
   - name: GitHub
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -696,7 +686,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
   - name: Google
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -737,7 +726,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png
   - name: Discord
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -778,7 +766,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png
   - name: Spotify
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -819,7 +806,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
   - name: OpenAI
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -860,7 +846,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
   - name: Apple
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -901,7 +886,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
   - name: Microsoft
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -942,7 +926,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: Roblox
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -983,8 +966,11 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Game.png
   - name: 🇺🇸自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -992,8 +978,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
   - name: 🇭🇰自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1001,8 +990,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
   - name: 🇯🇵自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1010,8 +1002,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
   - name: 🇰🇷自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1019,8 +1014,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
   - name: 🇸🇬自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1028,8 +1026,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
   - name: 🇦🇺自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1037,8 +1038,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
   - name: 🇬🇧自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1046,8 +1050,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
   - name: 🇫🇷自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1055,8 +1062,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
   - name: 🇩🇪自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1064,8 +1074,11 @@ proxy-groups:
     filter: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
   - name: 🇹🇼自动选择
     type: url-test
-    url: https://cp.cloudflare.com
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
     interval: 300
+    timeout: 5000
+    lazy: true
     tolerance: 50
     disable-udp: false
     hidden: true
@@ -1073,7 +1086,6 @@ proxy-groups:
     filter: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
   - name: 🇸🇬手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1081,7 +1093,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇺🇸手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1089,7 +1100,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇭🇰手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1097,7 +1107,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1105,7 +1114,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇰🇷手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1113,7 +1121,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
   - name: 🇦🇺手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1121,7 +1128,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png
   - name: 🇬🇧手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1129,7 +1135,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png
   - name: 🇫🇷手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1137,7 +1142,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png
   - name: 🇩🇪手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1145,7 +1149,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png
   - name: 🇹🇼手动选择
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1153,7 +1156,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 前置机
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
@@ -1186,7 +1188,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Airport.png
   - name: 落地机
     type: select
-    url: https://cp.cloudflare.com
     disable-udp: false
     hidden: false
     include-all: true
