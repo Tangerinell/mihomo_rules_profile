@@ -8,6 +8,13 @@ rule-providers:
     path: ./rule_set/todesk.yaml
 
 +rules:
+  # Adobe
+  - DOMAIN-REGEX,(?i)Adobe,⛔阻断
+  - PROCESS-NAME-REGEX,(?i)Adobe,⛔阻断
+  - PROCESS-NAME,Photoshop.exe,⛔阻断
+
+  - PROCESS-NAME,Draw&Guess.exe,➡️直连
+  - PROCESS-NAME,UnityCrashHandler64.exe,➡️直连
   - PROCESS-NAME,cs2.exe,➡️直连
   - PROCESS-NAME,Overcooked2.exe,➡️直连
   - PROCESS-NAME,left4dead2.exe,➡️直连
