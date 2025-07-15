@@ -197,7 +197,7 @@ Select: &Select
   include-all: true
 
 FallBack: &FallBack
-  type: url-test
+  type: fallback
   url: 'https://www.gstatic.com/generate_204'
   expected-status: 204
   interval: 300
