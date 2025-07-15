@@ -565,6 +565,11 @@ proxy-groups:
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png'
 
   ### Auto
+
+  - name: 🇸🇬自动选择
+    <<: *Auto
+    filter: *FilterSG
+
   - name: 🇺🇸自动选择
     <<: *Auto
     filter: *FilterUS
@@ -580,10 +585,6 @@ proxy-groups:
   - name: 🇰🇷自动选择
     <<: *Auto
     filter: *FilterKR
-
-  - name: 🇸🇬自动选择
-    <<: *Auto
-    filter: *FilterSG
 
   - name: 🇦🇺自动选择
     <<: *Auto
