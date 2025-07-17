@@ -99,8 +99,8 @@ tun:
   stack: system
   device: mihomo
   auto-route: true
+  auto-redirect: true
   auto-detect-interface: true
-  auto-redirect: false
   dns-hijack:
     - any:53
     - tcp://any:53
