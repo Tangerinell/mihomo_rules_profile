@@ -1,3 +1,7 @@
+tun:
+  stack: system
+  auto-redirect: false
+
 rule-providers:
   todesk:
     type: http

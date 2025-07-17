@@ -96,7 +96,7 @@ geox-url:
 # Tunnel Configuration
 tun:
   enable: true
-  stack: system
+  stack: mixed
   device: mihomo
   auto-route: true
   auto-redirect: true
