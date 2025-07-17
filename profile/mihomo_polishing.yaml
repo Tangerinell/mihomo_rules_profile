@@ -151,65 +151,82 @@ sniffer:
         - 443
         - 8443
 proxy-groups:
+  - name: 🟢故障转移
+    type: select
+    proxies:
+      - 🇸🇬故障转移
+      - 🇭🇰故障转移
+      - 🇺🇸故障转移
+      - 🇯🇵故障转移
+      - 🇰🇷故障转移
+      - 🇦🇺故障转移
+      - 🇬🇧故障转移
+      - 🇫🇷故障转移
+      - 🇩🇪故障转移
+      - 🇹🇼故障转移
+    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/ji.png
+  - name: 🟣故障转移
+    type: select
+    proxies:
+      - 🇸🇬故障转移
+      - 🇭🇰故障转移
+      - 🇺🇸故障转移
+      - 🇯🇵故障转移
+      - 🇰🇷故障转移
+      - 🇦🇺故障转移
+      - 🇬🇧故障转移
+      - 🇫🇷故障转移
+      - 🇩🇪故障转移
+      - 🇹🇼故障转移
+    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/ni.png
+  - name: 🔶自动选择
+    type: select
+    proxies:
+      - 🇸🇬自动选择
+      - 🇭🇰自动选择
+      - 🇺🇸自动选择
+      - 🇯🇵自动选择
+      - 🇰🇷自动选择
+      - 🇦🇺自动选择
+      - 🇬🇧自动选择
+      - 🇫🇷自动选择
+      - 🇩🇪自动选择
+      - 🇹🇼自动选择
+    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/tai.png
+  - name: 🔷自动选择
+    type: select
+    proxies:
+      - 🇸🇬自动选择
+      - 🇭🇰自动选择
+      - 🇺🇸自动选择
+      - 🇯🇵自动选择
+      - 🇰🇷自动选择
+      - 🇦🇺自动选择
+      - 🇬🇧自动选择
+      - 🇫🇷自动选择
+      - 🇩🇪自动选择
+      - 🇹🇼自动选择
+    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png
   - name: 🌐代理
     type: select
     proxies:
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🔗链式代理
       - ➡️直连
-      - ↩️绕过
       - ⛔阻断
-    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Proxy.png
-  - name: ➡️直连
-    type: select
-    proxies:
-      - DIRECT
-    hidden: true
-  - name: ↩️绕过
-    type: select
-    proxies:
-      - PASS
-    hidden: true
-  - name: ⛔阻断
-    type: select
-    proxies:
-      - REJECT
-    hidden: true
-  - name: 🟢自动选择
-    type: select
-    proxies:
-      - 🇸🇬自动选择
-      - 🇭🇰自动选择
-      - 🇺🇸自动选择
-      - 🇯🇵自动选择
-      - 🇰🇷自动选择
-      - 🇦🇺自动选择
-      - 🇬🇧自动选择
-      - 🇫🇷自动选择
-      - 🇩🇪自动选择
-      - 🇹🇼自动选择
-    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/ji.png
-  - name: 🟣自动选择
-    type: select
-    proxies:
-      - 🇸🇬自动选择
-      - 🇭🇰自动选择
-      - 🇺🇸自动选择
-      - 🇯🇵自动选择
-      - 🇰🇷自动选择
-      - 🇦🇺自动选择
-      - 🇬🇧自动选择
-      - 🇫🇷自动选择
-      - 🇩🇪自动选择
-      - 🇹🇼自动选择
-    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/ni.png
+      - ↩️绕过
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
   - name: 🟨手动选择
     type: select
     proxies:
@@ -223,7 +240,7 @@ proxy-groups:
       - 🇫🇷手动选择
       - 🇩🇪手动选择
       - 🇹🇼手动选择
-    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/tai.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png
   - name: 🟦手动选择
     type: select
     proxies:
@@ -237,7 +254,7 @@ proxy-groups:
       - 🇫🇷手动选择
       - 🇩🇪手动选择
       - 🇹🇼手动选择
-    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png
   - name: 🧩手动其他
     type: select
     disable-udp: false
@@ -259,680 +276,935 @@ proxy-groups:
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pornhub_2.png
   - name: Tiktok
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png
   - name: Netflix
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: YouTube
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png
   - name: Streaming
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
   - name: Cloudflare
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cloudflare.png
   - name: Epic
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png
   - name: Steam
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
   - name: Telegram
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
   - name: GitHub
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
   - name: Google
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png
   - name: Discord
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png
   - name: Spotify
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
   - name: OpenAI
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
   - name: Apple
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
   - name: Microsoft
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: Roblox
     type: select
     disable-udp: false
     hidden: false
     include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
     proxies:
       - 🌐代理
       - 🔗链式代理
       - ➡️直连
       - ⛔阻断
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 📋自动全部
-      - 📋手动全部
+      - 📋回退全部
       - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
       - 🧩手动其他
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Game.png
   - name: 前置机
     type: select
@@ -941,29 +1213,41 @@ proxy-groups:
     include-all: true
     filter: ^(?!.*((?i)(🔗))).*$
     proxies:
-      - 🟢自动选择
-      - 🟣自动选择
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
       - 🟨手动选择
       - 🟦手动选择
       - 🇯🇵自动选择
-      - 🇯🇵手动选择
+      - 🇯🇵故障转移
       - 🇰🇷自动选择
-      - 🇰🇷手动选择
+      - 🇰🇷故障转移
       - 🇹🇼自动选择
-      - 🇹🇼手动选择
+      - 🇹🇼故障转移
       - 🇭🇰自动选择
-      - 🇭🇰手动选择
+      - 🇭🇰故障转移
       - 🇦🇺自动选择
-      - 🇦🇺手动选择
+      - 🇦🇺故障转移
       - 🇩🇪自动选择
-      - 🇩🇪手动选择
+      - 🇩🇪故障转移
       - 🇬🇧自动选择
-      - 🇬🇧手动选择
+      - 🇬🇧故障转移
       - 🇫🇷自动选择
-      - 🇫🇷手动选择
+      - 🇫🇷故障转移
       - 🇸🇬自动选择
-      - 🇸🇬手动选择
+      - 🇸🇬故障转移
       - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
       - 🇺🇸手动选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Airport.png
   - name: 落地机
@@ -973,11 +1257,6 @@ proxy-groups:
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Airport.png
     filter: ^(?=.*(🔗)).*$
-  - name: 🔗链式代理
-    type: select
-    hidden: true
-    proxies:
-      - 落地机
   - name: 🇸🇬手动选择
     type: select
     disable-udp: false
@@ -1048,6 +1327,140 @@ proxy-groups:
     include-all: true
     filter: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+  - name: 🇺🇸故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(美国|US|United States|America|🇺🇸)))(?!.*((?i)(🔗))).*$
+  - name: 🇭🇰故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(香港|hk|hong|🇭🇰)))(?!.*((?i)(🔗))).*$
+  - name: 🇯🇵故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(日本|JP|Japan|🇯🇵)))(?!.*((?i)(🔗))).*$
+  - name: 🇰🇷故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(韩国|韓|KR|Korea|🇰🇷)))(?!.*((?i)(🔗))).*$
+  - name: 🇸🇬故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(新加坡|狮城|SG|Singapore|🇸🇬)))(?!.*((?i)(🔗))).*$
+  - name: 🇦🇺故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
+  - name: 🇬🇧故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(英国|UK|United Kingdom|🇬🇧)))(?!.*((?i)(🔗))).*$
+  - name: 🇫🇷故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(法国|FR|France|🇫🇷)))(?!.*((?i)(🔗))).*$
+  - name: 🇩🇪故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(德国|DE|Germany|🇩🇪)))(?!.*((?i)(🔗))).*$
+  - name: 🇹🇼故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?=.*((?i)(台湾|TW|Taiwan|Wan|🇹🇼)))(?!.*((?i)(🔗))).*$
+  - name: 🧩回退其他
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?!.*((?i)(香港|HK|Hong|🇭🇰|台湾|TW|Taiwan|Wan|🇹🇼|日本|JP|Japan|🇯🇵|新加坡|狮城|SG|Singapore|🇸🇬|美国|US|United
+      States|America|🇺🇸|德国|DE|Germany|🇩🇪|英国|UK|United
+      Kingdom|🇬🇧|韩国|韓|KR|Korea|🇰🇷|法国|FR|France|🇫🇷|澳大利亚|澳洲|AUS|au|Australia|🇦🇺)))(?!.*((?i)(🔗))).*$
+  - name: 📋回退全部
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    lazy: true
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?!.*((?i)(🔗))).*$
   - name: 🇸🇬自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1194,6 +1607,26 @@ proxy-groups:
     hidden: false
     include-all: true
     filter: ^(?!.*((?i)(🔗))).*$
+  - name: ➡️直连
+    type: select
+    proxies:
+      - DIRECT
+    hidden: true
+  - name: ↩️绕过
+    type: select
+    proxies:
+      - PASS
+    hidden: true
+  - name: ⛔阻断
+    type: select
+    proxies:
+      - REJECT
+    hidden: true
+  - name: 🔗链式代理
+    type: select
+    hidden: true
+    proxies:
+      - 落地机
 rule-providers:
   pikpak:
     type: http
