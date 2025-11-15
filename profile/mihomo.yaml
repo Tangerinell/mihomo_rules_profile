@@ -401,11 +401,6 @@ proxy-groups:
     filter: *FilterAll
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png'
 
-  - name: Roblox
-    <<: *Select_Proxies
-    filter: *FilterAll
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Game.png'
-
   ### Dialer Proxy
   - name: 前置机
     <<: *Select
@@ -704,14 +699,6 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/OpenAI.yaml'
     path: './rule_set/openai.yaml'
 
-  roblox:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Roblox.yaml'
-    path: './rule_set/roblox.yaml'
-
   epic:
     type: http
     behavior: classical
@@ -771,56 +758,56 @@ rule-providers:
 # Rules
 rules:
   ### Main
+  # LAN
+  - RULE-SET,lan,➡️直连
+
   # China
   - GEOSITE,cn,➡️直连
   - GEOIP,cn,➡️直连
-
-  # LAN
-  - RULE-SET,lan,➡️直连
 
   ### External Rule
   # Steam
   - RULE-SET,steam_cn,➡️直连
   - RULE-SET,steam,Steam
 
-  # Netflix
-  - RULE-SET,netflix,Netflix
-
-  # Cloudflare
-  - RULE-SET,cloudflare,Cloudflare
-
-  # Pornhub
-  - RULE-SET,pornhub,Pornhub
-
-  # YouTube
-  - RULE-SET,youtube,YouTube
-
-  # Google
-  - RULE-SET,google,Google
-
-  # GitHub
-  - RULE-SET,github,GitHub
-
   # Epic
   - RULE-SET,epic,Epic
 
-  # PikPak
-  - RULE-SET,pikpak,Pikpak
-
-  # Roblox
-  - RULE-SET,roblox,Roblox
-
-  # Discord
-  - RULE-SET,discord,Discord
+  # Telegram
+  - RULE-SET,telegram,Telegram
 
   # Spotify
   - RULE-SET,spotify,Spotify
 
+  # GitHub
+  - RULE-SET,github,GitHub
+
+  # PikPak
+  - RULE-SET,pikpak,Pikpak
+
+  # Discord
+  - RULE-SET,discord,Discord
+
   # TikTok
   - RULE-SET,tiktok,Tiktok
 
+  # Pornhub
+  - RULE-SET,pornhub,Pornhub
+
   # OpenAI
   - RULE-SET,openai,OpenAI
+
+  # YouTube
+  - RULE-SET,youtube,YouTube
+
+  # Netflix
+  - RULE-SET,netflix,Netflix
+
+  # Streaming
+  - RULE-SET,stream,Streaming
+
+  # Google
+  - RULE-SET,google,Google
 
   # Apple
   - RULE-SET,apple,Apple
@@ -828,11 +815,7 @@ rules:
   # Microsoft
   - RULE-SET,microsoft,Microsoft
 
-  # Telegram
-  - RULE-SET,telegram,Telegram
-
-  # Streaming
-  - RULE-SET,stream,Streaming
-
+  # Cloudflare
+  - RULE-SET,cloudflare,Cloudflare
 
   - MATCH,🌐代理

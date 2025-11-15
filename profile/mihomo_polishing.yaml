@@ -1261,61 +1261,6 @@ proxy-groups:
       - ↩️绕过
     filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-  - name: Roblox
-    type: select
-    disable-udp: false
-    hidden: false
-    include-all: true
-    proxies:
-      - 🌐代理
-      - 🔗链式代理
-      - ➡️直连
-      - ⛔阻断
-      - 🟢故障转移
-      - 🟣故障转移
-      - 🔶自动选择
-      - 🔷自动选择
-      - 🟨手动选择
-      - 🟦手动选择
-      - 📋自动全部
-      - 📋回退全部
-      - 🧩自动其他
-      - 🧩回退其他
-      - 📋手动全部
-      - 🧩手动其他
-      - 🇯🇵自动选择
-      - 🇯🇵故障转移
-      - 🇰🇷自动选择
-      - 🇰🇷故障转移
-      - 🇹🇼自动选择
-      - 🇹🇼故障转移
-      - 🇭🇰自动选择
-      - 🇭🇰故障转移
-      - 🇦🇺自动选择
-      - 🇦🇺故障转移
-      - 🇩🇪自动选择
-      - 🇩🇪故障转移
-      - 🇬🇧自动选择
-      - 🇬🇧故障转移
-      - 🇫🇷自动选择
-      - 🇫🇷故障转移
-      - 🇸🇬自动选择
-      - 🇸🇬故障转移
-      - 🇺🇸自动选择
-      - 🇺🇸故障转移
-      - 🇯🇵手动选择
-      - 🇰🇷手动选择
-      - 🇹🇼手动选择
-      - 🇭🇰手动选择
-      - 🇦🇺手动选择
-      - 🇩🇪手动选择
-      - 🇬🇧手动选择
-      - 🇫🇷手动选择
-      - 🇸🇬手动选择
-      - 🇺🇸手动选择
-      - ↩️绕过
-    filter: ^(?!.*((?i)(🔗))).*$
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Game.png
   - name: 前置机
     type: select
     disable-udp: false
@@ -1822,13 +1767,6 @@ rule-providers:
     proxy: 🌐代理
     url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/OpenAI.yaml
     path: ./rule_set/openai.yaml
-  roblox:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Roblox.yaml
-    path: ./rule_set/roblox.yaml
   epic:
     type: http
     behavior: classical
@@ -1879,26 +1817,25 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml
     path: ./rule_set/netflix.yaml
 rules:
+  - RULE-SET,lan,➡️直连
   - GEOSITE,cn,➡️直连
   - GEOIP,cn,➡️直连
-  - RULE-SET,lan,➡️直连
   - RULE-SET,steam_cn,➡️直连
   - RULE-SET,steam,Steam
-  - RULE-SET,netflix,Netflix
-  - RULE-SET,cloudflare,Cloudflare
-  - RULE-SET,pornhub,Pornhub
-  - RULE-SET,youtube,YouTube
-  - RULE-SET,google,Google
-  - RULE-SET,github,GitHub
   - RULE-SET,epic,Epic
-  - RULE-SET,pikpak,Pikpak
-  - RULE-SET,roblox,Roblox
-  - RULE-SET,discord,Discord
+  - RULE-SET,telegram,Telegram
   - RULE-SET,spotify,Spotify
+  - RULE-SET,github,GitHub
+  - RULE-SET,pikpak,Pikpak
+  - RULE-SET,discord,Discord
   - RULE-SET,tiktok,Tiktok
+  - RULE-SET,pornhub,Pornhub
   - RULE-SET,openai,OpenAI
+  - RULE-SET,youtube,YouTube
+  - RULE-SET,netflix,Netflix
+  - RULE-SET,stream,Streaming
+  - RULE-SET,google,Google
   - RULE-SET,apple,Apple
   - RULE-SET,microsoft,Microsoft
-  - RULE-SET,telegram,Telegram
-  - RULE-SET,stream,Streaming
+  - RULE-SET,cloudflare,Cloudflare
   - MATCH,🌐代理
