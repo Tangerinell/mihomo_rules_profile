@@ -284,7 +284,7 @@ proxy-groups:
               🧩自动其他, 🧩回退其他, 
               📋手动全部, 🧩手动其他, 
               🔗链式代理, ➡️直连, ⛔阻断, ↩️绕过]
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png'
+    icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
 
   - name: 🟨手动选择
     type: select
@@ -331,6 +331,11 @@ proxy-groups:
 
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png'
 
+  - name: Emby
+    <<: *Select_Proxies
+    filter: *FilterAll
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+
   - name: Streaming
     <<: *Select_Proxies
     filter: *FilterAll
@@ -375,6 +380,11 @@ proxy-groups:
     <<: *Select_Proxies
     filter: *FilterAll
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png'
+
+  - name: Pikpak
+    <<: *Select_Proxies
+    filter: *FilterAll
+    icon: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Pikpak.png'
 
   - name: OpenAI
     <<: *Select_Proxies
@@ -760,7 +770,19 @@ rule-providers:
 
 # Rules
 rules:
+  ### Main
+  # China
+  - GEOSITE,cn,➡️直连
+  - GEOIP,cn,➡️直连
+
+  # LAN
+  - RULE-SET,lan,➡️直连
+
   ### External Rule
+  # Steam
+  - RULE-SET,steam_cn,➡️直连
+  - RULE-SET,steam,Steam
+
   # Netflix
   - RULE-SET,netflix,Netflix
 
@@ -783,11 +805,7 @@ rules:
   - RULE-SET,epic,Epic
 
   # PikPak
-  - RULE-SET,pikpak,🌐代理
-
-  # Steam
-  - RULE-SET,steam,Steam
-  - RULE-SET,steam_cn,➡️直连
+  - RULE-SET,pikpak,Pikpak
 
   # Roblox
   - RULE-SET,roblox,Roblox
@@ -816,12 +834,5 @@ rules:
   # Streaming
   - RULE-SET,stream,Streaming
 
-  ### Main
-  # China
-  - GEOSITE,cn,➡️直连
-  - GEOIP,cn,➡️直连
-
-  # LAN
-  - RULE-SET,lan,➡️直连
 
   - MATCH,🌐代理

@@ -226,7 +226,7 @@ proxy-groups:
       - ➡️直连
       - ⛔阻断
       - ↩️绕过
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png
   - name: 🟨手动选择
     type: select
     proxies:
@@ -491,6 +491,61 @@ proxy-groups:
       - ↩️绕过
     filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png
+  - name: Emby
+    type: select
+    disable-udp: false
+    hidden: false
+    include-all: true
+    proxies:
+      - 🌐代理
+      - 🔗链式代理
+      - ➡️直连
+      - ⛔阻断
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
+      - 🟨手动选择
+      - 🟦手动选择
+      - 📋自动全部
+      - 📋回退全部
+      - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
+      - 🧩手动其他
+      - 🇯🇵自动选择
+      - 🇯🇵故障转移
+      - 🇰🇷自动选择
+      - 🇰🇷故障转移
+      - 🇹🇼自动选择
+      - 🇹🇼故障转移
+      - 🇭🇰自动选择
+      - 🇭🇰故障转移
+      - 🇦🇺自动选择
+      - 🇦🇺故障转移
+      - 🇩🇪自动选择
+      - 🇩🇪故障转移
+      - 🇬🇧自动选择
+      - 🇬🇧故障转移
+      - 🇫🇷自动选择
+      - 🇫🇷故障转移
+      - 🇸🇬自动选择
+      - 🇸🇬故障转移
+      - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
+      - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
   - name: Streaming
     type: select
     disable-udp: false
@@ -986,6 +1041,61 @@ proxy-groups:
       - ↩️绕过
     filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+  - name: Pikpak
+    type: select
+    disable-udp: false
+    hidden: false
+    include-all: true
+    proxies:
+      - 🌐代理
+      - 🔗链式代理
+      - ➡️直连
+      - ⛔阻断
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
+      - 🟨手动选择
+      - 🟦手动选择
+      - 📋自动全部
+      - 📋回退全部
+      - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
+      - 🧩手动其他
+      - 🇯🇵自动选择
+      - 🇯🇵故障转移
+      - 🇰🇷自动选择
+      - 🇰🇷故障转移
+      - 🇹🇼自动选择
+      - 🇹🇼故障转移
+      - 🇭🇰自动选择
+      - 🇭🇰故障转移
+      - 🇦🇺自动选择
+      - 🇦🇺故障转移
+      - 🇩🇪自动选择
+      - 🇩🇪故障转移
+      - 🇬🇧自动选择
+      - 🇬🇧故障转移
+      - 🇫🇷自动选择
+      - 🇫🇷故障转移
+      - 🇸🇬自动选择
+      - 🇸🇬故障转移
+      - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
+      - 🇺🇸手动选择
+      - ↩️绕过
+    filter: ^(?!.*((?i)(🔗))).*$
+    icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Pikpak.png
   - name: OpenAI
     type: select
     disable-udp: false
@@ -1769,6 +1879,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml
     path: ./rule_set/netflix.yaml
 rules:
+  - GEOSITE,cn,➡️直连
+  - GEOIP,cn,➡️直连
+  - RULE-SET,lan,➡️直连
+  - RULE-SET,steam_cn,➡️直连
+  - RULE-SET,steam,Steam
   - RULE-SET,netflix,Netflix
   - RULE-SET,cloudflare,Cloudflare
   - RULE-SET,pornhub,Pornhub
@@ -1776,9 +1891,7 @@ rules:
   - RULE-SET,google,Google
   - RULE-SET,github,GitHub
   - RULE-SET,epic,Epic
-  - RULE-SET,pikpak,🌐代理
-  - RULE-SET,steam,Steam
-  - RULE-SET,steam_cn,➡️直连
+  - RULE-SET,pikpak,Pikpak
   - RULE-SET,roblox,Roblox
   - RULE-SET,discord,Discord
   - RULE-SET,spotify,Spotify
@@ -1788,7 +1901,4 @@ rules:
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,telegram,Telegram
   - RULE-SET,stream,Streaming
-  - GEOSITE,cn,➡️直连
-  - GEOIP,cn,➡️直连
-  - RULE-SET,lan,➡️直连
   - MATCH,🌐代理
