@@ -43,7 +43,7 @@ proxy-providers:
       expected-status: 204
     override:
       additional-prefix: 🔗
-      dialer-proxy: 前置机
+      dialer-proxy: 中转
     path: ./proxy_provider/LandNode.yaml
   OtherNode:
     type: file
@@ -151,6 +151,27 @@ sniffer:
         - 443
         - 8443
 proxy-groups:
+  - name: 🌐代理
+    type: select
+    include-all: true
+    proxies:
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
+      - 🟨手动选择
+      - 🟦手动选择
+      - 📋自动全部
+      - 📋回退全部
+      - 🧩自动其他
+      - 🧩回退其他
+      - 📋手动全部
+      - 🧩手动其他
+      - 🔗链式代理
+      - ➡️直连
+      - ⛔阻断
+      - ↩️绕过
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png
   - name: 🟢故障转移
     type: select
     proxies:
@@ -207,26 +228,6 @@ proxy-groups:
       - 🇩🇪自动选择
       - 🇹🇼自动选择
     icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png
-  - name: 🌐代理
-    type: select
-    proxies:
-      - 🟢故障转移
-      - 🟣故障转移
-      - 🔶自动选择
-      - 🔷自动选择
-      - 🟨手动选择
-      - 🟦手动选择
-      - 📋自动全部
-      - 📋回退全部
-      - 🧩自动其他
-      - 🧩回退其他
-      - 📋手动全部
-      - 🧩手动其他
-      - 🔗链式代理
-      - ➡️直连
-      - ⛔阻断
-      - ↩️绕过
-    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png
   - name: 🟨手动选择
     type: select
     proxies:
@@ -261,14 +262,65 @@ proxy-groups:
     hidden: false
     include-all: true
     filter: ^(?!.*((?i)(香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸|德国|🇩🇪|英国|🇬🇧|韩国|🇰🇷|法国|🇫🇷|澳大利亚|🇦🇺)))(?!.*((?i)(🔗))).*$
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Puzzle.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Filter.png
   - name: 📋手动全部
     type: select
     disable-udp: false
     hidden: false
     include-all: true
     filter: ^(?!.*((?i)(🔗))).*$
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
+  - name: 中转
+    type: select
+    disable-udp: false
+    hidden: false
+    include-all: true
+    filter: ^(?!.*((?i)(🔗))).*$
+    proxies:
+      - 🟢故障转移
+      - 🟣故障转移
+      - 🔶自动选择
+      - 🔷自动选择
+      - 🟨手动选择
+      - 🟦手动选择
+      - 🇯🇵自动选择
+      - 🇯🇵故障转移
+      - 🇰🇷自动选择
+      - 🇰🇷故障转移
+      - 🇹🇼自动选择
+      - 🇹🇼故障转移
+      - 🇭🇰自动选择
+      - 🇭🇰故障转移
+      - 🇦🇺自动选择
+      - 🇦🇺故障转移
+      - 🇩🇪自动选择
+      - 🇩🇪故障转移
+      - 🇬🇧自动选择
+      - 🇬🇧故障转移
+      - 🇫🇷自动选择
+      - 🇫🇷故障转移
+      - 🇸🇬自动选择
+      - 🇸🇬故障转移
+      - 🇺🇸自动选择
+      - 🇺🇸故障转移
+      - 🇯🇵手动选择
+      - 🇰🇷手动选择
+      - 🇹🇼手动选择
+      - 🇭🇰手动选择
+      - 🇦🇺手动选择
+      - 🇩🇪手动选择
+      - 🇬🇧手动选择
+      - 🇫🇷手动选择
+      - 🇸🇬手动选择
+      - 🇺🇸手动选择
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png
+  - name: 落地
+    type: select
+    disable-udp: false
+    hidden: false
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    filter: ^(?=.*(🔗)).*$
   - name: Pornhub
     type: select
     disable-udp: false
@@ -1259,57 +1311,6 @@ proxy-groups:
       - ↩️绕过
     filter: ^(?!.*((?i)(🔗))).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-  - name: 前置机
-    type: select
-    disable-udp: false
-    hidden: false
-    include-all: true
-    filter: ^(?!.*((?i)(🔗))).*$
-    proxies:
-      - 🟢故障转移
-      - 🟣故障转移
-      - 🔶自动选择
-      - 🔷自动选择
-      - 🟨手动选择
-      - 🟦手动选择
-      - 🇯🇵自动选择
-      - 🇯🇵故障转移
-      - 🇰🇷自动选择
-      - 🇰🇷故障转移
-      - 🇹🇼自动选择
-      - 🇹🇼故障转移
-      - 🇭🇰自动选择
-      - 🇭🇰故障转移
-      - 🇦🇺自动选择
-      - 🇦🇺故障转移
-      - 🇩🇪自动选择
-      - 🇩🇪故障转移
-      - 🇬🇧自动选择
-      - 🇬🇧故障转移
-      - 🇫🇷自动选择
-      - 🇫🇷故障转移
-      - 🇸🇬自动选择
-      - 🇸🇬故障转移
-      - 🇺🇸自动选择
-      - 🇺🇸故障转移
-      - 🇯🇵手动选择
-      - 🇰🇷手动选择
-      - 🇹🇼手动选择
-      - 🇭🇰手动选择
-      - 🇦🇺手动选择
-      - 🇩🇪手动选择
-      - 🇬🇧手动选择
-      - 🇫🇷手动选择
-      - 🇸🇬手动选择
-      - 🇺🇸手动选择
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Airport.png
-  - name: 落地机
-    type: select
-    disable-udp: false
-    hidden: false
-    include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Airport.png
-    filter: ^(?=.*(🔗)).*$
   - name: 🇸🇬手动选择
     type: select
     disable-udp: false
@@ -1675,7 +1676,7 @@ proxy-groups:
     type: select
     hidden: true
     proxies:
-      - 落地机
+      - 落地
 rule-providers:
   pikpak:
     type: http

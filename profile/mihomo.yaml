@@ -36,7 +36,7 @@ proxy-providers:
     <<: *NodeParam
     override:
       additional-prefix: "🔗"
-      dialer-proxy: 前置机
+      dialer-proxy: 中转
     path: './proxy_provider/LandNode.yaml'
 
   OtherNode:
@@ -250,7 +250,19 @@ Select_Proxies: &Select_Proxies
 
 # Proxy Groups
 proxy-groups:
-  ### MAIN 
+  ### MAIN
+  - name: 🌐代理
+    type: select
+    include-all: true
+    proxies: [🟢故障转移, 🟣故障转移, 
+              🔶自动选择, 🔷自动选择, 
+              🟨手动选择, 🟦手动选择, 
+              📋自动全部, 📋回退全部, 
+              🧩自动其他, 🧩回退其他, 
+              📋手动全部, 🧩手动其他, 
+              🔗链式代理, ➡️直连, ⛔阻断, ↩️绕过]
+    icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
+
   - name: 🟢故障转移
     type: select
     proxies: [🇸🇬故障转移, 🇭🇰故障转移, 🇺🇸故障转移, 🇯🇵故障转移, 🇰🇷故障转移, 
@@ -275,17 +287,6 @@ proxy-groups:
               🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择, 🇹🇼自动选择]
     icon: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/mei.png'
 
-  - name: 🌐代理
-    type: select
-    proxies: [🟢故障转移, 🟣故障转移, 
-              🔶自动选择, 🔷自动选择, 
-              🟨手动选择, 🟦手动选择, 
-              📋自动全部, 📋回退全部, 
-              🧩自动其他, 🧩回退其他, 
-              📋手动全部, 🧩手动其他, 
-              🔗链式代理, ➡️直连, ⛔阻断, ↩️绕过]
-    icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
-
   - name: 🟨手动选择
     type: select
     proxies: [🇸🇬手动选择, 🇭🇰手动选择, 🇺🇸手动选择, 🇯🇵手动选择, 🇰🇷手动选择, 
@@ -298,16 +299,44 @@ proxy-groups:
               🇦🇺手动选择, 🇬🇧手动选择, 🇫🇷手动选择, 🇩🇪手动选择, 🇹🇼手动选择]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png'
 
-  ### Other
   - name: 🧩手动其他
     <<: *Select
     filter: *FilterOthers
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Puzzle.png'
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Filter.png'
 
   - name: 📋手动全部
     <<: *Select
     filter: *FilterAll
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png'
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png'
+
+  ### Dialer Proxy
+  - name: 中转
+    <<: *Select
+    filter: *FilterAll
+    proxies: [🟢故障转移, 🟣故障转移, 
+              🔶自动选择, 🔷自动选择, 
+              🟨手动选择, 🟦手动选择, 
+              🇯🇵自动选择, 🇯🇵故障转移, 
+              🇰🇷自动选择, 🇰🇷故障转移, 
+              🇹🇼自动选择, 🇹🇼故障转移, 
+              🇭🇰自动选择, 🇭🇰故障转移, 
+              🇦🇺自动选择, 🇦🇺故障转移, 
+              🇩🇪自动选择, 🇩🇪故障转移, 
+              🇬🇧自动选择, 🇬🇧故障转移, 
+              🇫🇷自动选择, 🇫🇷故障转移, 
+              🇸🇬自动选择, 🇸🇬故障转移, 
+              🇺🇸自动选择, 🇺🇸故障转移, 
+              🇯🇵手动选择, 🇰🇷手动选择, 
+              🇹🇼手动选择, 🇭🇰手动选择, 
+              🇦🇺手动选择, 🇩🇪手动选择, 
+              🇬🇧手动选择, 🇫🇷手动选择, 
+              🇸🇬手动选择, 🇺🇸手动选择]
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png'
+
+  - name: 落地
+    <<: *Select
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png'
+    filter: '^(?=.*(🔗)).*$'
 
   ### Services
   - name: Pornhub
@@ -400,35 +429,6 @@ proxy-groups:
     <<: *Select_Proxies
     filter: *FilterAll
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png'
-
-  ### Dialer Proxy
-  - name: 前置机
-    <<: *Select
-    filter: *FilterAll
-    proxies: [🟢故障转移, 🟣故障转移, 
-              🔶自动选择, 🔷自动选择, 
-              🟨手动选择, 🟦手动选择, 
-              🇯🇵自动选择, 🇯🇵故障转移, 
-              🇰🇷自动选择, 🇰🇷故障转移, 
-              🇹🇼自动选择, 🇹🇼故障转移, 
-              🇭🇰自动选择, 🇭🇰故障转移, 
-              🇦🇺自动选择, 🇦🇺故障转移, 
-              🇩🇪自动选择, 🇩🇪故障转移, 
-              🇬🇧自动选择, 🇬🇧故障转移, 
-              🇫🇷自动选择, 🇫🇷故障转移, 
-              🇸🇬自动选择, 🇸🇬故障转移, 
-              🇺🇸自动选择, 🇺🇸故障转移, 
-              🇯🇵手动选择, 🇰🇷手动选择, 
-              🇹🇼手动选择, 🇭🇰手动选择, 
-              🇦🇺手动选择, 🇩🇪手动选择, 
-              🇬🇧手动选择, 🇫🇷手动选择, 
-              🇸🇬手动选择, 🇺🇸手动选择]
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Airport.png'
-
-  - name: 落地机
-    <<: *Select
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Airport.png'
-    filter: '^(?=.*(🔗)).*$'
 
   ### Select
   - name: 🇸🇬手动选择
@@ -599,7 +599,7 @@ proxy-groups:
     type: select
     hidden: true
     proxies: 
-      - 落地机
+      - 落地
 
 # Rule Providers
 rule-providers:
