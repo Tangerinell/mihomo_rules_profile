@@ -85,7 +85,7 @@ tcp-concurrent: true
 global-client-fingerprint: chrome
 
 geodata-mode: true
-geo-auto-update: true
+geo-auto-update: false
 geo-update-interval: 24
 geox-url:
   geoip: 'https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat'
@@ -111,6 +111,9 @@ tun:
 # DNS Configuration
 dns:
   enable: true
+  listen: 0.0.0.0:53
+  cache-algorithm: arc
+  prefer-h3: false
   ipv6: true
   use-system-hosts: true
   enhanced-mode: fake-ip
@@ -224,7 +227,7 @@ Select_Proxies: &Select_Proxies
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🌐代理, 🔗链式代理, ➡️直连, ⛔阻断, 
+  proxies: [🌐代理, 🔗链式代理, DIRECT, ⛔阻断, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             🟨手动选择, 🟦手动选择, 
@@ -260,7 +263,7 @@ proxy-groups:
               📋自动全部, 📋回退全部, 
               🧩自动其他, 🧩回退其他, 
               📋手动全部, 🧩手动其他, 
-              🔗链式代理, ➡️直连, ⛔阻断, ↩️绕过]
+              🔗链式代理, DIRECT, ⛔阻断, ↩️绕过]
     icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
 
   - name: 🟢故障转移
@@ -580,11 +583,6 @@ proxy-groups:
     filter: *FilterAll
 
   ### Hidden
-  - name: ➡️直连
-    type: select
-    proxies: [DIRECT]
-    hidden: true
-
   - name: ↩️绕过
     type: select
     proxies: [PASS]
@@ -603,6 +601,15 @@ proxy-groups:
 
 # Rule Providers
 rule-providers:
+
+  gemini:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Gemini.yaml'
+    path: './rule_set/gemini.yaml'
+
   pikpak:
     type: http
     behavior: classical
@@ -642,14 +649,6 @@ rule-providers:
     proxy: 🌐代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Microsoft.yaml'
     path: './rule_set/microsoft.yaml'
-
-  lan:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
-    path: './rule_set/lan.yaml'
 
   steam:
     type: http
@@ -755,19 +754,46 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml'
     path: './rule_set/netflix.yaml'
 
+  lan:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
+    path: './rule_set/lan.yaml'
+
+  # geo
+  geositecn:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geositecn.mrs'
+    path: './rule_set/geo/geositecn.mrs'
+
+  geoipcn:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 43200
+    proxy: 🌐代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geoipcn.mrs'
+    path: './rule_set/geo/geoipcn.mrs'
+
 # Rules
 rules:
   ### Main
   # LAN
-  - RULE-SET,lan,➡️直连
+  - RULE-SET,lan,DIRECT
 
   # China
-  - GEOSITE,cn,➡️直连
-  - GEOIP,cn,➡️直连
+  - RULE-SET,geositecn,DIRECT
+  - RULE-SET,geoipcn,DIRECT
 
   ### External Rule
   # Steam
-  - RULE-SET,steam_cn,➡️直连
+  - RULE-SET,steam_cn,DIRECT
   - RULE-SET,steam,Steam
 
   # Epic
@@ -793,6 +819,9 @@ rules:
 
   # Pornhub
   - RULE-SET,pornhub,Pornhub
+
+  # Gemini
+  - RULE-SET,gemini,Google
 
   # OpenAI
   - RULE-SET,openai,OpenAI
