@@ -36,6 +36,7 @@ jobs:
       - name: Convert
         run: |
           mkdir -p mrs
+          rm -rf mrs/* && mkdir -p mrs
 
           LISTS=(
             # 文件名|行为|格式|URL
