@@ -48,7 +48,7 @@ jobs:
             curl -fL -o "temp_$name" "$url"
               
             # 语法: mihomo convert-ruleset <behavior> <format> <input> <output>
-            ./mihomo convert-ruleset "$behavior" "$format" "temp_$name" "$name.mrs"
+            ./mihomo convert-ruleset "$behavior" "$format" "temp_$name" "mrs/$name.mrs"
               
             rm "temp_$name"
           done
