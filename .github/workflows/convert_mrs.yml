@@ -36,7 +36,7 @@ jobs:
       - name: Convert
         run: |
           LISTS=(
-            #文件名|行为|格式|URL
+            # 文件名|行为|格式|URL
             "reject-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
             "direct-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
             "proxy-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt"
