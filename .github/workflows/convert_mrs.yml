@@ -35,6 +35,8 @@ jobs:
 
       - name: Convert
         run: |
+          mkdir -p mrs
+
           LISTS=(
             # 文件名|行为|格式|URL
             "reject-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
