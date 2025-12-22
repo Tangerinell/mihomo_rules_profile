@@ -82,7 +82,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "auto update rules"
+            git commit -m "auto update rules $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           fi
 

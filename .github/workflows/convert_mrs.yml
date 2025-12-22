@@ -69,7 +69,7 @@ jobs:
           
           # 判断是否有变动
           if ! git diff --cached --quiet; then
-            git commit -m "auto update mrs[skip ci]"
+            git commit -m "auto update mrs $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
             git push
           else
             echo "No changes. Skipping push."
