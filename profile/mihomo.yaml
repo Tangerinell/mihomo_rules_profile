@@ -774,9 +774,6 @@ rules:
   # LAN
   - RULE-SET,lan,DIRECT
 
-  # China
-  - RULE-SET,chinamax,DIRECT
-
   # Steam
   - RULE-SET,steam_cn,DIRECT
   - RULE-SET,steam,Steam
@@ -831,5 +828,8 @@ rules:
 
   # Cloudflare
   - RULE-SET,cloudflare,Cloudflare
+
+  # China
+  - RULE-SET,chinamax,DIRECT
 
   - MATCH,🌐代理
