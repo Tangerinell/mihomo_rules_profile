@@ -14,56 +14,61 @@ jobs:
         with:
           ref: remote_rules
 
-      - name: make directory
-        run: mkdir -p rules
-
-      - name: clear rules directory
-        run: rm -rf rules/* && mkdir -p rules
-
       - name: download
         run: |
+          mkdir -p rules
 
-          curl -sL https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs -o rules/geositecn.mrs
+          # 格式: 文件名|URL
+          LISTS=(
+            "geositecn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"
 
-          curl -sL https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs -o rules/geoipcn.mrs
+            "geoipcn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"
 
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini_No_Resolve.yaml -o rules/Gemini.yaml
-                   
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloudflare/Cloudflare_No_Resolve.yaml -o rules/Cloudflare.yaml
+            "Gemini.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini_No_Resolve.yaml"
 
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube_No_Resolve.yaml -o rules/YouTube.yaml
+            "Cloudflare.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloudflare/Cloudflare_No_Resolve.yaml"
 
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub_No_Resolve.yaml -o rules/GitHub.yaml
+            "YouTube.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube_No_Resolve.yaml"
+            
+            "GitHub.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub_No_Resolve.yaml"
+            
+            "Steam.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam_No_Resolve.yaml"
+            
+            "SteamCN.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN_No_Resolve.yaml"
+            
+            "Google.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google_No_Resolve.yaml"
+            
+            "Roblox.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Roblox/Roblox_No_Resolve.yaml"
+            
+            "OpenAI.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml"
+            
+            "TikTok.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok_No_Resolve.yaml"
+            
+            "Spotify.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify_No_Resolve.yaml"
+            
+            "Discord.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord_No_Resolve.yaml"
+            
+            "Lan.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan_No_Resolve.yaml"
+            
+            "Microsoft.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml"
+            
+            "Telegram.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram_No_Resolve.yaml"
+            
+            "PikPak.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak_No_Resolve.yaml"
+            
+            "GlobalMedia.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical_No_Resolve.yaml"
+            
+            "Apple.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml"
+            
+            "Netflix.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical_No_Resolve.yaml"
+          )
 
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam_No_Resolve.yaml -o rules/Steam.yaml
+          for jntm in "${LISTS[@]}"; do
+            IFS="|" read -r filename url <<< "$jntm"
+            echo "Downloading $filename..."
 
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN_No_Resolve.yaml -o rules/SteamCN.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google_No_Resolve.yaml -o rules/Google.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Roblox/Roblox_No_Resolve.yaml -o rules/Roblox.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml -o rules/OpenAI.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok_No_Resolve.yaml -o rules/TikTok.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify_No_Resolve.yaml -o rules/Spotify.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord_No_Resolve.yaml -o rules/Discord.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan_No_Resolve.yaml -o rules/Lan.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml -o rules/Microsoft.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram_No_Resolve.yaml -o rules/Telegram.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak_No_Resolve.yaml -o rules/PikPak.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical_No_Resolve.yaml -o rules/GlobalMedia.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml -o rules/Apple.yaml
-
-          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical_No_Resolve.yaml -o rules/Netflix.yaml
+            curl -sfL "$url" -o "rules/$filename"
+          done
 
       - name: global config
         run: |

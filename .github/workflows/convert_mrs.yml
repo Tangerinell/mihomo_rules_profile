@@ -36,12 +36,13 @@ jobs:
       - name: Convert
         run: |
           mkdir -p mrs
-          rm -rf mrs/* && mkdir -p mrs
 
           LISTS=(
             # 文件名|行为|格式|URL
             "reject-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
+
             "direct-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
+
             "proxy-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt"
           )
               
@@ -69,7 +70,7 @@ jobs:
           
           # 判断是否有变动
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update all ruleset files [skip ci]"
+            git commit -m "auto update mrs[skip ci]"
             git push
           else
             echo "No changes. Skipping push."
