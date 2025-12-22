@@ -18,9 +18,16 @@ jobs:
       - name: Install Mihomo
         run: |
           echo "Fetching latest mihomo"
+
           DOWNLOAD_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
-            | jq -r '.assets[] | select(.name | contains("linux-amd64")) | select(.name | endswith(".gz")) | select(.name | contains("compatible") | not) | .browser_download_url')
+          | jq -r '.assets[] | select(.name | contains("linux-amd64")) 
+          | select(.name | endswith(".gz")) 
+          | select(.name | contains("compatible") | not) 
+          | select(.name | contains("go") | not) 
+          | select(.name | contains("-v") | not) 
+          | .browser_download_url' | head -n 1)
           
+          echo "Downloading from: $DOWNLOAD_URL"
           echo "Downloading from $DOWNLOAD_URL"
           wget -O mihomo.gz "$DOWNLOAD_URL"
           
