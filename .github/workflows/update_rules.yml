@@ -5,19 +5,19 @@ on:
     - cron: '30 9 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout remote_rules
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: remote_rules
 
-      - name: download
+      - name: Download
         run: |
           mkdir -p rules
-
           # 格式: 文件名|URL
           LISTS=(
             "geositecn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"
@@ -67,7 +67,7 @@ jobs:
             IFS="|" read -r filename url <<< "$jntm"
             echo "Downloading $filename..."
 
-            curl -sfL "$url" -o "rules/$filename"
+            curl -sfL "$url" -o "rules/$filename" || echo "Failed to download $filename"
           done
 
       - name: global config
@@ -81,22 +81,11 @@ jobs:
           git add rules/
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "auto: update rules"
-            git push origin remote_rules
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git commit -m "auto update rules"
+            git push
           fi
 
-      - name: overwrite master
-        if: steps.commit.outputs.changed == 'true'
-        run: |
-          git fetch origin
-          git checkout master
-          git checkout origin/remote_rules -- rules/
-          git add -A
-          git commit -m "auto: overwrite master with remote_rules"
-          git push origin master
       
       
       

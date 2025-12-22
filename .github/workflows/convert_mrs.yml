@@ -23,7 +23,6 @@ jobs:
             | jq -r '.assets[] | select(.name | contains("linux-amd64")) | select(.name | endswith(".gz")) | .browser_download_url' \
             | head -n 1)
           
-          echo "Downloading from: $DOWNLOAD_URL"
           echo "Downloading from $DOWNLOAD_URL"
           wget -O mihomo.gz "$DOWNLOAD_URL"
           
@@ -66,7 +65,7 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git add *.mrs
+          git add mrs/
           
           # 判断是否有变动
           if ! git diff --cached --quiet; then
