@@ -1,0 +1,70 @@
+name: Convert Ruleset To mrs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Mihomo
+        run: |
+          echo "Fetching latest mihomo"
+          DOWNLOAD_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | jq -r '.assets[] | select(.name | contains("linux-amd64")) | select(.name | endswith(".gz")) | select(.name | contains("compatible") | not) | .browser_download_url')
+          
+          echo "Downloading from $DOWNLOAD_URL"
+          wget -O mihomo.gz "$DOWNLOAD_URL"
+          
+          gzip -d mihomo.gz
+          chmod +x mihomo
+
+          # mihomo版本号
+          ./mihomo -v
+
+      - name: Convert
+        run: |
+          LISTS=(
+            #文件名|行为|格式|URL
+            "reject-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
+            "direct-listdomain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
+            "proxy-list|domain|text|https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt"
+          )
+              
+          for jntm in "${LISTS[@]}"; do
+            IFS="|" read -r name behavior format url <<< "$jntm"
+              
+            curl -fL -o "temp_$name" "$url"
+              
+            # 语法: mihomo convert-ruleset <behavior> <format> <input> <output>
+            ./mihomo convert-ruleset "$behavior" "$format" "temp_$name" "$name.mrs"
+              
+            rm "temp_$name"
+          done
+
+          echo "Conversion complete"
+
+      - name: Global Config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push changes
+        run: |
+          git add *.mrs
+          
+          # 判断是否有变动
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update all ruleset files [skip ci]"
+            git push
+          else
+            echo "No changes. Skipping push."
+          fi
