@@ -606,25 +606,16 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
     path: './rule_set/lan.yaml'
 
-  # geo
-  geositecn:
+  # China
+  chinamax:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geositecn.mrs'
-    path: './rule_set/geo/geositecn.mrs'
-
-  geoipcn:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 43200
-    proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geoipcn.mrs'
-    path: './rule_set/geo/geoipcn.mrs'
-
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/refs/heads/master/rules/ChinaMax.yaml'
+    path: './rule_set/chinamax.yaml'
+  
+  # other
   gemini:
     type: http
     behavior: classical
@@ -784,8 +775,7 @@ rules:
   - RULE-SET,lan,DIRECT
 
   # China
-  - RULE-SET,geositecn,DIRECT
-  - RULE-SET,geoipcn,DIRECT
+  - RULE-SET,chinamax,DIRECT
 
   ### External Rule
   # Steam
