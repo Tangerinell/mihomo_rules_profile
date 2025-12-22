@@ -612,7 +612,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/refs/heads/master/rules/ChinaMax.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/ChinaMax.yaml'
     path: './rule_set/chinamax.yaml'
   
   # other
