@@ -598,6 +598,7 @@ proxy-groups:
 
 # Rule Providers
 rule-providers:
+  # LAN
   lan:
     type: http
     behavior: classical
@@ -615,7 +616,7 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/ChinaMax.yaml'
     path: './rule_set/chinamax.yaml'
   
-  # other
+  # Other
   gemini:
     type: http
     behavior: classical
