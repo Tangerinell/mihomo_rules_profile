@@ -770,14 +770,12 @@ rule-providers:
 
 # Rules
 rules:
-  ### Main
   # LAN
   - RULE-SET,lan,DIRECT
 
   # China
   - RULE-SET,chinamax,DIRECT
 
-  ### External Rule
   # Steam
   - RULE-SET,steam_cn,DIRECT
   - RULE-SET,steam,Steam
