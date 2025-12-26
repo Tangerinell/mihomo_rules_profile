@@ -63,6 +63,8 @@ jobs:
             "Netflix.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical_No_Resolve.yaml"
 
             "ChinaMax.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Classical_No_Resolve.yaml"
+
+            "GeositeCN.yaml|https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/GeositeCN/GeositeCN_No_Resolve.yaml"
           )
 
           for jntm in "${LISTS[@]}"; do

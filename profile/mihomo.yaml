@@ -607,14 +607,14 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
     path: './rule_set/lan.yaml'
 
-  # China
-  chinamax:
+  # ChinaDIRECT
+  chinadirect:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🌐代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/ChinaMax.yaml'
-    path: './rule_set/chinamax.yaml'
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GeositeCN.yaml'
+    path: './rule_set/chinadirect.yaml'
   
   # Other
   gemini:
@@ -829,7 +829,7 @@ rules:
   # Cloudflare
   - RULE-SET,cloudflare,Cloudflare
 
-  # China
-  - RULE-SET,chinamax,DIRECT
+  # ChinaDIRECT
+  - RULE-SET,chinadirect,DIRECT
 
   - MATCH,🌐代理
