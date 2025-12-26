@@ -273,7 +273,7 @@ proxy-groups:
               📋自动全部, 📋回退全部, 
               🧩自动其他, 🧩回退其他, 
               🔗链式代理, DIRECT, ⛔阻断]
-    icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
+    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png'
 
   - name: 🟢故障转移
     type: select
