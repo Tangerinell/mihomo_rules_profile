@@ -16,7 +16,7 @@ proxy-providers:
     type: http
     <<: *JNTM
     path: './proxy_provider/providers_1.yaml'
-    proxy: 🌐代理
+    proxy: 🎯代理
     override:
       additional-prefix: "1🐔"
     filter: '^(?!.*(?i)(?:NEVER_MATCH)).*$'
@@ -26,7 +26,7 @@ proxy-providers:
     type: http
     <<: *JNTM
     path: './proxy_provider/providers_2.yaml'
-    proxy: 🌐代理
+    proxy: 🎯代理
     override:
       additional-prefix: "2🐒"
     filter: '^(?!.*(?i)(?:NEVER_MATCH)).*$'
@@ -96,7 +96,7 @@ geox-url:
 # Tunnel Configuration
 tun:
   enable: true
-  stack: mixed
+  stack: system
   device: mihomo
   auto-route: true
   auto-redirect: true
@@ -227,7 +227,7 @@ Select_Proxies: &Select_Proxies
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🌐代理, 🔗链式代理, DIRECT, ⛔阻断, 
+  proxies: [🎯代理, 🔗链式代理, DIRECT, ⛔阻断, 
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
@@ -251,7 +251,7 @@ Select_Proxies: &Select_Proxies
 # Proxy Groups
 proxy-groups:
   ### MAIN
-  - name: 🌐代理
+  - name: 🎯代理
     type: select
     include-all: true
     proxies: [🟢故障转移, 🟣故障转移, 
@@ -261,6 +261,18 @@ proxy-groups:
               📋自动全部, 📋回退全部, 
               🧩自动其他, 🧩回退其他, 
               🔗链式代理, DIRECT, ⛔阻断, ↩️绕过]
+    icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
+
+  - name: 🌐未匹配
+    type: select
+    include-all: true
+    proxies: [🟢故障转移, 🟣故障转移, 
+              📋手动全部, 🧩手动其他, 
+              🟨手动选择, 🟦手动选择, 
+              🔶自动选择, 🔷自动选择, 
+              📋自动全部, 📋回退全部, 
+              🧩自动其他, 🧩回退其他, 
+              🔗链式代理, DIRECT, ⛔阻断]
     icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png'
 
   - name: 🟢故障转移
@@ -603,7 +615,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml'
     path: './rule_set/lan.yaml'
 
@@ -612,7 +624,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GeositeCN.yaml'
     path: './rule_set/chinadirect.yaml'
   
@@ -621,7 +633,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Gemini.yaml'
     path: './rule_set/gemini.yaml'
 
@@ -629,7 +641,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/PikPak.yaml'
     path: './rule_set/pikpak.yaml'
 
@@ -637,7 +649,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GlobalMedia.yaml'
     path: './rule_set/stream.yaml'
 
@@ -645,7 +657,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Telegram.yaml'
     path: './rule_set/telegram.yaml'
 
@@ -653,7 +665,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Apple.yaml'
     path: './rule_set/apple.yaml'
 
@@ -661,7 +673,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Microsoft.yaml'
     path: './rule_set/microsoft.yaml'
 
@@ -669,7 +681,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Steam.yaml'
     path: './rule_set/steam.yaml'
 
@@ -677,7 +689,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/SteamCN.yaml'
     path: './rule_set/steam_cn.yaml'
 
@@ -685,7 +697,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Discord.yaml'
     path: './rule_set/discord.yaml'
 
@@ -693,7 +705,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Spotify.yaml'
     path: './rule_set/spotify.yaml'
 
@@ -701,7 +713,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/TikTok.yaml'
     path: './rule_set/tiktok.yaml'
 
@@ -709,7 +721,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/OpenAI.yaml'
     path: './rule_set/openai.yaml'
 
@@ -717,7 +729,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Epic.yaml'
     path: './rule_set/epic.yaml'
 
@@ -725,7 +737,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Google.yaml'
     path: './rule_set/google.yaml'
 
@@ -733,7 +745,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GitHub.yaml'
     path: './rule_set/github.yaml'
 
@@ -741,7 +753,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/YouTube.yaml'
     path: './rule_set/youtube.yaml'
 
@@ -749,7 +761,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Pornhub.yaml'
     path: './rule_set/pornhub.yaml'
 
@@ -757,7 +769,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Cloudflare.yaml'
     path: './rule_set/cloudflare.yaml'
 
@@ -765,7 +777,7 @@ rule-providers:
     type: http
     behavior: classical
     interval: 43200
-    proxy: 🌐代理
+    proxy: 🎯代理
     url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml'
     path: './rule_set/netflix.yaml'
 
@@ -832,4 +844,4 @@ rules:
   # ChinaDIRECT
   - RULE-SET,chinadirect,DIRECT
 
-  - MATCH,🌐代理
+  - MATCH,🌐未匹配
