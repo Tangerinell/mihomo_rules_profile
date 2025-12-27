@@ -206,10 +206,11 @@ Auto: &Auto
   interval: 300
   timeout: 5000
   lazy: true
-  tolerance: 50
   disable-udp: false
   hidden: false
   include-all: true
+
+  tolerance: 50
 
 FallBack: &FallBack
   type: fallback
@@ -222,6 +223,19 @@ FallBack: &FallBack
   hidden: false
   include-all: true
 
+LoadBalance: &LoadBalance
+  type: load-balance
+  url: 'https://www.gstatic.com/generate_204'
+  expected-status: 204
+  interval: 300
+  timeout: 5000
+  lazy: true
+  disable-udp: false
+  hidden: false
+  include-all: true
+
+  strategy: round-robin
+
 Select_Proxies: &Select_Proxies
   type: select
   disable-udp: false
@@ -232,20 +246,25 @@ Select_Proxies: &Select_Proxies
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             🇭🇰手动选择, 🇸🇬手动选择, 
-            🇺🇸手动选择, 🇹🇼手动选择,
+            🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
             🇦🇺手动选择, 🇬🇧手动选择, 
             🇫🇷手动选择, 🇩🇪手动选择, 
-            🇭🇰自动选择, 🇭🇰故障转移, 
-            🇸🇬自动选择, 🇸🇬故障转移, 
-            🇺🇸自动选择, 🇺🇸故障转移,  
-            🇹🇼自动选择, 🇹🇼故障转移, 
-            🇯🇵自动选择, 🇯🇵故障转移, 
-            🇰🇷自动选择, 🇰🇷故障转移, 
-            🇦🇺自动选择, 🇦🇺故障转移,               
-            🇬🇧自动选择, 🇬🇧故障转移, 
-            🇫🇷自动选择, 🇫🇷故障转移, 
-            🇩🇪自动选择, 🇩🇪故障转移, 
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇦🇺自动选择, 🇬🇧自动选择, 
+            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇦🇺故障转移, 🇬🇧故障转移, 
+            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇦🇺负载均衡, 🇬🇧负载均衡, 
+            🇫🇷负载均衡, 🇩🇪负载均衡, 
             ↩️绕过]
 
 # Proxy Groups
@@ -326,23 +345,28 @@ proxy-groups:
     <<: *Select
     filter: *FilterAll
     proxies: [🟢故障转移, 🟣故障转移, 
+              🟨手动选择, 🟦手动选择, 
               🔶自动选择, 🔷自动选择, 
-              🟨手动选择, 🟦手动选择,
               🇭🇰手动选择, 🇸🇬手动选择, 
-              🇺🇸手动选择, 🇹🇼手动选择,
+              🇺🇸手动选择, 🇹🇼手动选择, 
               🇯🇵手动选择, 🇰🇷手动选择, 
               🇦🇺手动选择, 🇬🇧手动选择, 
               🇫🇷手动选择, 🇩🇪手动选择, 
-              🇭🇰自动选择, 🇭🇰故障转移, 
-              🇸🇬自动选择, 🇸🇬故障转移, 
-              🇺🇸自动选择, 🇺🇸故障转移,  
-              🇹🇼自动选择, 🇹🇼故障转移, 
-              🇯🇵自动选择, 🇯🇵故障转移, 
-              🇰🇷自动选择, 🇰🇷故障转移, 
-              🇦🇺自动选择, 🇦🇺故障转移,               
-              🇬🇧自动选择, 🇬🇧故障转移, 
-              🇫🇷自动选择, 🇫🇷故障转移, 
-              🇩🇪自动选择, 🇩🇪故障转移]
+              🇭🇰自动选择, 🇸🇬自动选择, 
+              🇺🇸自动选择, 🇹🇼自动选择, 
+              🇯🇵自动选择, 🇰🇷自动选择, 
+              🇦🇺自动选择, 🇬🇧自动选择, 
+              🇫🇷自动选择, 🇩🇪自动选择, 
+              🇭🇰故障转移, 🇸🇬故障转移, 
+              🇺🇸故障转移, 🇹🇼故障转移, 
+              🇯🇵故障转移, 🇰🇷故障转移, 
+              🇦🇺故障转移, 🇬🇧故障转移, 
+              🇫🇷故障转移, 🇩🇪故障转移, 
+              🇭🇰负载均衡, 🇸🇬负载均衡, 
+              🇺🇸负载均衡, 🇹🇼负载均衡, 
+              🇯🇵负载均衡, 🇰🇷负载均衡, 
+              🇦🇺负载均衡, 🇬🇧负载均衡, 
+              🇫🇷负载均衡, 🇩🇪负载均衡]
     icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png'
 
   - name: 落地
@@ -589,6 +613,55 @@ proxy-groups:
 
   - name: 📋自动全部
     <<: *Auto
+    filter: *FilterAll
+
+  ### LoadBalance
+  - name: 🇭🇰负载均衡
+    <<: *LoadBalance
+    filter: *FilterHK
+
+  - name: 🇸🇬负载均衡
+    <<: *LoadBalance
+    filter: *FilterSG
+
+  - name: 🇺🇸负载均衡
+    <<: *LoadBalance
+    filter: *FilterUS
+
+  - name: 🇹🇼负载均衡
+    <<: *LoadBalance
+    filter: *FilterTW
+
+  - name: 🇯🇵负载均衡
+    <<: *LoadBalance
+    filter: *FilterJP
+
+  - name: 🇰🇷负载均衡
+    <<: *LoadBalance
+    filter: *FilterKR
+
+  - name: 🇦🇺负载均衡
+    <<: *LoadBalance
+    filter: *FilterAU
+
+  - name: 🇬🇧负载均衡
+    <<: *LoadBalance
+    filter: *FilterUK
+
+  - name: 🇫🇷负载均衡
+    <<: *LoadBalance
+    filter: *FilterFR
+
+  - name: 🇩🇪负载均衡
+    <<: *LoadBalance
+    filter: *FilterDE
+
+  - name: 🧩均衡其他
+    <<: *LoadBalance
+    filter: *FilterOthers
+
+  - name: 📋均衡全部
+    <<: *LoadBalance
     filter: *FilterAll
 
   ### Hidden
