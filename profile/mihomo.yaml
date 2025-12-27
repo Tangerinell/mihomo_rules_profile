@@ -51,7 +51,7 @@ port: 0
 redir-port: 0
 tproxy-port: 0
 mode: rule
-log-level: info
+log-level: warning
 ipv6: true
 find-process-mode: always
 authentication: []
