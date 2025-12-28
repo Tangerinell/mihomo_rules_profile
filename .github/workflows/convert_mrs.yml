@@ -20,11 +20,8 @@ jobs:
           echo "Fetching latest mihomo"
 
           DOWNLOAD_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
-            | jq -r '.assets[] 
-              | select(.name | contains("linux-amd64") and endswith(".gz")) 
-              | .browser_download_url 
-              | select(. != null) 
-              | limit(1; .)')
+          | jq -r '.assets[] | select(.name | contains("linux-amd64-compatible") and endswith(".gz")) | .browser_download_url')
+
           
           echo "Downloading from $DOWNLOAD_URL"
           wget -O mihomo.gz "$DOWNLOAD_URL"
