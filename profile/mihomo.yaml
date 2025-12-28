@@ -693,14 +693,32 @@ rule-providers:
     path: './rule_set/lan.yaml'
 
   # ChinaDIRECT
-  chinadirect:
+  chinadirect1:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 43200
+    proxy: 🎯代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geoipcn.mrs'
+    path: './rule_set/chinadirect1.yaml'
+  
+  chinadirect2:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    proxy: 🎯代理
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geositecn.mrs'
+    path: './rule_set/chinadirect2.yaml'
+
+  chinadirect3:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
-    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GeositeCN.yaml'
-    path: './rule_set/chinadirect.yaml'
-  
+    url: 'https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/chinadirect3.yaml'
+    path: './rule_set/chinadirect3.yaml'
+
   # Other
   gemini:
     type: http
@@ -856,6 +874,8 @@ rule-providers:
 
 # Rules
 rules:
+
+
   # LAN
   - RULE-SET,lan,DIRECT
 
@@ -915,6 +935,8 @@ rules:
   - RULE-SET,cloudflare,Cloudflare
 
   # ChinaDIRECT
-  - RULE-SET,chinadirect,DIRECT
+  - RULE-SET,chinadirect1,DIRECT
+  - RULE-SET,chinadirect2,DIRECT
+  - RULE-SET,chinadirect3,DIRECT
 
   - MATCH,🌐未匹配
