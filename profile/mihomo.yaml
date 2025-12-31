@@ -12,17 +12,17 @@ JNTM: &JNTM
 # Proxy Providers
 proxy-providers:
   Node-1:
-    url: https://订阅1.com
+    url: https://鸡你太美1.com
     type: http
     <<: *JNTM
     path: './proxy_provider/providers_1.yaml'
     proxy: 🎯代理
     override:
       additional-prefix: "1🐔"
-    filter: '^(?!.*(?i)(?:NEVER_MATCH)).*$'
+    filter: '^(?!.*(?i)(?:剩余|到期|官网)).*$'
 
   Node-2:
-    url: https://订阅2.com
+    url: https://鸡你太美2.com
     type: http
     <<: *JNTM
     path: './proxy_provider/providers_2.yaml'
@@ -84,14 +84,14 @@ unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 
-geodata-mode: true
 geo-auto-update: false
+geodata-mode: true
 geo-update-interval: 24
 geox-url:
-  geoip: 'https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat'
-  geosite: 'https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat'
-  mmdb: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb'
-  asn: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb'
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 
 # Tunnel Configuration
 tun:
