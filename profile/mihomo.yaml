@@ -875,7 +875,6 @@ rule-providers:
 # Rules
 rules:
 
-
   # LAN
   - RULE-SET,lan,DIRECT
 
@@ -935,8 +934,8 @@ rules:
   - RULE-SET,cloudflare,Cloudflare
 
   # ChinaDIRECT
-  - RULE-SET,chinadirectip,DIRECT
   - RULE-SET,chinadirectsite,DIRECT
+  - RULE-SET,chinadirectip,DIRECT,no-resolve
   - RULE-SET,chinadirectadd,DIRECT
 
   - MATCH,🌐未匹配
