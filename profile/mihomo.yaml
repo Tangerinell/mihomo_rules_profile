@@ -12,7 +12,7 @@ JNTM: &JNTM
 # Proxy Providers
 proxy-providers:
   Node-1:
-    url: https://鸡你太美1.com
+    url: "https://鸡你太美1.com"
     type: http
     <<: *JNTM
     path: "./proxy_provider/providers_1.yaml"
@@ -22,7 +22,7 @@ proxy-providers:
     filter: "^(?!.*(?i)(?:剩余|到期|官网)).*$"
 
   Node-2:
-    url: https://鸡你太美2.com
+    url: "https://鸡你太美2.com"
     type: http
     <<: *JNTM
     path: "./proxy_provider/providers_2.yaml"
@@ -117,8 +117,12 @@ dns:
   use-system-hosts: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+
+  fake-ip-filter-mode: rule
   fake-ip-filter:
     - RULE-SET,lan,real-ip
+    - MATCH,fake-ip
+
   respect-rules: true
   default-nameserver:
     - 1.1.1.1
