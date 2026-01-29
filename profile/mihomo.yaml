@@ -1,4 +1,6 @@
-#Clash.Meta(mihomo)
+# Clash.Meta(mihomo)
+# v1.19.19
+
 JNTM: &JNTM
     interval: 43200
     health-check:
