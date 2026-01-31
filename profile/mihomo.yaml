@@ -939,7 +939,7 @@ rules:
 
   # ChinaDIRECT
   - RULE-SET,chinadirectsite,DIRECT
-  - RULE-SET,chinadirectip,DIRECT,no-resolve
+  - RULE-SET,chinadirectip,DIRECT
   - RULE-SET,chinadirectadd,DIRECT
 
   - MATCH,🌐未匹配
