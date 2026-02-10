@@ -2,8 +2,6 @@ name: Convert Ruleset To mrs
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *'
 
 permissions:
   contents: write
