@@ -203,6 +203,7 @@ Select: &Select
   hidden: false
   include-all: true
 
+
 Auto: &Auto
   type: url-test
   url: "https://www.gstatic.com/generate_204"
@@ -216,6 +217,7 @@ Auto: &Auto
 
   tolerance: 50
 
+
 FallBack: &FallBack
   type: fallback
   url: "https://www.gstatic.com/generate_204"
@@ -226,6 +228,7 @@ FallBack: &FallBack
   disable-udp: false
   hidden: false
   include-all: true
+
 
 LoadBalance: &LoadBalance
   type: load-balance
@@ -239,6 +242,7 @@ LoadBalance: &LoadBalance
   include-all: true
 
   strategy: round-robin
+
 
 Select_Proxies: &Select_Proxies
   type: select
@@ -271,31 +275,131 @@ Select_Proxies: &Select_Proxies
             🇫🇷负载均衡, 🇩🇪负载均衡, 
             ↩️绕过]
 
+
+Select_Main: &Select_Main
+  type: select
+  disable-udp: false
+  hidden: false
+  include-all: true
+  proxies: [🟢故障转移, 🟣故障转移, 
+            🟨手动选择, 🟦手动选择, 
+            🔶自动选择, 🔷自动选择, 
+            DIRECT, 🔗链式代理,
+            🇭🇰手动选择, 🇸🇬手动选择, 
+            🇺🇸手动选择, 🇹🇼手动选择, 
+            🇯🇵手动选择, 🇰🇷手动选择, 
+            🇦🇺手动选择, 🇬🇧手动选择, 
+            🇫🇷手动选择, 🇩🇪手动选择, 
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇦🇺自动选择, 🇬🇧自动选择, 
+            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇦🇺故障转移, 🇬🇧故障转移, 
+            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇦🇺负载均衡, 🇬🇧负载均衡, 
+            🇫🇷负载均衡, 🇩🇪负载均衡, 
+            ⛔阻断]
+
+
+Dialer: &Dialer
+  type: select
+  disable-udp: false
+  hidden: false
+  include-all: true
+  proxies: [🟢故障转移, 🟣故障转移, 
+            🟨手动选择, 🟦手动选择, 
+            🔶自动选择, 🔷自动选择, 
+            🇭🇰手动选择, 🇸🇬手动选择, 
+            🇺🇸手动选择, 🇹🇼手动选择, 
+            🇯🇵手动选择, 🇰🇷手动选择, 
+            🇦🇺手动选择, 🇬🇧手动选择, 
+            🇫🇷手动选择, 🇩🇪手动选择, 
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇦🇺自动选择, 🇬🇧自动选择, 
+            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇦🇺故障转移, 🇬🇧故障转移, 
+            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇦🇺负载均衡, 🇬🇧负载均衡, 
+            🇫🇷负载均衡, 🇩🇪负载均衡, 
+            ⛔阻断]
+
+
+Global: &Global
+  type: select
+  disable-udp: false
+  hidden: false
+  include-all: true
+  proxies: [🎯代理, 🌐其他, 
+            🔗链式代理, ⛔阻断, 
+            🟢故障转移, 🟣故障转移, 
+            🔶自动选择, 🔷自动选择, 
+            🟨手动选择, 🟦手动选择, 
+            🧩手动其他, 📋手动全部, 
+            中转, 落地, Pornhub, Tiktok, 
+            Netflix, Gemini, YouTube, 
+            Emby, GlobalMedia, Cloudflare, 
+            Epic, Steam, Telegram, 
+            GitHub, Google, Discord, 
+            Spotify, Pikpak, OpenAI, 
+            Apple, Microsoft, 
+            🇭🇰手动选择, 🇸🇬手动选择, 
+            🇺🇸手动选择, 🇹🇼手动选择, 
+            🇯🇵手动选择, 🇰🇷手动选择, 
+            🇦🇺手动选择, 🇬🇧手动选择, 
+            🇫🇷手动选择, 🇩🇪手动选择, 
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇦🇺故障转移, 🇬🇧故障转移, 
+            🇫🇷故障转移, 🇩🇪故障转移, 
+            🧩回退其他, 📋回退全部,
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇦🇺自动选择, 🇬🇧自动选择, 
+            🇫🇷自动选择, 🇩🇪自动选择, 
+            🧩自动其他, 📋自动全部, 
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇦🇺负载均衡, 🇬🇧负载均衡, 
+            🇫🇷负载均衡, 🇩🇪负载均衡, 
+            🧩均衡其他, 📋均衡全部]
+
+
 # Proxy Groups
 proxy-groups:
+
+  ### GLOBAL
+  - name: GLOBAL
+    <<: *Global
+    filter: *FilterAll
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Daily.png"
+
   ### MAIN
   - name: 🎯代理
-    type: select
-    include-all: true
-    proxies: [🟢故障转移, 🟣故障转移, 
-              📋手动全部, 🧩手动其他, 
-              🟨手动选择, 🟦手动选择, 
-              🔶自动选择, 🔷自动选择, 
-              📋自动全部, 📋回退全部, 
-              🧩自动其他, 🧩回退其他, 
-              🔗链式代理, DIRECT, ⛔阻断, ↩️绕过]
+    <<: *Select_Main
+    filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png"
 
-  - name: 🌐未匹配
-    type: select
-    include-all: true
-    proxies: [🟢故障转移, 🟣故障转移, 
-              📋手动全部, 🧩手动其他, 
-              🟨手动选择, 🟦手动选择, 
-              🔶自动选择, 🔷自动选择, 
-              📋自动全部, 📋回退全部, 
-              🧩自动其他, 🧩回退其他, 
-              🔗链式代理, DIRECT, ⛔阻断]
+  - name: 🌐其他
+    <<: *Select_Main
+    filter: *FilterAll
     icon: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Global.png"
 
   - name: 🟢故障转移
@@ -346,31 +450,8 @@ proxy-groups:
 
   ### Dialer Proxy
   - name: 中转
-    <<: *Select
+    <<: *Dialer
     filter: *FilterAll
-    proxies: [🟢故障转移, 🟣故障转移, 
-              🟨手动选择, 🟦手动选择, 
-              🔶自动选择, 🔷自动选择, 
-              🇭🇰手动选择, 🇸🇬手动选择, 
-              🇺🇸手动选择, 🇹🇼手动选择, 
-              🇯🇵手动选择, 🇰🇷手动选择, 
-              🇦🇺手动选择, 🇬🇧手动选择, 
-              🇫🇷手动选择, 🇩🇪手动选择, 
-              🇭🇰自动选择, 🇸🇬自动选择, 
-              🇺🇸自动选择, 🇹🇼自动选择, 
-              🇯🇵自动选择, 🇰🇷自动选择, 
-              🇦🇺自动选择, 🇬🇧自动选择, 
-              🇫🇷自动选择, 🇩🇪自动选择, 
-              🇭🇰故障转移, 🇸🇬故障转移, 
-              🇺🇸故障转移, 🇹🇼故障转移, 
-              🇯🇵故障转移, 🇰🇷故障转移, 
-              🇦🇺故障转移, 🇬🇧故障转移, 
-              🇫🇷故障转移, 🇩🇪故障转移, 
-              🇭🇰负载均衡, 🇸🇬负载均衡, 
-              🇺🇸负载均衡, 🇹🇼负载均衡, 
-              🇯🇵负载均衡, 🇰🇷负载均衡, 
-              🇦🇺负载均衡, 🇬🇧负载均衡, 
-              🇫🇷负载均衡, 🇩🇪负载均衡]
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png"
 
   - name: 落地
@@ -394,10 +475,14 @@ proxy-groups:
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"
 
+  - name: Gemini
+    <<: *Select_Proxies
+    filter: *FilterAll
+    icon: "https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-png/dark/gemini-color.png"
+
   - name: YouTube
     <<: *Select_Proxies
     filter: *FilterAll
-
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png"
 
   - name: Emby
@@ -405,7 +490,7 @@ proxy-groups:
     filter: *FilterAll
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
-  - name: Streaming
+  - name: GlobalMedia
     <<: *Select_Proxies
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png"
@@ -740,13 +825,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/PikPak.yaml"
     path: "./rule_set/pikpak.yaml"
 
-  stream:
+  globalmedia:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GlobalMedia.yaml"
-    path: "./rule_set/stream.yaml"
+    path: "./rule_set/globalmedia.yaml"
 
   telegram:
     type: http
@@ -911,7 +996,7 @@ rules:
   - RULE-SET,pornhub,Pornhub,no-resolve
 
   # Gemini
-  - RULE-SET,gemini,Google,no-resolve
+  - RULE-SET,gemini,Gemini,no-resolve
 
   # OpenAI
   - RULE-SET,openai,OpenAI,no-resolve
@@ -922,8 +1007,8 @@ rules:
   # Netflix
   - RULE-SET,netflix,Netflix,no-resolve
 
-  # Streaming
-  - RULE-SET,stream,Streaming,no-resolve
+  # GlobalMedia
+  - RULE-SET,globalmedia,GlobalMedia,no-resolve
 
   # Google
   - RULE-SET,google,Google,no-resolve
@@ -942,4 +1027,4 @@ rules:
   - RULE-SET,chinadirectip,DIRECT,no-resolve
   - RULE-SET,chinadirectadd,DIRECT,no-resolve
 
-  - MATCH,🌐未匹配
+  - MATCH,🌐其他
