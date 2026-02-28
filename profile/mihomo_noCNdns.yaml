@@ -21,6 +21,27 @@ proxy-providers:
     proxy: 🎯代理
     override:
       additional-prefix: "1🐔"
+      proxy-name:
+      - pattern: "美国"
+        target: "🇺🇸"
+      - pattern: "日本"
+        target: "🇯🇵"
+      - pattern: "新加坡"
+        target: "🇸🇬"
+      - pattern: "台湾"
+        target: "🇹🇼"
+      - pattern: "香港"
+        target: "🇭🇰"
+      - pattern: "韩国"
+        target: "🇰🇷"
+      - pattern: "英国"
+        target: "🇬🇧"
+      - pattern: "澳大利亚"
+        target: "🇦🇺"
+      - pattern: "法国"
+        target: "🇫🇷"
+      - pattern: "德国"
+        target: "🇩🇪"
     filter: "^(?!.*(?i)(?:剩余|到期|官网)).*$"
 
   Node-2:
@@ -247,7 +268,8 @@ Select_Proxies: &Select_Proxies
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🎯代理, 🔗链式代理, DIRECT, ⛔阻断, 
+  proxies: [🎯代理, 🔗链式代理, 
+            DIRECT, ⛔阻断, 
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
@@ -337,6 +359,7 @@ Dialer: &Dialer
             ⛔阻断]
 
 
+### Determine the order of Proxy Groups
 Global: &Global
   type: select
   disable-udp: false
@@ -348,13 +371,26 @@ Global: &Global
             🔶自动选择, 🔷自动选择, 
             🟨手动选择, 🟦手动选择, 
             🧩手动其他, 📋手动全部, 
-            中转, 落地, Pornhub, Tiktok, 
-            Netflix, Gemini, YouTube, 
-            Emby, GlobalMedia, Cloudflare, 
-            Epic, Steam, Telegram, 
-            GitHub, Google, Discord, 
-            Spotify, Pikpak, OpenAI, 
-            Apple, Microsoft, 
+            中转, 落地, 
+            Pornhub, 
+            Tiktok, 
+            Netflix, 
+            YouTube, 
+            Gemini, 
+            Google, 
+            Emby, 
+            GlobalMedia, 
+            Cloudflare, 
+            Epic, 
+            Steam, 
+            Telegram, 
+            GitHub, 
+            Discord, 
+            Spotify, 
+            Pikpak, 
+            OpenAI, 
+            Apple, 
+            Microsoft, 
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
