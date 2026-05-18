@@ -270,11 +270,13 @@ Select_Proxies: &Select_Proxies
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🎯代理, 🔗链式代理, 
-            DIRECT, ⛔阻断, 
+  proxies: [
+            🎯代理, 🌐其他,
+            🔗链式代理, DIRECT, 
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
+            ⛔阻断, ↩️绕过,
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
@@ -294,8 +296,8 @@ Select_Proxies: &Select_Proxies
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
             🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡, 
-            ↩️绕过]
+            🇫🇷负载均衡, 🇩🇪负载均衡
+            ]
 
 
 Select_Main: &Select_Main
@@ -303,10 +305,12 @@ Select_Main: &Select_Main
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🟢故障转移, 🟣故障转移, 
+  proxies: [
+            🟢故障转移, 🟣故障转移, 
             🟨手动选择, 🟦手动选择, 
             🔶自动选择, 🔷自动选择, 
-            DIRECT, 🔗链式代理,
+            DIRECT, 🔗链式代理, 
+            ⛔阻断, ↩️绕过, 
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
@@ -326,8 +330,8 @@ Select_Main: &Select_Main
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
             🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡, 
-            ⛔阻断]
+            🇫🇷负载均衡, 🇩🇪负载均衡
+            ]
 
 
 Dialer: &Dialer
@@ -335,9 +339,11 @@ Dialer: &Dialer
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🟢故障转移, 🟣故障转移, 
+  proxies: [
+            🟢故障转移, 🟣故障转移, 
             🟨手动选择, 🟦手动选择, 
             🔶自动选择, 🔷自动选择, 
+            DIRECT, ⛔阻断, 
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
@@ -357,8 +363,8 @@ Dialer: &Dialer
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
             🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡, 
-            ⛔阻断, DIRECT]
+            🇫🇷负载均衡, 🇩🇪负载均衡
+            ]
 
 
 ### Determine the order of Proxy Groups
@@ -367,7 +373,8 @@ Global: &Global
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [🎯代理, 🌐其他, 
+  proxies: [
+            🎯代理, 🌐其他, 
             🔗链式代理, ⛔阻断, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
@@ -415,7 +422,8 @@ Global: &Global
             🇯🇵负载均衡, 🇰🇷负载均衡, 
             🇦🇺负载均衡, 🇬🇧负载均衡, 
             🇫🇷负载均衡, 🇩🇪负载均衡, 
-            🧩均衡其他, 📋均衡全部]
+            🧩均衡其他, 📋均衡全部
+            ]
 
 
 # Proxy Groups
