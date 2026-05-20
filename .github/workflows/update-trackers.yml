@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Generator Script
         # 修改这里的路径为你存放 generate.py 的实际路径
-        run: python scripts/generate.py
+        run: python scripts/tracker_generate.py
 
       - name: Commit and Push Changes
         run: |
