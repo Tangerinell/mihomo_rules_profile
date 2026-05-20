@@ -9,7 +9,7 @@ URLS = [
     "https://raw.githubusercontent.com/adysec/tracker/refs/heads/main/trackers_all.txt" # 示例: 可以在此按格式继续添加
 ]
 # 输出的 Mihomo 规则集文件名
-OUTPUT_FILE = "trackers.yaml"
+OUTPUT_FILE = "rules/trackers.yaml"
 
 def main():
     # 伪装 User-Agent，防止被 Cloudflare 拦截
