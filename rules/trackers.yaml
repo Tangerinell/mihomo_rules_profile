@@ -735,6 +735,7 @@ payload:
   - DOMAIN-SUFFIX,tracker.ali213.net80
   - DOMAIN-SUFFIX,tracker.altrosky.nl
   - DOMAIN-SUFFIX,tracker.amelia.fun
+  - DOMAIN-SUFFIX,tracker.anibt.net
   - DOMAIN-SUFFIX,tracker.anima.nz
   - DOMAIN-SUFFIX,tracker.anirena.com
   - DOMAIN-SUFFIX,tracker.anonwebz.xyz
@@ -1362,6 +1363,7 @@ payload:
   - IP-CIDR,113.16.155.116/32
   - IP-CIDR,113.16.155.135/32
   - IP-CIDR,113.16.155.146/32
+  - IP-CIDR,113.16.155.21/32
   - IP-CIDR,113.16.155.226/32
   - IP-CIDR,113.16.155.243/32
   - IP-CIDR,113.17.152.163/32
@@ -1444,6 +1446,7 @@ payload:
   - IP-CIDR,123.245.62.7/32
   - IP-CIDR,123.245.62.72/32
   - IP-CIDR,123.245.62.75/32
+  - IP-CIDR,123.245.62.80/32
   - IP-CIDR,123.245.62.83/32
   - IP-CIDR,123.245.62.84/32
   - IP-CIDR,123.245.62.88/32
