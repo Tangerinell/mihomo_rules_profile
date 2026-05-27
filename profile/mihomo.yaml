@@ -382,7 +382,7 @@ Global: &Global
             🧩手动其他, 📋手动全部, 
             中转, 落地, 
             Pornhub, 
-            Tiktok, 
+            TikTok, 
             Netflix, 
             YouTube, 
             Gemini, 
@@ -509,7 +509,7 @@ proxy-groups:
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pornhub_2.png"
 
-  - name: Tiktok
+  - name: TikTok
     <<: *Select_Proxies
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png"
@@ -1034,7 +1034,7 @@ rules:
   - RULE-SET,discord,Discord
 
   # TikTok
-  - RULE-SET,tiktok,Tiktok
+  - RULE-SET,tiktok,TikTok
 
   # Pornhub
   - RULE-SET,pornhub,Pornhub
