@@ -62,6 +62,7 @@ jobs:
             
             "Netflix.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix_Classical.yaml"
 
+            "Instagram.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.yaml"
           )
 
           for jntm in "${LISTS[@]}"; do
