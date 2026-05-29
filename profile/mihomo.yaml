@@ -143,7 +143,7 @@ dns:
 
   fake-ip-filter-mode: rule
   fake-ip-filter:
-    - RULE-SET,lan,real-ip
+    - RULE-SET,LAN,real-ip
     - MATCH,fake-ip
 
   respect-rules: true
@@ -393,7 +393,8 @@ Global: &Global
             Epic, 
             Steam, 
             Telegram, 
-            GitHub, 
+            GitHub,
+            Instagram, 
             Discord, 
             Spotify, 
             Pikpak, 
@@ -573,6 +574,11 @@ proxy-groups:
     <<: *Select_Proxies
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png"
+
+  - name: Instagram
+    <<: *Select_Proxies
+    filter: *FilterAll
+    icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png"
 
   - name: Spotify
     <<: *Select_Proxies
@@ -817,258 +823,269 @@ proxy-groups:
 # Rule Providers
 rule-providers:
   # LAN
-  lan:
+  LAN:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Lan.yaml"
-    path: "./rule_set/lan.yaml"
+    path: "./rule_set/LAN.yaml"
 
   # ChinaDIRECT
-  chinadirectip:
+  ChinaDirectIP:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geoipcn.mrs"
-    path: "./rule_set/chinadirectip.mrs"
+    path: "./rule_set/ChinaDirectIP.mrs"
   
-  chinadirectsite:
+  ChinaDirectSite:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/geositecn.mrs"
-    path: "./rule_set/chinadirectsite.mrs"
+    path: "./rule_set/ChinaDirectSite.mrs"
 
-  chinadirectadd:
+  ChinaDirectAdd:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/chinadirectadd.yaml"
-    path: "./rule_set/chinadirectadd.yaml"
+    path: "./rule_set/ChinaDirectAdd.yaml"
 
   # Other
-  gemini:
+  Gemini:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Gemini.yaml"
-    path: "./rule_set/gemini.yaml"
+    path: "./rule_set/Gemini.yaml"
 
-  pikpak:
+  PikPak:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/PikPak.yaml"
-    path: "./rule_set/pikpak.yaml"
+    path: "./rule_set/PikPak.yaml"
 
-  globalmedia:
+  GlobalMedia:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GlobalMedia.yaml"
-    path: "./rule_set/globalmedia.yaml"
+    path: "./rule_set/GlobalMedia.yaml"
 
-  telegram:
+  Telegram:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Telegram.yaml"
-    path: "./rule_set/telegram.yaml"
+    path: "./rule_set/Telegram.yaml"
 
-  apple:
+  Apple:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Apple.yaml"
-    path: "./rule_set/apple.yaml"
+    path: "./rule_set/Apple.yaml"
 
-  microsoft:
+  Microsoft:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Microsoft.yaml"
-    path: "./rule_set/microsoft.yaml"
+    path: "./rule_set/Microsoft.yaml"
 
-  steam:
+  Steam:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Steam.yaml"
-    path: "./rule_set/steam.yaml"
+    path: "./rule_set/Steam.yaml"
 
-  steam_cn:
+  SteamCN:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/SteamCN.yaml"
-    path: "./rule_set/steam_cn.yaml"
+    path: "./rule_set/SteamCN.yaml"
 
-  discord:
+  Discord:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Discord.yaml"
-    path: "./rule_set/discord.yaml"
+    path: "./rule_set/Discord.yaml"
 
-  spotify:
+  Spotify:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Spotify.yaml"
-    path: "./rule_set/spotify.yaml"
+    path: "./rule_set/Spotify.yaml"
 
-  tiktok:
+  TikTok:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/TikTok.yaml"
-    path: "./rule_set/tiktok.yaml"
+    path: "./rule_set/TikTok.yaml"
 
-  openai:
+  OpenAI:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/OpenAI.yaml"
-    path: "./rule_set/openai.yaml"
+    path: "./rule_set/OpenAI.yaml"
 
-  epic:
+  Epic:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Epic.yaml"
-    path: "./rule_set/epic.yaml"
+    path: "./rule_set/Epic.yaml"
 
-  google:
+  Google:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Google.yaml"
-    path: "./rule_set/google.yaml"
+    path: "./rule_set/Google.yaml"
 
-  github:
+  GitHub:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/GitHub.yaml"
-    path: "./rule_set/github.yaml"
+    path: "./rule_set/GitHub.yaml"
 
-  youtube:
+  YouTube:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/YouTube.yaml"
-    path: "./rule_set/youtube.yaml"
+    path: "./rule_set/YouTube.yaml"
 
-  pornhub:
+  Pornhub:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Pornhub.yaml"
-    path: "./rule_set/pornhub.yaml"
+    path: "./rule_set/Pornhub.yaml"
 
-  cloudflare:
+  Cloudflare:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Cloudflare.yaml"
-    path: "./rule_set/cloudflare.yaml"
+    path: "./rule_set/Cloudflare.yaml"
 
-  netflix:
+  Netflix:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
     url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Netflix.yaml"
-    path: "./rule_set/netflix.yaml"
+    path: "./rule_set/Netflix.yaml"
+
+  Instagram:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    url: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/rules/Instagram.yaml"
+    path: "./rule_set/Instagram.yaml"
 
 # Rules
 rules:
 
   # LAN
-  - RULE-SET,lan,DIRECT
+  - RULE-SET,LAN,DIRECT
 
   # Steam
-  - RULE-SET,steam_cn,DIRECT
-  - RULE-SET,steam,Steam
+  - RULE-SET,SteamCN,DIRECT
+  - RULE-SET,Steam,Steam
 
   # Epic
-  - RULE-SET,epic,Epic
+  - RULE-SET,Epic,Epic
 
   # Telegram
-  - RULE-SET,telegram,Telegram
+  - RULE-SET,Telegram,Telegram
 
   # Spotify
-  - RULE-SET,spotify,Spotify
+  - RULE-SET,Spotify,Spotify
+
+  # Instagram
+  - RULE-SET,Instagram,Instagram
 
   # GitHub
-  - RULE-SET,github,GitHub
+  - RULE-SET,GitHub,GitHub
 
   # PikPak
-  - RULE-SET,pikpak,Pikpak
+  - RULE-SET,PikPak,Pikpak
 
   # Discord
-  - RULE-SET,discord,Discord
+  - RULE-SET,Discord,Discord
 
   # TikTok
-  - RULE-SET,tiktok,TikTok
+  - RULE-SET,TikTok,TikTok
 
   # Pornhub
-  - RULE-SET,pornhub,Pornhub
+  - RULE-SET,Pornhub,Pornhub
 
   # Gemini
-  - RULE-SET,gemini,Gemini
+  - RULE-SET,Gemini,Gemini
 
   # OpenAI
-  - RULE-SET,openai,OpenAI
+  - RULE-SET,OpenAI,OpenAI
 
   # YouTube
-  - RULE-SET,youtube,YouTube
+  - RULE-SET,YouTube,YouTube
 
   # Netflix
-  - RULE-SET,netflix,Netflix
+  - RULE-SET,Netflix,Netflix
 
   # GlobalMedia
-  - RULE-SET,globalmedia,GlobalMedia
+  - RULE-SET,GlobalMedia,GlobalMedia
 
   # Google
-  - RULE-SET,google,Google
+  - RULE-SET,Google,Google
 
   # Apple
-  - RULE-SET,apple,Apple
+  - RULE-SET,Apple,Apple
 
   # Microsoft
-  - RULE-SET,microsoft,Microsoft
+  - RULE-SET,Microsoft,Microsoft
 
   # Cloudflare
-  - RULE-SET,cloudflare,Cloudflare
+  - RULE-SET,Cloudflare,Cloudflare
 
   # ChinaDIRECT
-  - RULE-SET,chinadirectsite,DIRECT
-  - RULE-SET,chinadirectip,DIRECT
-  - RULE-SET,chinadirectadd,DIRECT
+  - RULE-SET,ChinaDirectSite,DIRECT
+  - RULE-SET,ChinaDirectIP,DIRECT
+  - RULE-SET,ChinaDirectAdd,DIRECT
 
   - MATCH,🌐其他
