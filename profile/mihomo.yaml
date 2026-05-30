@@ -397,7 +397,7 @@ Global: &Global
             Instagram, 
             Discord, 
             Spotify, 
-            Pikpak, 
+            PikPak, 
             OpenAI, 
             Apple, 
             Microsoft, 
@@ -585,10 +585,10 @@ proxy-groups:
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"
 
-  - name: Pikpak
+  - name: PikPak
     <<: *Select_Proxies
     filter: *FilterAll
-    icon: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Pikpak.png"
+    icon: "https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/PikPak.png"
 
   - name: OpenAI
     <<: *Select_Proxies
@@ -1021,6 +1021,66 @@ rule-providers:
 
 # Rules
 rules:
+  # android TikTok
+  - PROCESS-NAME,com.zhiliaoapp.musically,TikTok
+  - PROCESS-NAME,com.ss.android.ugc.trill,TikTok
+
+  # android Gemini
+  - PROCESS-NAME,com.google.android.apps.bard,Gemini
+
+  # workshop download
+  - DOMAIN,cdn.steamusercontent.com,🌐其他
+
+  # Discord
+  - PROCESS-NAME,com.discord,Discord
+  - PROCESS-NAME,Discord.exe,Discord
+
+  # 雷神加速器
+  - PROCESS-PATH-REGEX,(?i).*\\LeiGod_Acc.*,DIRECT
+
+  # uu加速器
+  - PROCESS-NAME-REGEX,(?i).*GameViewer.*,DIRECT
+  - PROCESS-PATH-REGEX,(?i).*\\GameViewer.*,DIRECT
+
+  # Radmin VPN
+  - PROCESS-PATH-REGEX,(?i).*\\Radmin VPN.*,DIRECT
+
+  # 樱花穿透
+  - PROCESS-PATH-REGEX,(?i).*\\SakuraFrpLauncher.*,DIRECT
+
+  # SteamGame
+  - PROCESS-PATH-REGEX,(?i).*steamapps\\common.*,DIRECT
+
+  # hills
+  - PROCESS-NAME,com.mountains.hills,Emby
+
+  # Windows联网搜索
+  - PROCESS-PATH-REGEX,(?i).*\\Windows\\SystemApps.*SearchHost.exe.*,REJECT
+
+  # Studio One
+  - PROCESS-NAME,Studio One.exe,REJECT
+  - PROCESS-NAME,Studio Pro.exe,REJECT
+
+  # 宝石插件
+  - PROCESS-NAME,www.overloud.com,REJECT
+
+  # Adobe
+  - PROCESS-PATH-REGEX,(?i).*Adobe\\.*,REJECT
+
+  # PikPak
+  - PROCESS-NAME,DownloadServer.exe,PikPak
+  - PROCESS-NAME,com.pikcloud.pikpak,PikPak
+
+  # roblox
+  - PROCESS-PATH-REGEX,(?i).*roblox.*,🌐其他
+  - PROCESS-NAME,com.roblox.player,🌐其他
+  - PROCESS-NAME,com.roblox.executor,🌐其他
+  - PROCESS-NAME,com.roblox.client,🌐其他
+
+  # instagram
+  - PROCESS-NAME,com.instagram.android,Instagram
+
+
 
   # LAN
   - RULE-SET,LAN,DIRECT
@@ -1045,7 +1105,7 @@ rules:
   - RULE-SET,GitHub,GitHub
 
   # PikPak
-  - RULE-SET,PikPak,Pikpak
+  - RULE-SET,PikPak,PikPak
 
   # Discord
   - RULE-SET,Discord,Discord
