@@ -945,6 +945,7 @@ payload:
   - DOMAIN-SUFFIX,tracker.m-team.cc
   - DOMAIN-SUFFIX,tracker.madtia.cc
   - DOMAIN-SUFFIX,tracker.magnetoo.io
+  - DOMAIN-SUFFIX,tracker.manager.itislove.cz
   - DOMAIN-SUFFIX,tracker.manager.v6.navy
   - DOMAIN-SUFFIX,tracker.maya.no.eu.org
   - DOMAIN-SUFFIX,tracker.memelords.xyz
@@ -1373,6 +1374,7 @@ payload:
   - IP-CIDR,113.17.153.227/32
   - IP-CIDR,113.17.153.71/32
   - IP-CIDR,113.17.66.72/32
+  - IP-CIDR,113.17.67.93/32
   - IP-CIDR,114.55.113.60/32
   - IP-CIDR,116.16.41.96/32
   - IP-CIDR,116.16.42.86/32
