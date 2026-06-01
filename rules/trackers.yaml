@@ -5,6 +5,7 @@ payload:
   - DOMAIN-SUFFIX,004430.xyz
   - DOMAIN-SUFFIX,0123456789nonexistent.com
   - DOMAIN-SUFFIX,0205.uptm.ch
+  - DOMAIN-SUFFIX,021912.xyz
   - DOMAIN-SUFFIX,0d.kebhana.mx
   - DOMAIN-SUFFIX,0x7c.space
   - DOMAIN-SUFFIX,1.tracker.eu.org
@@ -79,6 +80,7 @@ payload:
   - DOMAIN-SUFFIX,auratorrent.pl
   - DOMAIN-SUFFIX,axell24.ru
   - DOMAIN-SUFFIX,baibako.tv
+  - DOMAIN-SUFFIX,banananetwork.qzz.io
   - DOMAIN-SUFFIX,bananas.space
   - DOMAIN-SUFFIX,bandito.byterunner.io
   - DOMAIN-SUFFIX,bclearning.top
@@ -456,6 +458,7 @@ payload:
   - DOMAIN-SUFFIX,opentracker.xyz
   - DOMAIN-SUFFIX,opentrackr.org
   - DOMAIN-SUFFIX,openwrt.lingyurouqing.xyz
+  - DOMAIN-SUFFIX,orgtgju.org
   - DOMAIN-SUFFIX,oscar.reyesleon.xyz
   - DOMAIN-SUFFIX,ourbits.club
   - DOMAIN-SUFFIX,p2p.0g.cx
