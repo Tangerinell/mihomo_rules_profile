@@ -309,8 +309,8 @@ Select_Main: &Select_Main
   hidden: false
   include-all: true
   proxies: [
-            🟢故障转移, 🟣故障转移, 
             🟨手动选择, 🟦手动选择, 
+            🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             DIRECT, 🔗链式代理, 
             ⛔阻断, ↩️绕过, 
@@ -343,8 +343,8 @@ Dialer: &Dialer
   hidden: false
   include-all: true
   proxies: [
-            🟢故障转移, 🟣故障转移, 
             🟨手动选择, 🟦手动选择, 
+            🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             DIRECT, ⛔阻断, 
             🇭🇰手动选择, 🇸🇬手动选择, 
@@ -378,9 +378,9 @@ Global_Select: &Global_Select
             🎯代理, 🌐其他, 
             🔗链式代理, 
             ⛔阻断, ↩️绕过, 
+            🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
-            🟨手动选择, 🟦手动选择, 
             🧩手动其他, 📋手动全部, 
             中转, 落地, 
             Pornhub, 
@@ -440,9 +440,9 @@ Global: &Global
             🎯代理, 🌐其他, 
             🔗链式代理, 
             ⛔阻断, ↩️绕过, 
+            🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
-            🟨手动选择, 🟦手动选择, 
             🧩手动其他, 📋手动全部, 
             中转, 落地, 
             Pornhub, 
@@ -544,40 +544,40 @@ proxy-groups:
     proxies: 
       - 落地
 
-  - name: 🟢故障转移
-    type: select
-    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
-              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ji.png"
-
-  - name: 🟣故障转移
-    type: select
-    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
-              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ni.png"
-
-  - name: 🔶自动选择
-    type: select
-    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
-              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/tai.png"
-
-  - name: 🔷自动选择
-    type: select
-    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
-              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/mei.png"
-
   - name: 🟨手动选择
     type: select
     proxies: [🇭🇰手动选择, 🇸🇬手动选择, 🇺🇸手动选择, 🇹🇼手动选择, 🇯🇵手动选择, 
               🇰🇷手动选择, 🇦🇺手动选择, 🇬🇧手动选择, 🇫🇷手动选择, 🇩🇪手动选择]
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ji.png"
 
   - name: 🟦手动选择
     type: select
     proxies: [🇭🇰手动选择, 🇸🇬手动选择, 🇺🇸手动选择, 🇹🇼手动选择, 🇯🇵手动选择, 
               🇰🇷手动选择, 🇦🇺手动选择, 🇬🇧手动选择, 🇫🇷手动选择, 🇩🇪手动选择]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ni.png"
+
+  - name: 🟢故障转移
+    type: select
+    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
+              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/tai.png"
+
+  - name: 🟣故障转移
+    type: select
+    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
+              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/mei.png"
+
+  - name: 🔶自动选择
+    type: select
+    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
+              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
+
+  - name: 🔷自动选择
+    type: select
+    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
+              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
 
   - name: 🧩手动其他
