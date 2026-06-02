@@ -1,4 +1,4 @@
-name: Auto Update Remote Rules
+name: Auto Update Remote Files
 
 on:
   schedule:
