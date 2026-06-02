@@ -1,0 +1,187 @@
+name: Auto Update Remote Rules
+
+on:
+  schedule:
+    - cron: '30 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download
+        run: |
+          # 格式: 相对仓库根目录的文件路径|URL
+          LISTS=(
+
+            "rules/geositecn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"
+
+            "rules/geoipcn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"
+
+            "rules/Gemini.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.yaml"
+
+            "rules/Cloudflare.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.yaml"
+
+            "rules/YouTube.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.yaml"
+            
+            "rules/GitHub.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml"
+            
+            "rules/Steam.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml"
+            
+            "rules/SteamCN.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml"
+            
+            "rules/Google.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml"
+            
+            "rules/Roblox.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/Roblox/Roblox.yaml"
+            
+            "rules/OpenAI.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml"
+            
+            "rules/TikTok.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.yaml"
+            
+            "rules/Spotify.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml"
+            
+            "rules/Discord.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.yaml"
+            
+            "rules/Lan.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.yaml"
+            
+            "rules/Microsoft.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml"
+            
+            "rules/Telegram.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.yaml"
+            
+            "rules/PikPak.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak.yaml"
+            
+            "rules/GlobalMedia.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml"
+            
+            "rules/Apple.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical.yaml"
+            
+            "rules/Netflix.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix_Classical.yaml"
+
+            "rules/Instagram.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.yaml"
+            
+
+
+
+            "other/geodata/geoip.dat|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+
+            "other/geodata/geosite.dat|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+
+            "other/geodata/geoip.metadb|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
+
+            "other/geodata/GeoLite2-ASN.mmdb|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+
+            "other/ui/dist.zip|https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+
+
+
+
+            "icon/Daily.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Daily.png"
+
+            "icon/Vpn.png|https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png"
+
+            "icon/Server.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png"
+
+            "icon/Airport.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png"
+
+            "icon/Static.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"
+
+            "icon/Filter.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Filter.png"
+
+            "icon/Available.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png"
+
+            "icon/Pornhub_2.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pornhub_2.png"
+
+            "icon/TikTok_2.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png"
+
+            "icon/Netflix.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"
+
+            "icon/gemini-color.png|https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-png/dark/gemini-color.png"
+
+            "icon/YouTube.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png"
+
+            "icon/Emby.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
+
+            "icon/Streaming.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png"
+
+            "icon/Cloudflare.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cloudflare.png"
+
+            "icon/Epic_Games.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png"
+
+            "icon/Steam.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png"
+
+            "icon/Telegram_X.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png"
+
+            "icon/GitHub.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"
+
+            "icon/Google.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png"
+
+            "icon/Discord.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png"
+
+            "icon/Instagram.png|https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png"
+
+            "icon/Spotify.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"
+
+            "icon/ChatGPT.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"
+
+            "icon/Apple.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png"
+
+            "icon/Microsoft.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
+
+            "icon/Hong_Kong.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
+
+            "icon/Singapore.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
+
+            "icon/United_States.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"
+
+            "icon/Taiwan.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
+
+            "icon/Japan.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
+
+            "icon/Korea.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"
+
+            "icon/Australia.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png"
+
+            "icon/United_Kingdom.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png"
+
+            "icon/France.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png"
+
+            "icon/Germany.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png"
+          )
+
+          for jntm in "${LISTS[@]}"; do
+            IFS="|" read -r filepath url <<< "$jntm"
+            echo "Processing $filepath..."
+            
+            # 获取文件所在的父目录路径
+            filedir=$(dirname "$filepath")
+            
+            # 如果目录不存在，则递归创建该目录
+            if [ "$filedir" != "." ]; then
+              mkdir -p "$filedir"
+            fi
+
+            # 下载文件到指定位置
+            curl -sfL "$url" -o "$filepath" || echo "Failed to download $filepath"
+          done
+
+      - name: global config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: commit
+        id: commit
+        run: |
+          # 暂存当前目录下所有发生变化的文件（包括新创建的多级目录和文件）
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto update rules $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
