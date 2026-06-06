@@ -22,8 +22,12 @@ jobs:
 
             "rules/geositecn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"
 
+            "rules/geositecn.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.list"
+            
             "rules/geoipcn.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"
-
+            
+            "rules/geoipcn.list|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.list"
+            
             "rules/Gemini.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.yaml"
 
             "rules/Cloudflare.yaml|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.yaml"
