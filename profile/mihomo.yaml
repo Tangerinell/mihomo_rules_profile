@@ -1,5 +1,5 @@
 # Clash.Meta(mihomo)
-# v1.19.19
+# v1.19.27
 
 JNTM: &JNTM
     interval: 43200
@@ -524,8 +524,10 @@ proxy-groups:
 
   - name: 落地
     <<: *Select
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Airport.png"
     filter: "^(?=.*(🔗)).*$"
+    empty-fallback: REJECT
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Airport.png"
+
 
   ### Hidden
   - name: ↩️绕过
@@ -897,6 +899,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Lan.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Lan.yaml"
     path: "./rule_set/LAN.yaml"
 
@@ -907,6 +910,7 @@ rule-providers:
     format: mrs
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "geoipcn.mrs"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geoipcn.mrs"
     path: "./rule_set/ChinaDirectIP.mrs"
   
@@ -916,6 +920,7 @@ rule-providers:
     format: mrs
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "geositecn.mrs"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geositecn.mrs"
     path: "./rule_set/ChinaDirectSite.mrs"
 
@@ -924,6 +929,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "chinadirectadd.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/chinadirectadd.yaml"
     path: "./rule_set/ChinaDirectAdd.yaml"
 
@@ -933,6 +939,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Gemini.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Gemini.yaml"
     path: "./rule_set/Gemini.yaml"
 
@@ -941,6 +948,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "PikPak.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/PikPak.yaml"
     path: "./rule_set/PikPak.yaml"
 
@@ -949,6 +957,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "GlobalMedia.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GlobalMedia.yaml"
     path: "./rule_set/GlobalMedia.yaml"
 
@@ -957,6 +966,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Telegram.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Telegram.yaml"
     path: "./rule_set/Telegram.yaml"
 
@@ -965,6 +975,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Apple.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Apple.yaml"
     path: "./rule_set/Apple.yaml"
 
@@ -973,6 +984,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Microsoft.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Microsoft.yaml"
     path: "./rule_set/Microsoft.yaml"
 
@@ -981,6 +993,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Steam.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Steam.yaml"
     path: "./rule_set/Steam.yaml"
 
@@ -989,6 +1002,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "SteamCN.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/SteamCN.yaml"
     path: "./rule_set/SteamCN.yaml"
 
@@ -997,6 +1011,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Discord.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Discord.yaml"
     path: "./rule_set/Discord.yaml"
 
@@ -1005,6 +1020,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Spotify.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Spotify.yaml"
     path: "./rule_set/Spotify.yaml"
 
@@ -1013,6 +1029,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "TikTok.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/TikTok.yaml"
     path: "./rule_set/TikTok.yaml"
 
@@ -1021,6 +1038,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "OpenAI.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/OpenAI.yaml"
     path: "./rule_set/OpenAI.yaml"
 
@@ -1029,6 +1047,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Epic.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Epic.yaml"
     path: "./rule_set/Epic.yaml"
 
@@ -1037,6 +1056,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Google.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Google.yaml"
     path: "./rule_set/Google.yaml"
 
@@ -1045,6 +1065,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "GitHub.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GitHub.yaml"
     path: "./rule_set/GitHub.yaml"
 
@@ -1053,6 +1074,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "YouTube.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/YouTube.yaml"
     path: "./rule_set/YouTube.yaml"
 
@@ -1061,6 +1083,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Pornhub.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Pornhub.yaml"
     path: "./rule_set/Pornhub.yaml"
 
@@ -1069,6 +1092,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Cloudflare.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Cloudflare.yaml"
     path: "./rule_set/Cloudflare.yaml"
 
@@ -1077,6 +1101,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Netflix.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Netflix.yaml"
     path: "./rule_set/Netflix.yaml"
 
@@ -1085,6 +1110,7 @@ rule-providers:
     behavior: classical
     interval: 43200
     proxy: 🎯代理
+    path-in-bundle: "Instagram.yaml"
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Instagram.yaml"
     path: "./rule_set/Instagram.yaml"
 
