@@ -3,7 +3,7 @@ name: Compress and Push 7z Archive
 
 on:
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '30 3 * * *'
   workflow_dispatch: 
 
 # 赋予 GitHub Actions 机器人推送代码到仓库的写权限 (非常重要)
