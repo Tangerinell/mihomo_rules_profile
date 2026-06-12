@@ -26,14 +26,12 @@ jobs:
       # 压缩包的名称
       OUTPUT_FILENAME: 'BundleMRS.7z' 
 
-      # 解决 Node.js 20 废弃警告：强制让 JavaScript Actions 运行在 Node.js 24 上
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     # ============================
 
     steps:
       # 1. 拉取仓库代码
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # 2. 安装 7zip 工具
       - name: Install p7zip
@@ -65,7 +63,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "没有检测到文件变动，无需提交。"
           else
-            # 提交代码（因为是定时任务触发，不再需要 [skip ci] 了）
+            # 提交代码
             git commit -m "Auto-generate 7z archive: ${{ env.OUTPUT_FILENAME }}"
             git push
           fi
