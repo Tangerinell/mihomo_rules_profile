@@ -25,6 +25,9 @@ jobs:
       
       # 压缩包的名称
       OUTPUT_FILENAME: 'BundleMRS.7z' 
+
+      # 解决 Node.js 20 废弃警告：强制让 JavaScript Actions 运行在 Node.js 24 上
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     # ============================
 
     steps:
