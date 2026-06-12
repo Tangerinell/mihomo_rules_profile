@@ -62,7 +62,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "没有检测到文件变动，无需提交。"
           else
-            # 提交代码，[skip ci] 用于防止这次提交再次触发该工作流，造成无限循环
-            git commit -m "Auto-generate 7z archive: ${{ env.OUTPUT_FILENAME }} [skip ci]"
+            # 提交代码（因为是定时任务触发，不再需要 [skip ci] 了）
+            git commit -m "Auto-generate 7z archive: ${{ env.OUTPUT_FILENAME }}"
             git push
           fi
