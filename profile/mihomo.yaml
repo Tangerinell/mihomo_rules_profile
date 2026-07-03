@@ -1,5 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.27
+# 2026-07-04
 
 JNTM: &JNTM
     interval: 43200
@@ -42,6 +43,8 @@ proxy-providers:
         target: "🇫🇷"
       - pattern: "德国"
         target: "🇩🇪"
+      - pattern: "加拿大"
+        target: "🇨🇦"
     filter: "^(?!.*(?i)(?:剩余|到期|官网)).*$"
 
   Node-2:
@@ -74,16 +77,14 @@ port: 0
 redir-port: 0
 tproxy-port: 0
 mode: rule
-log-level: warning
+log-level: error
 ipv6: true
 find-process-mode: always
-authentication: []
 skip-auth-prefixes:
   - 127.0.0.1/32
   - ::1/128
 
 allow-lan: true
-lan-disallowed-ips: []
 bind-address: "*"
 lan-allowed-ips:
   - 0.0.0.0/0
@@ -131,7 +132,6 @@ tun:
     - any:53
     - tcp://any:53
   strict-route: true
-  route-exclude-address: []
 
 # DNS Configuration
 dns:
@@ -184,41 +184,48 @@ sniffer:
         - 8443
 
 # Node Filters
+
+FilterCN: &FilterCN 
+  "^(?!.*(?:🔗|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(?:中国|🇨🇳)"
+
 FilterHK: &FilterHK 
-  "^(?=.*((?i)(香港|🇭🇰)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:香港|🇭🇰)"
 
 FilterJP: &FilterJP 
-  "^(?=.*((?i)(日本|🇯🇵)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:日本|🇯🇵)"
 
 FilterKR: &FilterKR 
-  "^(?=.*((?i)(韩国|🇰🇷)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:韩国|🇰🇷)"
 
 FilterSG: &FilterSG 
-  "^(?=.*((?i)(新加坡|🇸🇬)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:新加坡|🇸🇬)"
 
 FilterUS: &FilterUS 
-  "^(?=.*((?i)(美国|🇺🇸)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:美国|🇺🇸)"
 
 FilterUK: &FilterUK 
-  "^(?=.*((?i)(英国|🇬🇧)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:英国|🇬🇧)"
 
 FilterAU: &FilterAU 
-  "^(?=.*((?i)(澳大利亚|🇦🇺)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:澳大利亚|🇦🇺)"
 
 FilterFR: &FilterFR 
-  "^(?=.*((?i)(法国|🇫🇷)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:法国|🇫🇷)"
 
 FilterDE: &FilterDE 
-  "^(?=.*((?i)(德国|🇩🇪)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:德国|🇩🇪)"
 
 FilterTW: &FilterTW 
-  "^(?=.*((?i)(台湾|🇹🇼)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗).*(?:台湾|🇹🇼)"
+
+FilterCA: &FilterCA 
+  "^(?!.*🔗).*(?:加拿大|🇨🇦)"
 
 FilterOthers: &FilterOthers 
-  "^(?!.*((?i)(香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸|德国|🇩🇪|英国|🇬🇧|韩国|🇰🇷|法国|🇫🇷|澳大利亚|🇦🇺)))(?!.*((?i)(🔗))).*$"
+  "^(?!.*(?:🔗|中国|🇨🇳|香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸|德国|🇩🇪|英国|🇬🇧|韩国|🇰🇷|法国|🇫🇷|澳大利亚|🇦🇺|加拿大|🇨🇦))"
 
 FilterAll: &FilterAll 
-  "^(?!.*((?i)(🔗))).*$"
+  "^(?!.*🔗)"
 
 # Proxy Group Templates
 Select: &Select
@@ -275,31 +282,41 @@ Select_Proxies: &Select_Proxies
   include-all: true
   proxies: [
             🎯代理, 🌐其他,
-            🔗链式代理, DIRECT, 
+            🔗链式代理, ➡️直连, 
+
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
-            ⛔阻断, ↩️绕过,
+
+            ⛔阻断, ↩️绕过, 
+
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
-            🇦🇺手动选择, 🇬🇧手动选择, 
-            🇫🇷手动选择, 🇩🇪手动选择, 
-            🇭🇰自动选择, 🇸🇬自动选择, 
-            🇺🇸自动选择, 🇹🇼自动选择, 
-            🇯🇵自动选择, 🇰🇷自动选择, 
-            🇦🇺自动选择, 🇬🇧自动选择, 
-            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
             🇭🇰故障转移, 🇸🇬故障转移, 
             🇺🇸故障转移, 🇹🇼故障转移, 
             🇯🇵故障转移, 🇰🇷故障转移, 
-            🇦🇺故障转移, 🇬🇧故障转移, 
-            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
+
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
+
             🇭🇰负载均衡, 🇸🇬负载均衡, 
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡
             ]
 
 
@@ -312,28 +329,37 @@ Select_Main: &Select_Main
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
-            DIRECT, 🔗链式代理, 
+
+            ➡️直连, 🔗链式代理, 
             ⛔阻断, ↩️绕过, 
+
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
-            🇦🇺手动选择, 🇬🇧手动选择, 
-            🇫🇷手动选择, 🇩🇪手动选择, 
-            🇭🇰自动选择, 🇸🇬自动选择, 
-            🇺🇸自动选择, 🇹🇼自动选择, 
-            🇯🇵自动选择, 🇰🇷自动选择, 
-            🇦🇺自动选择, 🇬🇧自动选择, 
-            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
             🇭🇰故障转移, 🇸🇬故障转移, 
             🇺🇸故障转移, 🇹🇼故障转移, 
             🇯🇵故障转移, 🇰🇷故障转移, 
-            🇦🇺故障转移, 🇬🇧故障转移, 
-            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
+
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
+
             🇭🇰负载均衡, 🇸🇬负载均衡, 
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡
             ]
 
 
@@ -346,28 +372,85 @@ Dialer: &Dialer
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
-            DIRECT, ⛔阻断, 
+
+            ➡️直连, ⛔阻断, 
+
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
-            🇦🇺手动选择, 🇬🇧手动选择, 
-            🇫🇷手动选择, 🇩🇪手动选择, 
-            🇭🇰自动选择, 🇸🇬自动选择, 
-            🇺🇸自动选择, 🇹🇼自动选择, 
-            🇯🇵自动选择, 🇰🇷自动选择, 
-            🇦🇺自动选择, 🇬🇧自动选择, 
-            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
             🇭🇰故障转移, 🇸🇬故障转移, 
             🇺🇸故障转移, 🇹🇼故障转移, 
             🇯🇵故障转移, 🇰🇷故障转移, 
-            🇦🇺故障转移, 🇬🇧故障转移, 
-            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
+
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
+
             🇭🇰负载均衡, 🇸🇬负载均衡, 
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡
             ]
+
+
+China: &China
+  type: select
+  disable-udp: false
+  hidden: false
+  include-all: true
+  proxies: [
+            🇨🇳手动选择, 
+
+            🎯代理, 🌐其他,
+            🔗链式代理, ➡️直连, 
+
+            🟨手动选择, 🟦手动选择, 
+            🟢故障转移, 🟣故障转移, 
+            🔶自动选择, 🔷自动选择, 
+
+            ⛔阻断, ↩️绕过, 
+
+            🇭🇰手动选择, 🇸🇬手动选择, 
+            🇺🇸手动选择, 🇹🇼手动选择, 
+            🇯🇵手动选择, 🇰🇷手动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 
+
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
+
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
+
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡
+            ]
+
 
 Global_Select: &Global_Select
   type: select
@@ -378,11 +461,14 @@ Global_Select: &Global_Select
             🎯代理, 🌐其他, 
             🔗链式代理, 
             ⛔阻断, ↩️绕过, 
+
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             🧩手动其他, 📋手动全部, 
+
             中转, 落地, 
+
             Pornhub, 
             TikTok, 
             Netflix, 
@@ -403,28 +489,37 @@ Global_Select: &Global_Select
             OpenAI, 
             Apple, 
             Microsoft, 
+            China, 
+
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
-            🇦🇺手动选择, 🇬🇧手动选择, 
-            🇫🇷手动选择, 🇩🇪手动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
             🇭🇰故障转移, 🇸🇬故障转移, 
             🇺🇸故障转移, 🇹🇼故障转移, 
             🇯🇵故障转移, 🇰🇷故障转移, 
-            🇦🇺故障转移, 🇬🇧故障转移, 
-            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
             🧩回退其他, 📋回退全部,
+
             🇭🇰自动选择, 🇸🇬自动选择, 
             🇺🇸自动选择, 🇹🇼自动选择, 
             🇯🇵自动选择, 🇰🇷自动选择, 
-            🇦🇺自动选择, 🇬🇧自动选择, 
-            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
             🧩自动其他, 📋自动全部, 
+
             🇭🇰负载均衡, 🇸🇬负载均衡, 
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡, 
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡, 
             🧩均衡其他, 📋均衡全部
             ]
 
@@ -437,14 +532,18 @@ Global: &Global
   include-all: true
   proxies: [
             ☀️全局, 
+
             🎯代理, 🌐其他, 
             🔗链式代理, 
             ⛔阻断, ↩️绕过, 
+
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
             🔶自动选择, 🔷自动选择, 
             🧩手动其他, 📋手动全部, 
+
             中转, 落地, 
+
             Pornhub, 
             TikTok, 
             Netflix, 
@@ -465,28 +564,37 @@ Global: &Global
             OpenAI, 
             Apple, 
             Microsoft, 
+            China, 
+
             🇭🇰手动选择, 🇸🇬手动选择, 
             🇺🇸手动选择, 🇹🇼手动选择, 
             🇯🇵手动选择, 🇰🇷手动选择, 
-            🇦🇺手动选择, 🇬🇧手动选择, 
-            🇫🇷手动选择, 🇩🇪手动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
             🇭🇰故障转移, 🇸🇬故障转移, 
             🇺🇸故障转移, 🇹🇼故障转移, 
             🇯🇵故障转移, 🇰🇷故障转移, 
-            🇦🇺故障转移, 🇬🇧故障转移, 
-            🇫🇷故障转移, 🇩🇪故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
             🧩回退其他, 📋回退全部,
+
             🇭🇰自动选择, 🇸🇬自动选择, 
             🇺🇸自动选择, 🇹🇼自动选择, 
             🇯🇵自动选择, 🇰🇷自动选择, 
-            🇦🇺自动选择, 🇬🇧自动选择, 
-            🇫🇷自动选择, 🇩🇪自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
             🧩自动其他, 📋自动全部, 
+
             🇭🇰负载均衡, 🇸🇬负载均衡, 
             🇺🇸负载均衡, 🇹🇼负载均衡, 
             🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇦🇺负载均衡, 🇬🇧负载均衡, 
-            🇫🇷负载均衡, 🇩🇪负载均衡, 
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡, 
             🧩均衡其他, 📋均衡全部
             ]
 
@@ -530,6 +638,12 @@ proxy-groups:
 
 
   ### Hidden
+
+  - name: ➡️直连
+    type: select
+    proxies: [DIRECT]
+    hidden: true
+
   - name: ↩️绕过
     type: select
     proxies: [PASS]
@@ -548,38 +662,74 @@ proxy-groups:
 
   - name: 🟨手动选择
     type: select
-    proxies: [🇭🇰手动选择, 🇸🇬手动选择, 🇺🇸手动选择, 🇹🇼手动选择, 🇯🇵手动选择, 
-              🇰🇷手动选择, 🇦🇺手动选择, 🇬🇧手动选择, 🇫🇷手动选择, 🇩🇪手动选择]
+    proxies: [
+              🇭🇰手动选择, 🇸🇬手动选择, 
+              🇺🇸手动选择, 🇹🇼手动选择, 
+              🇯🇵手动选择, 🇰🇷手动选择, 
+              🇨🇦手动选择, 🇦🇺手动选择, 
+              🇬🇧手动选择, 🇫🇷手动选择, 
+              🇩🇪手动选择, 🇨🇳手动选择
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ji.png"
 
   - name: 🟦手动选择
     type: select
-    proxies: [🇭🇰手动选择, 🇸🇬手动选择, 🇺🇸手动选择, 🇹🇼手动选择, 🇯🇵手动选择, 
-              🇰🇷手动选择, 🇦🇺手动选择, 🇬🇧手动选择, 🇫🇷手动选择, 🇩🇪手动选择]
+    proxies: [
+              🇭🇰手动选择, 🇸🇬手动选择, 
+              🇺🇸手动选择, 🇹🇼手动选择, 
+              🇯🇵手动选择, 🇰🇷手动选择, 
+              🇨🇦手动选择, 🇦🇺手动选择, 
+              🇬🇧手动选择, 🇫🇷手动选择, 
+              🇩🇪手动选择, 🇨🇳手动选择
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ni.png"
 
   - name: 🟢故障转移
     type: select
-    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
-              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
+    proxies: [
+              🇭🇰故障转移, 🇸🇬故障转移, 
+              🇺🇸故障转移, 🇹🇼故障转移, 
+              🇯🇵故障转移, 🇰🇷故障转移, 
+              🇨🇦故障转移, 🇦🇺故障转移, 
+              🇬🇧故障转移, 🇫🇷故障转移, 
+              🇩🇪故障转移, 🇨🇳故障转移
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/tai.png"
 
   - name: 🟣故障转移
     type: select
-    proxies: [🇭🇰故障转移, 🇸🇬故障转移, 🇺🇸故障转移, 🇹🇼故障转移, 🇯🇵故障转移, 
-              🇰🇷故障转移, 🇦🇺故障转移, 🇬🇧故障转移, 🇫🇷故障转移, 🇩🇪故障转移]
+    proxies: [
+              🇭🇰故障转移, 🇸🇬故障转移, 
+              🇺🇸故障转移, 🇹🇼故障转移, 
+              🇯🇵故障转移, 🇰🇷故障转移, 
+              🇨🇦故障转移, 🇦🇺故障转移, 
+              🇬🇧故障转移, 🇫🇷故障转移, 
+              🇩🇪故障转移, 🇨🇳故障转移
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/mei.png"
 
   - name: 🔶自动选择
     type: select
-    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
-              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
+    proxies: [
+              🇭🇰自动选择, 🇸🇬自动选择, 
+              🇺🇸自动选择, 🇹🇼自动选择, 
+              🇯🇵自动选择, 🇰🇷自动选择, 
+              🇨🇦自动选择, 🇦🇺自动选择, 
+              🇬🇧自动选择, 🇫🇷自动选择, 
+              🇩🇪自动选择, 🇨🇳自动选择
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
 
   - name: 🔷自动选择
     type: select
-    proxies: [🇭🇰自动选择, 🇸🇬自动选择, 🇺🇸自动选择, 🇹🇼自动选择, 🇯🇵自动选择, 
-              🇰🇷自动选择, 🇦🇺自动选择, 🇬🇧自动选择, 🇫🇷自动选择, 🇩🇪自动选择]
+    proxies: [
+              🇭🇰自动选择, 🇸🇬自动选择, 
+              🇺🇸自动选择, 🇹🇼自动选择, 
+              🇯🇵自动选择, 🇰🇷自动选择, 
+              🇨🇦自动选择, 🇦🇺自动选择, 
+              🇬🇧自动选择, 🇫🇷自动选择, 
+              🇩🇪自动选择, 🇨🇳自动选择
+              ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
 
   - name: 🧩手动其他
@@ -693,6 +843,13 @@ proxy-groups:
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Microsoft.png"
 
+  ### China
+  - name: China
+    <<: *China
+    filter: *FilterAll
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/China.png"
+
+
   ### Select
   - name: 🇭🇰手动选择
     <<: *Select
@@ -744,6 +901,17 @@ proxy-groups:
     filter: *FilterDE
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Germany.png"
 
+  - name: 🇨🇳手动选择
+    <<: *Select
+    filter: *FilterCN
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/China.png"
+
+  - name: 🇨🇦手动选择
+    <<: *Select
+    filter: *FilterCA
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Canada.png"
+
+
   ### FallBack
   - name: 🇭🇰故障转移
     <<: *FallBack
@@ -784,6 +952,14 @@ proxy-groups:
   - name: 🇩🇪故障转移
     <<: *FallBack
     filter: *FilterDE
+
+  - name: 🇨🇳故障转移
+    <<: *FallBack
+    filter: *FilterCN
+
+  - name: 🇨🇦故障转移
+    <<: *FallBack
+    filter: *FilterCA
 
   - name: 🧩回退其他
     <<: *FallBack
@@ -834,6 +1010,14 @@ proxy-groups:
     <<: *Auto
     filter: *FilterDE
 
+  - name: 🇨🇳自动选择
+    <<: *Auto
+    filter: *FilterCN
+
+  - name: 🇨🇦自动选择
+    <<: *Auto
+    filter: *FilterCA
+
   - name: 🧩自动其他
     <<: *Auto
     filter: *FilterOthers
@@ -882,6 +1066,14 @@ proxy-groups:
   - name: 🇩🇪负载均衡
     <<: *LoadBalance
     filter: *FilterDE
+
+  - name: 🇨🇳负载均衡
+    <<: *LoadBalance
+    filter: *FilterCN
+
+  - name: 🇨🇦负载均衡
+    <<: *LoadBalance
+    filter: *FilterCA
 
   - name: 🧩均衡其他
     <<: *LoadBalance
@@ -1121,7 +1313,7 @@ rules:
   - RULE-SET,LAN,DIRECT
 
   # Steam
-  - RULE-SET,SteamCN,DIRECT
+  - RULE-SET,SteamCN,China
   - RULE-SET,Steam,Steam
 
   # Epic
@@ -1179,8 +1371,8 @@ rules:
   - RULE-SET,Cloudflare,Cloudflare
 
   # ChinaDIRECT
-  - RULE-SET,ChinaDirectSite,DIRECT
-  - RULE-SET,ChinaDirectIP,DIRECT
-  - RULE-SET,ChinaDirectAdd,DIRECT
+  - RULE-SET,ChinaDirectSite,China
+  - RULE-SET,ChinaDirectIP,China
+  - RULE-SET,ChinaDirectAdd,China
 
   - MATCH,🌐其他
