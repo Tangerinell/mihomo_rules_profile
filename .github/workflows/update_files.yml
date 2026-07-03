@@ -83,7 +83,6 @@ jobs:
 
 
 
-            "icon/China.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
 
             "icon/Vpn.png|https://raw.githubusercontent.com/Orz-3/mini/master/Color/Vpn.png"
 
@@ -154,6 +153,10 @@ jobs:
             "icon/France.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png"
 
             "icon/Germany.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png"
+
+            "icon/China.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
+
+            "icon/Canada.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Canada.png"
           )
 
           for jntm in "${LISTS[@]}"; do
