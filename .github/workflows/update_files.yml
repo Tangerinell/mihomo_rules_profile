@@ -162,11 +162,11 @@ jobs:
 
 
 
-            "rules/Roblox_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/roblox.mrs"
+            "rules/Ex_Roblox_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/roblox.mrs"
 
-            "rules/Roblox_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/roblox.yaml"
+            "rules/Ex_Roblox_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/roblox.yaml"
+
             
-
 
 
 
@@ -208,7 +208,7 @@ jobs:
 
             "icon/gemini-color.png|https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-png/dark/gemini-color.png"
 
-            "icon/YouTube.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png"
+            "icon/YouTube.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
 
             "icon/Emby.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
 
@@ -224,7 +224,7 @@ jobs:
 
             "icon/GitHub.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"
 
-            "icon/Google.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png"
+            "icon/Google.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
 
             "icon/Discord.png|https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png"
 
