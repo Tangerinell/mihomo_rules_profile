@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.27
-# 2026-07-06 01:55:00
+# 2026-07-06 15:04:00
 
 JNTM: &JNTM
     interval: 43200
@@ -633,7 +633,7 @@ proxy-groups:
 
   - name: 落地
     <<: *Select
-    filter: "^(?=.*(🔗)).*$"
+    filter: "🔗"
     empty-fallback: REJECT
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Airport.png"
 
