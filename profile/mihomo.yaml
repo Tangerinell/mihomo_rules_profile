@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.27
-# 2026-07-06 15:04:00
+# 2026-07-06 17:45:00
 
 JNTM: &JNTM
     interval: 43200
@@ -77,7 +77,7 @@ port: 0
 redir-port: 0
 tproxy-port: 0
 mode: rule
-log-level: error
+log-level: warning
 ipv6: true
 find-process-mode: always
 
@@ -86,7 +86,7 @@ bind-address: "*"
 
 ### External Controller
 external-controller: 0.0.0.0:9090
-external-ui: UI
+external-ui: ui
 
 external-ui-url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/other/ui/dist.zip"
 external-ui-name: zashboard
