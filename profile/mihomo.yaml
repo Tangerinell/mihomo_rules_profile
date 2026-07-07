@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.27
-# 2026-07-06 17:45:00
+# 2026-07-07 16:43:00
 
 JNTM: &JNTM
     interval: 43200
@@ -1356,23 +1356,23 @@ rule-providers:
     path: "./rule_set/Instagram_geosite.mrs"
 
 
-  Ex_Pornhub:
+  Pornhub_classical:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
-    path-in-bundle: "Ex_Pornhub.yaml"
-    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Ex_Pornhub.yaml"
-    path: "./rule_set/Ex_Pornhub.yaml"
+    path-in-bundle: "Pornhub_classical.yaml"
+    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Pornhub_classical.yaml"
+    path: "./rule_set/Pornhub_classical.yaml"
 
-  Ex_Epic:
+  Epic_classical:
     type: http
     behavior: classical
     interval: 43200
     proxy: 🎯代理
-    path-in-bundle: "Ex_Epic.yaml"
-    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Ex_Epic.yaml"
-    path: "./rule_set/Ex_Epic.yaml"
+    path-in-bundle: "Epic_classical.yaml"
+    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Epic_classical.yaml"
+    path: "./rule_set/Epic_classical.yaml"
 
 # Rules
 rules:
@@ -1386,7 +1386,7 @@ rules:
   - RULE-SET,Steam_geosite,Steam
 
   # Epic
-  - RULE-SET,Ex_Epic,Epic
+  - RULE-SET,Epic_classical,Epic
 
   # Telegram
   - RULE-SET,Telegram_geosite,Telegram
@@ -1411,7 +1411,7 @@ rules:
   - RULE-SET,TikTok_geosite,TikTok
 
   # Pornhub
-  - RULE-SET,Ex_Pornhub,Pornhub
+  - RULE-SET,Pornhub_classical,Pornhub
 
   # Gemini
   - RULE-SET,Gemini_geosite,Gemini
