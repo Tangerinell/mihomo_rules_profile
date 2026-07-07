@@ -19,28 +19,46 @@ jobs:
     env:
       # 待压缩的文件或文件夹路径（例如：'src/' 或 'data.txt'）
       TARGET_PATH: 'rules/' 
-      
+
       # 自定义输出文件夹（如果不存在会自动创建）
       OUTPUT_DIR: '.' 
-      
+
       # 压缩包的名称
       OUTPUT_FILENAME: 'BundleMRS.7z' 
-
+    
     # ============================
-
+    
     steps:
+      # STREAMING_CHUNK:Checking out repository...
       # 1. 拉取仓库代码
       - name: Checkout repository
-        uses: actions/checkout@v6
-
+        uses: actions/checkout@v4 # 建议更新到较新的 v4 版本
+    
+      # STREAMING_CHUNK:Installing 7zip...
       # 2. 安装 7zip 工具
       - name: Install p7zip
         run: sudo apt-get update && sudo apt-get install -y p7zip-full
+    
+      # STREAMING_CHUNK:Setting up directories and cleaning old archives...
+      # 3. 创建输出文件夹并清理旧的压缩包
+      - name: Prepare output directory and clean old archive
+        run: |
+          # 创建输出文件夹
+          mkdir -p ${{ env.OUTPUT_DIR }}
 
-      # 3. 创建输出文件夹
-      - name: Create output directory
-        run: mkdir -p ${{ env.OUTPUT_DIR }}
+          # 定义压缩包的完整路径
+          ARCHIVE_PATH="${{ github.workspace }}/${{ env.OUTPUT_DIR }}/${{ env.OUTPUT_FILENAME }}"
 
+          # 检查旧的压缩包是否存在，如果存在则删除，防止合并压缩
+          if [ -f "$ARCHIVE_PATH" ]; then
+            echo "发现旧的压缩包: $ARCHIVE_PATH,正在删除..."
+            rm -f "$ARCHIVE_PATH"
+            echo "旧压缩包已删除。"
+          else
+            echo "未发现旧的压缩包，直接进行压缩。"
+          fi
+    
+      # STREAMING_CHUNK:Compressing files...
       # 4. 执行 7z 压缩命令
       - name: Compress to 7z
         run: |
@@ -48,17 +66,18 @@ jobs:
           # 使用 ${{ github.workspace }} 提供绝对路径，确保输出位置正确
           cd ${{ env.TARGET_PATH }}
           7z a -t7z ${{ github.workspace }}/${{ env.OUTPUT_DIR }}/${{ env.OUTPUT_FILENAME }} .
-
+    
+      # STREAMING_CHUNK:Committing and pushing changes...
       # 5. 提交并推送生成的压缩包到仓库
       - name: Commit and Push changes
         run: |
           # 配置 Git 机器人账号
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           # 添加生成的 7z 文件
           git add ${{ env.OUTPUT_DIR }}/${{ env.OUTPUT_FILENAME }}
-          
+
           # 检查是否有文件变动（如果文件内容没变，就不提交，防止报错）
           if git diff --staged --quiet; then
             echo "没有检测到文件变动，无需提交。"
