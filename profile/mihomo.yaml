@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.28
-# 2026-07-08 18:33:00
+# 2026-07-08 20:22:00
 
 JNTM: &JNTM
     interval: 43200
@@ -532,6 +532,7 @@ Global: &Global
   disable-udp: false
   hidden: false
   include-all: true
+  default-selected: 🎯默认
   proxies: [
             ⚙️模式, 
 
@@ -613,7 +614,6 @@ proxy-groups:
   - name: GLOBAL
     <<: *Global
     filter: *FilterAll
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Daily.png"
 
   - name: ⚙️模式
     <<: *Global_Select
