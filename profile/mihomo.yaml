@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.28
-# 2026-07-08 20:22:00
+# 2026-07-09 03:24:00
 
 JNTM: &JNTM
     interval: 43200
@@ -261,6 +261,78 @@ LoadBalance: &LoadBalance
   strategy: consistent-hashing
 
 
+Route: &Route
+  type: select
+  disable-udp: false
+  hidden: false
+  include-all: true
+  proxies: [ 
+            🔀分流, ➡️直连, 
+
+            🟨手动选择, 🟦手动选择, 
+            🟢故障转移, 🟣故障转移, 
+            🔶自动选择, 🔷自动选择, 
+            🧩手动其他, 📋手动全部, 
+
+            🎯默认, 🌐其他,
+            🔗链式代理, 
+            ⛔阻断, ↩️绕过, 
+
+            Pornhub, 
+            TikTok, 
+            Netflix, 
+            YouTube, 
+            Gemini, 
+            Google, 
+            Emby, 
+            GlobalMedia, 
+            Cloudflare, 
+            Epic, 
+            Steam, 
+            Telegram, 
+            GitHub,
+            Instagram, 
+            Discord, 
+            Spotify, 
+            PikPak, 
+            OpenAI, 
+            Apple, 
+            Microsoft, 
+            China, 
+
+            🇭🇰手动选择, 🇸🇬手动选择, 
+            🇺🇸手动选择, 🇹🇼手动选择, 
+            🇯🇵手动选择, 🇰🇷手动选择, 
+            🇨🇦手动选择, 🇦🇺手动选择, 
+            🇬🇧手动选择, 🇫🇷手动选择, 
+            🇩🇪手动选择, 🇨🇳手动选择, 
+
+            🇭🇰故障转移, 🇸🇬故障转移, 
+            🇺🇸故障转移, 🇹🇼故障转移, 
+            🇯🇵故障转移, 🇰🇷故障转移, 
+            🇨🇦故障转移, 🇦🇺故障转移, 
+            🇬🇧故障转移, 🇫🇷故障转移, 
+            🇩🇪故障转移, 🇨🇳故障转移, 
+            🧩回退其他, 📋回退全部,
+
+            🇭🇰自动选择, 🇸🇬自动选择, 
+            🇺🇸自动选择, 🇹🇼自动选择, 
+            🇯🇵自动选择, 🇰🇷自动选择, 
+            🇨🇦自动选择, 🇦🇺自动选择, 
+            🇬🇧自动选择, 🇫🇷自动选择, 
+            🇩🇪自动选择, 🇨🇳自动选择, 
+            🧩自动其他, 📋自动全部, 
+
+            🇭🇰负载均衡, 🇸🇬负载均衡, 
+            🇺🇸负载均衡, 🇹🇼负载均衡, 
+            🇯🇵负载均衡, 🇰🇷负载均衡, 
+            🇨🇦负载均衡, 🇦🇺负载均衡, 
+            🇬🇧负载均衡, 🇫🇷负载均衡, 
+            🇩🇪负载均衡, 🇨🇳负载均衡, 
+            🧩均衡其他, 📋均衡全部
+            ]
+
+
 Select_Main: &Select_Main
   type: select
   disable-udp: false
@@ -354,7 +426,7 @@ Dialer: &Dialer
             ]
 
 
-Select_Proxies: &Select_Proxies
+Select_General: &Select_General
   type: select
   disable-udp: false
   hidden: false
@@ -454,78 +526,6 @@ China: &China
             ]
 
 
-Global_Select: &Global_Select
-  type: select
-  disable-udp: false
-  hidden: false
-  include-all: true
-  proxies: [ 
-            🔀分流, ➡️直连, 
-
-            🟨手动选择, 🟦手动选择, 
-            🟢故障转移, 🟣故障转移, 
-            🔶自动选择, 🔷自动选择, 
-            🧩手动其他, 📋手动全部, 
-
-            🎯默认, 🌐其他,
-            🔗链式代理, 
-            ⛔阻断, ↩️绕过, 
-
-            Pornhub, 
-            TikTok, 
-            Netflix, 
-            YouTube, 
-            Gemini, 
-            Google, 
-            Emby, 
-            GlobalMedia, 
-            Cloudflare, 
-            Epic, 
-            Steam, 
-            Telegram, 
-            GitHub,
-            Instagram, 
-            Discord, 
-            Spotify, 
-            PikPak, 
-            OpenAI, 
-            Apple, 
-            Microsoft, 
-            China, 
-
-            🇭🇰手动选择, 🇸🇬手动选择, 
-            🇺🇸手动选择, 🇹🇼手动选择, 
-            🇯🇵手动选择, 🇰🇷手动选择, 
-            🇨🇦手动选择, 🇦🇺手动选择, 
-            🇬🇧手动选择, 🇫🇷手动选择, 
-            🇩🇪手动选择, 🇨🇳手动选择, 
-
-            🇭🇰故障转移, 🇸🇬故障转移, 
-            🇺🇸故障转移, 🇹🇼故障转移, 
-            🇯🇵故障转移, 🇰🇷故障转移, 
-            🇨🇦故障转移, 🇦🇺故障转移, 
-            🇬🇧故障转移, 🇫🇷故障转移, 
-            🇩🇪故障转移, 🇨🇳故障转移, 
-            🧩回退其他, 📋回退全部,
-
-            🇭🇰自动选择, 🇸🇬自动选择, 
-            🇺🇸自动选择, 🇹🇼自动选择, 
-            🇯🇵自动选择, 🇰🇷自动选择, 
-            🇨🇦自动选择, 🇦🇺自动选择, 
-            🇬🇧自动选择, 🇫🇷自动选择, 
-            🇩🇪自动选择, 🇨🇳自动选择, 
-            🧩自动其他, 📋自动全部, 
-
-            🇭🇰负载均衡, 🇸🇬负载均衡, 
-            🇺🇸负载均衡, 🇹🇼负载均衡, 
-            🇯🇵负载均衡, 🇰🇷负载均衡, 
-            🇨🇦负载均衡, 🇦🇺负载均衡, 
-            🇬🇧负载均衡, 🇫🇷负载均衡, 
-            🇩🇪负载均衡, 🇨🇳负载均衡, 
-            🧩均衡其他, 📋均衡全部
-            ]
-
-
 ### Determine the order of Proxy Groups
 Global: &Global
   type: select
@@ -534,7 +534,7 @@ Global: &Global
   include-all: true
   default-selected: 🎯默认
   proxies: [
-            ⚙️模式, 
+            ⚙️路由, 
 
             🎯默认, 🌐其他, 
             🔗链式代理, ➡️直连, 
@@ -615,8 +615,8 @@ proxy-groups:
     <<: *Global
     filter: *FilterAll
 
-  - name: ⚙️模式
-    <<: *Global_Select
+  - name: ⚙️路由
+    <<: *Route
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Daily.png"
 
@@ -751,102 +751,102 @@ proxy-groups:
 
   ### Services
   - name: Pornhub
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Pornhub_2.png"
 
   - name: TikTok
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/TikTok_2.png"
 
   - name: Netflix
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Netflix.png"
 
   - name: Gemini
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/gemini-color.png"
 
   - name: YouTube
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/YouTube.png"
 
   - name: Emby
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Emby.png"
 
   - name: GlobalMedia
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Streaming.png"
 
   - name: Cloudflare
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Cloudflare.png"
 
   - name: Epic
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Epic_Games.png"
 
   - name: Steam
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Steam.png"
 
   - name: Telegram
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Telegram_X.png"
 
   - name: GitHub
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/GitHub.png"
 
   - name: Google
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Google.png"
 
   - name: Discord
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Discord.png"
 
   - name: Instagram
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Instagram.png"
 
   - name: Spotify
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Spotify.png"
 
   - name: PikPak
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/PikPak.png"
 
   - name: OpenAI
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ChatGPT.png"
 
   - name: Apple
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Apple.png"
 
   - name: Microsoft
-    <<: *Select_Proxies
+    <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Microsoft.png"
 
@@ -1380,9 +1380,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Epic_classical.yaml"
     path: "./rule_set/Epic_classical.yaml"
 
+
+rules:
+  - MATCH,⚙️路由
+
+
 sub-rules:
   rematch_sub-rule:
-
 
     # private
     - RULE-SET,private_geosite,DIRECT
@@ -1455,7 +1459,3 @@ sub-rules:
     - RULE-SET,CN_geoip,China
   
     - MATCH,🌐其他
-
-
-rules:
-  - MATCH,⚙️模式
