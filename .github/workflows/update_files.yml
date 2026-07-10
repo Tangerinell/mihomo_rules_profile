@@ -131,12 +131,6 @@ jobs:
             "rules/PikPak_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/pikpak.mrs"
             
             "rules/PikPak_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/pikpak.yaml"
-
-
-
-            "rules/GlobalMedia_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-media.mrs"
-            
-            "rules/GlobalMedia_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-media.yaml"
             
 
 
@@ -161,6 +155,28 @@ jobs:
             "rules/Instagram_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/instagram.yaml"
 
 
+
+            "rules/Cryptocurrency_geosite.mrs|https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"
+
+            "rules/Cryptocurrency_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.yaml"
+
+
+
+            "rules/GoogleFCM_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"
+
+            "rules/GoogleFCM_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.yaml"
+
+
+
+            "rules/xAI_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/xai.mrs"
+
+            "rules/xAI_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/xai.yaml"
+
+
+
+            "rules/Anthropic_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/anthropic.mrs"
+
+            "rules/Anthropic_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/anthropic.yaml"
 
 
 
