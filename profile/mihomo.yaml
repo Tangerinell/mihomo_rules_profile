@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # v1.19.28
-# 2026-07-11 07:24:00
+# 2026-07-11 17:44:00
 
 JNTM: &JNTM
     interval: 43200
@@ -169,8 +169,16 @@ sniffer:
         - 443
         - 8443
 
-# Node Filters
+# NTP
+ntp:
+  enable: true
+  write-to-system: false
+  server: time.apple.com
+  port: 123
+  interval: 30
+  dialer-proxy: DIRECT
 
+# Node Filters
 FilterCN: &FilterCN 
   "^(?!.*(?:🔗|🔀分流|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(?:中国|🇨🇳)"
 
