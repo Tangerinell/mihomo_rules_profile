@@ -2,7 +2,7 @@ payload:
     - yt3.googleusercontent.com
     - +.youtube
     - +.youtube.ru
-    - +.youtube.az
+    - +.youtube.iq
     - +.ytimg.com
     - +.withyoutube.com
     - +.youtu.be
@@ -12,7 +12,7 @@ payload:
     - +.youtube.al
     - +.youtube.am
     - +.youtube.at
-    - +.youtube.ro
+    - +.youtube.az
     - +.youtube.ba
     - +.youtube.be
     - +.youtube.bg
@@ -22,7 +22,7 @@ payload:
     - +.youtube.ca
     - +.youtube.cat
     - +.youtube.ch
-    - +.youtube.qa
+    - +.youtube.cl
     - +.youtube.co
     - +.youtubemobilesupport.com
     - +.youtubekids.com
@@ -40,7 +40,7 @@ payload:
     - +.youtube.tn
     - +.youtube.sv
     - +.youtube.soy
-    - +.youtube.rs
+    - +.youtube.sn
     - +.youtube.sk
     - +.ggpht.com
     - +.youtube.com
@@ -49,9 +49,9 @@ payload:
     - +.youtube.se
     - +.youtube.sa
     - +.youtube.ee
-    - +.youtube.sn
     - +.googlevideo.com
-    - +.youtube.cl
+    - +.youtube.qa
+    - +.youtube.rs
     - +.youtube.pt
     - +.youtube.pr
     - +.youtube.pl
@@ -82,7 +82,7 @@ payload:
     - +.youtube.jo
     - +.youtube.it
     - +.youtube.is
-    - +.youtube.iq
+    - +.youtube.ro
     - +.youtube.in
     - +.youtube.ie
     - +.youtube.hu
