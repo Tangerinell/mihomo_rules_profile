@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
-# Version v1.19.28
-# Date 2026-07-14 11:25:00
+# Version: v1.19.28
+# Updated: 2026-07-19 16:36:00
 
 JNTM: &JNTM
     interval: 43200
@@ -175,53 +175,53 @@ sniffer:
 ntp:
   enable: true
   write-to-system: false
-  server: time.apple.com
+  server: pool.ntp.org
   port: 123
   interval: 30
   dialer-proxy: DIRECT
 
 # Node Filters
 FilterCN: &FilterCN 
-  "^(?!.*(🔗|🔀分流|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(中国|🇨🇳)"
+  "^(?!.*(🔗|🔀规则|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(中国|🇨🇳)"
 
 FilterHK: &FilterHK 
-  "^(?!.*(🔗|🔀分流)).*(香港|🇭🇰)"
+  "^(?!.*(🔗|🔀规则)).*(香港|🇭🇰)"
 
 FilterJP: &FilterJP 
-  "^(?!.*(🔗|🔀分流)).*(日本|🇯🇵)"
+  "^(?!.*(🔗|🔀规则)).*(日本|🇯🇵)"
 
 FilterKR: &FilterKR 
-  "^(?!.*(🔗|🔀分流)).*(韩国|🇰🇷)"
+  "^(?!.*(🔗|🔀规则)).*(韩国|🇰🇷)"
 
 FilterSG: &FilterSG 
-  "^(?!.*(🔗|🔀分流)).*(新加坡|🇸🇬)"
+  "^(?!.*(🔗|🔀规则)).*(新加坡|🇸🇬)"
 
 FilterUS: &FilterUS 
-  "^(?!.*(🔗|🔀分流)).*(美国|🇺🇸)"
+  "^(?!.*(🔗|🔀规则)).*(美国|🇺🇸)"
 
 FilterUK: &FilterUK 
-  "^(?!.*(🔗|🔀分流)).*(英国|🇬🇧)"
+  "^(?!.*(🔗|🔀规则)).*(英国|🇬🇧)"
 
 FilterAU: &FilterAU 
-  "^(?!.*(🔗|🔀分流)).*(澳大利亚|🇦🇺)"
+  "^(?!.*(🔗|🔀规则)).*(澳大利亚|🇦🇺)"
 
 FilterFR: &FilterFR 
-  "^(?!.*(🔗|🔀分流)).*(法国|🇫🇷)"
+  "^(?!.*(🔗|🔀规则)).*(法国|🇫🇷)"
 
 FilterDE: &FilterDE 
-  "^(?!.*(🔗|🔀分流)).*(德国|🇩🇪)"
+  "^(?!.*(🔗|🔀规则)).*(德国|🇩🇪)"
 
 FilterTW: &FilterTW 
-  "^(?!.*(🔗|🔀分流)).*(台湾|🇹🇼)"
+  "^(?!.*(🔗|🔀规则)).*(台湾|🇹🇼)"
 
 FilterCA: &FilterCA 
-  "^(?!.*(🔗|🔀分流)).*(加拿大|🇨🇦)"
+  "^(?!.*(🔗|🔀规则)).*(加拿大|🇨🇦)"
 
 FilterOthers: &FilterOthers 
-  "^(?!.*(🔗|🔀分流|中国|🇨🇳|香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸|德国|🇩🇪|英国|🇬🇧|韩国|🇰🇷|法国|🇫🇷|澳大利亚|🇦🇺|加拿大|🇨🇦))"
+  "^(?!.*(🔗|🔀规则|中国|🇨🇳|香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸|德国|🇩🇪|英国|🇬🇧|韩国|🇰🇷|法国|🇫🇷|澳大利亚|🇦🇺|加拿大|🇨🇦))"
 
 FilterAll: &FilterAll 
-  "^(?!.*(🔗|🔀分流))"
+  "^(?!.*(🔗|🔀规则))"
 
 # Proxy Group Templates
 Select: &Select
@@ -277,7 +277,7 @@ Route: &Route
   hidden: false
   include-all: true
   proxies: [ 
-            🔀分流, ➡️直连, 
+            🔀规则, ➡️直连, 
 
             🟨手动选择, 🟦手动选择, 
             🟢故障转移, 🟣故障转移, 
@@ -622,7 +622,7 @@ Global: &Global
 
 # REMATCH Proxy
 proxies:
-  - name: 🔀分流
+  - name: 🔀规则
     type: rematch
     target-sub-rule: "rematch_sub-rule"
 
