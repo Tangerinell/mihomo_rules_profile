@@ -6,6 +6,26 @@ payload:
     - statics-marketingsites-eas-ms-com.akamaized.net
     - statics-marketingsites-eus-ms-com.akamaized.net
     - statics-marketingsites-wcus-ms-com.akamaized.net
+    - az764295.vo.msecnd.net
+    - bingsettingssearch.trafficmanager.net
+    - default.exp-tas.com
+    - developer.microsoft.com
+    - dtlgalleryint.cloudapp.net
+    - packages.microsoft.com
+    - poshtestgallery.cloudapp.net
+    - psg-int-centralus.cloudapp.net
+    - psg-int-eastus.cloudapp.net
+    - rink.hockeyapp.net
+    - vscode-sync-insiders.trafficmanager.net
+    - vscode-sync.trafficmanager.net
+    - vscode.blob.core.windows.net
+    - vscode.search.windows.net
+    - vsmarketplacebadge.apphb.com
+    - crl.microsoft.com
+    - mscrl.microsoft.com
+    - ocsp.microsoft.com
+    - oneocsp.microsoft.com
+    - www.microsoft.com
     - flightsimulator.azureedge.net
     - prodforza.blob.core.windows.net
     - azure.microsoft.com
@@ -41,26 +61,6 @@ payload:
     - copilot-proxy.githubusercontent.com
     - copilot-workspace.githubnext.com
     - copilotprodattachments.blob.core.windows.net
-    - az764295.vo.msecnd.net
-    - bingsettingssearch.trafficmanager.net
-    - default.exp-tas.com
-    - developer.microsoft.com
-    - dtlgalleryint.cloudapp.net
-    - packages.microsoft.com
-    - poshtestgallery.cloudapp.net
-    - psg-int-centralus.cloudapp.net
-    - psg-int-eastus.cloudapp.net
-    - rink.hockeyapp.net
-    - vscode-sync-insiders.trafficmanager.net
-    - vscode-sync.trafficmanager.net
-    - vscode.blob.core.windows.net
-    - vscode.search.windows.net
-    - vsmarketplacebadge.apphb.com
-    - crl.microsoft.com
-    - mscrl.microsoft.com
-    - ocsp.microsoft.com
-    - oneocsp.microsoft.com
-    - www.microsoft.com
     - +.microsoft
     - +.hotmail
     - +.office
@@ -71,7 +71,7 @@ payload:
     - +.xbox
     - +.onedriveupdater
     - +.onedrive
-    - +.microsoftapp.net
+    - +.appcenter.ms
     - +.microsoft.pl
     - +.microsoft.com
     - +.microsoft.cz
@@ -92,7 +92,7 @@ payload:
     - +.microsoft.lv
     - +.microsoft.md
     - +.microsoft.net
-    - +.livefilestore.com
+    - +.dot.net
     - +.microsoft.pt
     - +.microsoft.red
     - +.microsoft.ro
@@ -108,7 +108,7 @@ payload:
     - +.m12.vc
     - +.a-msedge.net
     - +.aka.ms
-    - +.sharepoint.cn
+    - +.devopsassessment.net
     - +.applicationinsights.io
     - +.applicationinsights.net
     - +.aria.ms
@@ -165,7 +165,6 @@ payload:
     - +.l-msedge.net
     - +.latampartneruniversity.com
     - +.live.com
-    - +.start.com
     - +.live.eu
     - +.live.net
     - +.livingyourambition.com
@@ -185,7 +184,7 @@ payload:
     - +.microsoftadvertising.com
     - +.microsoftadvertisingregionalawards.com
     - +.microsoftaffiliates.com
-    - +.microsoft.ch
+    - +.microsoftapp.net
     - +.microsoftcloud.com
     - +.microsoftcloudworkshop.com
     - +.microsoftcommunitytraining.com
@@ -202,7 +201,6 @@ payload:
     - +.microsoftready.com
     - +.microsoftsiteselection.com
     - +.microsoftstore.com
-    - +.microsoftstart.com
     - +.microsoftstream.com
     - +.microsoftteams.com
     - +.microsofttradein.com
@@ -300,27 +298,102 @@ payload:
     - +.windowscommunity.net
     - +.windowsmarketplace.com
     - +.windowsphone-int.com
+    - +.windowsphone.com
     - +.windowssearch.com
-    - +.windowsupdate.com
+    - +.gamesstack.com
     - +.winhec.com
     - +.winhec.net
     - +.yammer.com
-    - +.msnkids.com
+    - +.adaptivecards.io
+    - +.api-extractor.com
+    - +.githubcopilot.com
+    - +.npmjs.org
+    - +.apisof.net
+    - +.microsoft.ch
+    - +.blazor.net
+    - +.botframework.com
+    - +.codethemicrobit.com
+    - +.ankarazirvesi2018.com
+    - +.microsoft.cl
+    - +.windowsupdate.com
+    - +.graphengine.io
+    - +.insiderdevtour.com
+    - +.jwt.ms
+    - +.microbit.org
+    - +.microsoftadc.com
+    - +.microsoftgamestack.com
+    - +.microsoftiotinsiderlabs.com
+    - +.microsoftreactor.info
+    - +.microsoftreactor.net
+    - +.microsoftreactor.org
+    - +.microsoftsilverlight.com
+    - +.microsoftsilverlight.net
+    - +.microsoftsilverlight.org
+    - +.microsoftsqlserver.com
+    - +.mmdnn.com
+    - +.mono-project.com
+    - +.msdn.com
+    - +.msinnovationchallenge.com
+    - +.mspairlift.com
+    - +.msropendata.com
+    - +.nuget.org
+    - +.nugettest.org
+    - +.opentranslatorstothings.org
+    - +.poshtestgallery.com
+    - +.pwabuilder.com
+    - +.sankie.net
+    - +.sqlserveronlinux.com
+    - +.timelinestoryteller.com
+    - +.uwpcommunitytoolkit.com
+    - +.vfsforgit.com
+    - +.vfsforgit.org
+    - +.visualstudio-staging.com
+    - +.visualstudio.co
+    - +.visualstudio.com
+    - +.visualstudio.eu
+    - +.visualstudio.net
+    - +.vsassets.io
+    - +.vscode-cdn.net
+    - +.vscode-unpkg.net
+    - +.vscode-webview.net
+    - +.vscode.dev
+    - +.vscodeedu.app
+    - +.vscodeedu.com
+    - +.xamarin.com
+    - +.npmjs.com
+    - +.npm.community
+    - +.thegithubshop.com
+    - +.msocsp.com
+    - +.microsoftnews.cc
+    - +.microsoftnews.com
+    - +.microsoftnews.net
+    - +.microsoftnews.org
+    - +.microsoftnewsforkids.com
+    - +.microsoftnewsforkids.net
+    - +.microsoftnewsforkids.org
+    - +.microsoftnewskids.com
+    - +.microsoftnewskids.net
+    - +.microsoftnewskids.org
+    - +.msn.com
+    - +.msnewskids.com
+    - +.msnewskids.net
     - +.msnewskids.org
+    - +.msnkids.com
+    - +.microsoftstart.com
+    - +.start.com
     - +.microsoft.cat
     - +.microsoft.ca
     - +.onedrive.com
-    - +.ankarazirvesi2018.com
-    - +.microsoft.cl
-    - +.windowsphone.com
+    - +.sharepoint.cn
+    - +.livefilestore.com
     - +.1drv.com
-    - +.msnewskids.net
-    - +.msnewskids.com
-    - +.msn.com
-    - +.microsoftnewskids.org
-    - +.microsoftnewskids.net
-    - +.microsoftnewskids.com
-    - +.microsoftnewsforkids.org
+    - +.repo.new
+    - +.opensource.guide
+    - +.octocaptcha.com
+    - +.myoctocat.com
+    - +.githubusercontent.com
+    - +.githubuniverse.com
+    - +.githubstatus.com
     - +.microsoft.by
     - +.gamepass.com
     - +.orithegame.com
@@ -401,7 +474,6 @@ payload:
     - +.azurestackvalidation.com
     - +.azurestaticapps.net
     - +.azurewebsites.net
-    - +.botframework.com
     - +.cosmosdb.info
     - +.cosmosdb.net
     - +.devopsms.com
@@ -451,8 +523,8 @@ payload:
     - +.sprinklesapp.com
     - +.copilot-stg.com
     - +.copilot.com
-    - +.microsoftnewsforkids.net
-    - +.microsoftnewsforkids.com
+    - +.githubpreview.dev
+    - +.githubnext.com
     - +.atom.io
     - +.dependabot.com
     - +.gh.io
@@ -469,81 +541,9 @@ payload:
     - +.githubapp.com
     - +.githubassets.com
     - +.githubhackathon.com
-    - +.githubnext.com
-    - +.githubpreview.dev
-    - +.githubstatus.com
-    - +.githubuniverse.com
-    - +.githubusercontent.com
-    - +.myoctocat.com
-    - +.octocaptcha.com
-    - +.opensource.guide
-    - +.repo.new
-    - +.thegithubshop.com
-    - +.githubcopilot.com
-    - +.npm.community
-    - +.npmjs.com
-    - +.npmjs.org
-    - +.adaptivecards.io
-    - +.api-extractor.com
-    - +.apisof.net
-    - +.appcenter.ms
-    - +.blazor.net
-    - +.codethemicrobit.com
-    - +.devopsassessment.net
-    - +.dot.net
-    - +.gamesstack.com
-    - +.graphengine.io
-    - +.insiderdevtour.com
-    - +.jwt.ms
-    - +.microbit.org
-    - +.microsoftadc.com
-    - +.microsoftgamestack.com
-    - +.microsoftiotinsiderlabs.com
-    - +.microsoftreactor.info
-    - +.microsoftreactor.net
-    - +.microsoftreactor.org
-    - +.microsoftsilverlight.com
-    - +.microsoftsilverlight.net
-    - +.microsoftsilverlight.org
-    - +.microsoftsqlserver.com
-    - +.mmdnn.com
-    - +.mono-project.com
-    - +.msdn.com
-    - +.msinnovationchallenge.com
-    - +.mspairlift.com
-    - +.msropendata.com
-    - +.nuget.org
-    - +.nugettest.org
-    - +.opentranslatorstothings.org
-    - +.poshtestgallery.com
-    - +.pwabuilder.com
-    - +.sankie.net
-    - +.sqlserveronlinux.com
-    - +.timelinestoryteller.com
-    - +.uwpcommunitytoolkit.com
-    - +.vfsforgit.com
-    - +.vfsforgit.org
-    - +.visualstudio-staging.com
-    - +.visualstudio.co
-    - +.visualstudio.com
-    - +.visualstudio.eu
-    - +.visualstudio.net
-    - +.vsassets.io
-    - +.vscode-cdn.net
-    - +.vscode-unpkg.net
-    - +.vscode-webview.net
-    - +.vscode.dev
-    - +.vscodeedu.app
-    - +.vscodeedu.com
-    - +.xamarin.com
-    - +.microsoftnews.org
-    - +.msocsp.com
-    - +.microsoftnews.cc
-    - +.microsoftnews.com
-    - +.microsoftnews.net
+    - +.visualstudio.co.uk
     - +.microsoftstore.com.hk
     - +.live.com.au
-    - +.visualstudio.co.uk
     - +.spoprod-a.akamaihd.net
     - +.skypedata.akadns.net
     - +.skype-edf.akadns.net
@@ -636,6 +636,14 @@ payload:
     - vscode.download.prss.microsoft.com
     - vz.download.prss.microsoft.com
     - windbg.download.prss.microsoft.com
+    - +.microsoftreactor.cn
+    - +.microsoftreactor.com.cn
+    - +.reactorms.com.cn
+    - download.visualstudio.microsoft.com
+    - +.microsoftnews.cn
+    - +.msn.cn
+    - +.browser.events.data.msn.cn
+    - +.browser.events.data.msn.com
     - +.xboxlive.cn
     - +.21vbc.com
     - +.21vbluecloud.com
@@ -739,11 +747,3 @@ payload:
     - +.collector.github.com
     - copilot-telemetry-service.githubusercontent.com
     - copilot-telemetry.githubusercontent.com
-    - +.microsoftreactor.cn
-    - +.microsoftreactor.com.cn
-    - +.reactorms.com.cn
-    - download.visualstudio.microsoft.com
-    - +.microsoftnews.cn
-    - +.msn.cn
-    - +.browser.events.data.msn.cn
-    - +.browser.events.data.msn.com
