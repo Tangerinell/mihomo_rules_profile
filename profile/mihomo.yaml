@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Version: v1.19.28
-# Updated: 2026-07-20 13:27:00
+# Updated: 2026-07-20 13:48:00
 
 JNTM: &JNTM
     interval: 43200
@@ -159,6 +159,9 @@ dns:
     
     'rule-set:private_geosite': 
     - system
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.alidns.com/dns-query
 
   nameserver:
     - https://cloudflare-dns.com/dns-query
