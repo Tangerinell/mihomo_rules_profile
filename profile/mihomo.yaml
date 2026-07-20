@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Version: v1.19.28
-# Updated: 2026-07-20 13:48:00
+# Updated: 2026-07-20 15:05:00
 
 JNTM: &JNTM
     interval: 43200
@@ -138,13 +138,13 @@ dns:
     - RULE-SET,private_geosite,real-ip
     - MATCH,fake-ip
 
-  default-nameserver:
-    - 1.1.1.1
-    - 2606:4700:4700::1111
-    - 8.8.8.8
-    - 2001:4860:4860::8888
-    - 223.5.5.5
-    - 2400:3200::1
+  default-nameserver: 
+    - https://1.1.1.1/dns-query
+    - https://[2606:4700:4700::1111]/dns-query
+    - https://8.8.8.8/dns-query
+    - https://[2001:4860:4860::8888]/dns-query
+    - https://223.5.5.5/dns-query
+    - https://[2400:3200::1]/dns-query
     
   proxy-server-nameserver:
     - https://cloudflare-dns.com/dns-query
