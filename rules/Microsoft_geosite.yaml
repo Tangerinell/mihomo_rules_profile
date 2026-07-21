@@ -26,8 +26,8 @@ payload:
     - ocsp.microsoft.com
     - oneocsp.microsoft.com
     - www.microsoft.com
-    - flightsimulator.azureedge.net
     - prodforza.blob.core.windows.net
+    - flightsimulator.azureedge.net
     - azure.microsoft.com
     - azuremarketplace.microsoft.com
     - location.microsoft.com
@@ -306,8 +306,8 @@ payload:
     - +.yammer.com
     - +.adaptivecards.io
     - +.api-extractor.com
-    - +.githubcopilot.com
     - +.npmjs.org
+    - +.npmjs.com
     - +.apisof.net
     - +.microsoft.ch
     - +.blazor.net
@@ -360,8 +360,8 @@ payload:
     - +.vscodeedu.app
     - +.vscodeedu.com
     - +.xamarin.com
-    - +.npmjs.com
     - +.npm.community
+    - +.githubcopilot.com
     - +.thegithubshop.com
     - +.msocsp.com
     - +.microsoftnews.cc
@@ -418,8 +418,6 @@ payload:
     - +.xboxservices.com
     - +.xboxstudios.com
     - +.xbx.lv
-    - +.asobostudio.com
-    - +.flightsimulator.com
     - +.beth.games
     - +.bethesda.net
     - +.bethesdagamestudios.com
@@ -436,6 +434,8 @@ payload:
     - +.minecraftservices.com
     - +.minecraftshop.com
     - +.mojang.com
+    - +.asobostudio.com
+    - +.flightsimulator.com
     - +.microsoft.be
     - +.aadrm.com
     - +.azure-api.net
