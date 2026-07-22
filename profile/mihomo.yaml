@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Version: v1.19.28
-# Updated: 2026-07-22 03:14:00
+# Updated: 2026-07-22 16:14:00
 
 JNTM: &JNTM
     interval: 43200
@@ -1551,7 +1551,6 @@ sub-rules:
     - RULE-SET,Cloudflare_geoip,Cloudflare
   
     # China
-    - RULE-SET,CN_geosite,China
     - RULE-SET,CN_geoip,China
   
     - MATCH,🌐其他
