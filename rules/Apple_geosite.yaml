@@ -2,6 +2,13 @@ payload:
     - apple.com.akadns.net
     - configuration-lb.ls-apple.com.akadns.net
     - push-apple.com.akadns.net
+    - notary-submissions-prod.s3-accelerate.amazonaws.com
+    - notary-submissions-prod.s3.us-west-2.amazonaws.com
+    - appleworldwidedeveloper.hb-api.omtrdc.net
+    - appleworldwidedeveloper.sc.omtrdc.net
+    - p-events-delivery.akamaized.net
+    - beatselectronicsllc.tt.omtrdc.net
+    - www-cdn.icloud.com.akadns.net
     - apple-tv-plus-press.apple.com
     - hls-amt.itunes.apple.com
     - hls.itunes.apple.com
@@ -9,16 +16,9 @@ payload:
     - play-edge.itunes.apple.com
     - tv.applemusic.com
     - uts-api.itunes.apple.com
-    - beatselectronicsllc.tt.omtrdc.net
-    - notary-submissions-prod.s3-accelerate.amazonaws.com
-    - notary-submissions-prod.s3.us-west-2.amazonaws.com
-    - appleworldwidedeveloper.hb-api.omtrdc.net
-    - appleworldwidedeveloper.sc.omtrdc.net
-    - p-events-delivery.akamaized.net
-    - www-cdn.icloud.com.akadns.net
     - +.apple
-    - +.drebeatssolocybermondaysale.com
-    - +.monsterbeatssydneyaustralia.com
+    - +.drebeatsheadphones-nz.com
+    - +.drebeatsoutletstore.com
     - +.apple.be
     - +.apple.bg
     - +.apple.bs
@@ -184,11 +184,20 @@ payload:
     - +.applestore.cc
     - +.applestore.ch
     - +.applestore.cm
+    - +.wwwapplemusic.com
+    - +.musickit.net
+    - +.applemusicfestival.com
+    - +.applemusicconnect.com
+    - +.applestore.com
+    - +.applemusic.wang
+    - +.applemusic.hamburg
+    - +.applemusic.com
+    - +.applemusic.co
+    - +.applemusic.berlin
     - +.wwwicloud.com
     - +.mylcloud.net
     - +.myicloud.net
     - +.me.com
-    - +.applestore.com
     - +.ios-icloud.com
     - +.icloudsetup.com
     - +.icloudsecure.net
@@ -196,21 +205,12 @@ payload:
     - +.icloudos.de
     - +.icloudo.net
     - +.icloudo.de
-    - +.icloudo.com
-    - +.icloudpay.net
-    - +.icloudnet.net
-    - +.icloudmusic.net
-    - +.icloudmail.net
-    - +.icloudhome.com
-    - +.icloude.com
-    - +.icloudbrowser.net
-    - +.icloudbox.net
     - +.applestore.de
     - +.applestore.hk
     - +.applestore.kr
     - +.applestore.me
     - +.applestore.net
-    - +.icloudads.net
+    - +.icloudo.com
     - +.applestore.ph
     - +.applestore.qa
     - +.applestore.sg
@@ -221,7 +221,7 @@ payload:
     - +.appletv.com
     - +.appletv.fr
     - +.appletv.wang
-    - +.icloud.vn
+    - +.icloudpay.net
     - +.applewatch.hk
     - +.applewatch.tv
     - +.applewatch.tw
@@ -231,7 +231,7 @@ payload:
     - +.applewatchsport.com
     - +.i-book.com
     - +.i-book.net
-    - +.beatsbydrdrecustom.com
+    - +.beatsbydrdre-online.com
     - +.ibook.com
     - +.ibook.eu
     - +.ibook.net
@@ -242,7 +242,7 @@ payload:
     - +.imac-apple.com
     - +.imac-applecomputer.com
     - +.imac.co
-    - +.icloud.sk
+    - +.icloudnet.net
     - +.imac.com
     - +.imac.eu
     - +.imac.gr
@@ -257,15 +257,15 @@ payload:
     - +.euroipad.com
     - +.findmyipad.com
     - +.indiaipad.com
-    - +.icloud.si
+    - +.icloudmusic.net
     - +.ipad.de
     - +.ipad.host
     - +.ipad.wang
     - +.ipad3.com
     - +.ipadair.cl
     - +.ipadair.cm
-    - +.icloud.se
-    - +.icloud.ro
+    - +.icloudmail.net
+    - +.icloudhome.com
     - +.ipadair.fr
     - +.ipadair.hk
     - +.ipadair.ie
@@ -273,7 +273,7 @@ payload:
     - +.ipadair.tw
     - +.ipadaustralia.com
     - +.ipadmini.cm
-    - +.icloud.pt
+    - +.icloude.com
     - +.ipadmini.lk
     - +.ipadpro.buzz
     - +.ukipad.com
@@ -284,15 +284,15 @@ payload:
     - +.ipod.ch
     - +.ipod.cm
     - +.ipod.co
-    - +.icloud.org
-    - +.icloud.om
-    - +.icloud.lv
+    - +.icloudbrowser.net
+    - +.icloudbox.net
+    - +.icloudads.net
     - +.ipod.com
-    - +.icloud.jp
-    - +.icloud.is
-    - +.icloud.ie
-    - +.icloud.hu
-    - +.icloud.fr
+    - +.icloud.vn
+    - +.icloud.sk
+    - +.icloud.si
+    - +.icloud.se
+    - +.icloud.ro
     - +.ipod.de
     - +.ipod.es
     - +.ipod.eu
@@ -313,9 +313,9 @@ payload:
     - +.ipodnano.net
     - +.ipodprices.com
     - +.ipodrip.ca
-    - +.icloud.fi
+    - +.icloud.pt
     - +.ipods.com
-    - +.icloud.ee
+    - +.icloud.org
     - +.ipodtouch.co
     - +.ipodtouch.com
     - +.myipod.net
@@ -347,27 +347,27 @@ payload:
     - +.iphone-zh.com
     - +.iphone.cm
     - +.iphone.com
-    - +.icloud.de
-    - +.icloud.com
+    - +.icloud.om
+    - +.icloud.lv
     - +.iphone.es
     - +.iphone.host
-    - +.icloud.ch
+    - +.icloud.jp
     - +.iphone.pt
     - +.iphone.rs
     - +.iphone.ru
     - +.iphone.wang
     - +.iphone4.com
-    - +.icloud-sandbox.com
+    - +.icloud.is
     - +.iphone4s.com
     - +.iphone5.com
     - +.iphone5casescovers.com
     - +.iphone5s5case.com
-    - +.icloud-isupport.com
+    - +.icloud.ie
     - +.iphonecase2013.com
     - +.iphonecase5.com
     - +.iphonecases100.com
     - +.iphonecases5.com
-    - +.icloud-content.com
+    - +.icloud.hu
     - +.iphonecollcase.com
     - +.iphonefc.com
     - +.iphonegermany.com
@@ -390,11 +390,11 @@ payload:
     - +.macbook.hk
     - +.macbook.tw
     - +.macbook.wang
-    - +.applemx-icloud.com
-    - +.wwwapplemusic.com
+    - +.icloud.fr
+    - +.icloud.fi
     - +.macbookair.com
-    - +.apple.at
-    - +.musickit.net
+    - +.icloud.ee
+    - +.icloud.de
     - +.macbookair.es
     - +.macbookair.hk
     - +.macbookair.kr
@@ -402,7 +402,7 @@ payload:
     - +.macbookair.net
     - +.macbookpro.co
     - +.macbookpro.com
-    - +.applemusicfestival.com
+    - +.icloud.com
     - +.macbookpro.net
     - +.macbookpro.us
     - +.macbookpros.com
@@ -416,13 +416,13 @@ payload:
     - +.darwinsource.com
     - +.darwinsource.org
     - +.darwinsourcecode.com
-    - +.applemusicconnect.com
+    - +.icloud.ch
     - +.macossierra.com
     - +.macosx.info
     - +.macosxlion.com
     - +.shazam.com
-    - +.applemusic.wang
-    - +.applemusic.hamburg
+    - +.icloud-sandbox.com
+    - +.icloud-isupport.com
     - +.5lml.com
     - +.a0pple.net
     - +.aapl.tw
@@ -458,28 +458,28 @@ payload:
     - +.appleafrica.com
     - +.appleantilles.com
     - +.appleaustralia.com
-    - +.applemusic.com
-    - +.applemusic.co
+    - +.icloud-content.com
+    - +.applemx-icloud.com
     - +.applebk.net
     - +.applecarbon.com
     - +.applecard.tv
-    - +.applemusic.berlin
+    - +.yourmonsterbeats.com
     - +.applecentar.rs
-    - +.servicetalk.io
+    - +.worldcoinpay.com
     - +.applecentre.info
-    - +.researchkit.tv
+    - +.wholesaleonlinemart.com
     - +.applecom.com
     - +.applecomputer-imac.com
-    - +.researchkit.org
-    - +.researchkit.net
+    - +.wholesalefine.com
+    - +.wholesalediscountpurses.com
     - +.applecomputer.com
-    - +.researchkit.hk
-    - +.researchandcare.org
+    - +.wholesale-exporter1.com
+    - +.wasdj.com
     - +.applecomputer.hu
     - +.applecomputer.kr
     - +.applecomputerimac.com
     - +.applecomputerinc.info
-    - +.carekit.org
+    - +.vipshoes2.com
     - +.applecoronavirus.com
     - +.appleexpo.eu
     - +.appleexpo.info
@@ -489,20 +489,21 @@ payload:
     - +.applefinalcutproworld.net
     - +.applefinalcutproworld.org
     - +.applehongkong.com
-    - +.webkitgtk.org
+    - +.vipheadphones.com
     - +.appleinclegal.com
     - +.appleipodsettlement.com
     - +.appleiservices.com
     - +.applelink.com
     - +.applemagickeyboard.com
+    - +.vipbeatsbydre.com
     - +.applemasters.info
     - +.appleonline.com
     - +.appleonline.net
     - +.appleoriginalproductions.com
     - +.appleos.tv
     - +.applepencil.net
-    - +.macosforge.org
-    - +.2014cheapbeatsbydre.com
+    - +.vip-beats.com
+    - +.v-has.com
     - +.applereach.com
     - +.applereach.net
     - +.apples-msk.ru
@@ -510,7 +511,7 @@ payload:
     - +.applescreensavers.com
     - +.applescript.info
     - +.appleshare.info
-    - +.apple-cloudkit.com
+    - +.usa-beatsbydreheadphonesonsale.net
     - +.applesurveys.com
     - +.appletaiwan.com
     - +.appletips.net
@@ -562,7 +563,7 @@ payload:
     - +.earpod.net
     - +.ecgapp.net
     - +.edu-research.org
-    - +.macruby.org
+    - +.unstyle.us
     - +.emac.in
     - +.emagic.de
     - +.eworld.com
@@ -576,10 +577,10 @@ payload:
     - +.firewire.eu
     - +.geoport.com
     - +.hopstop.tv
-    - +.foundationdb.org
+    - +.ubnw.net
     - +.idvd.eu
     - +.ikids.com
-    - +.calendarserver.org
+    - +.tteshop.com
     - +.ilife.eu
     - +.ilife.gr
     - +.ilife.wang
@@ -597,10 +598,10 @@ payload:
     - +.jetfuelapps.com
     - +.latticedata.com
     - +.livephotos.tv
-    - +.wpewebkit.org
+    - +.tradevip1.com
     - +.mac-mini.com
     - +.mac.com
-    - +.webobjects.com
+    - +.topbeatsforsale.com
     - +.mac.eu
     - +.mac.rs
     - +.macappsto.re
@@ -615,7 +616,7 @@ payload:
     - +.macreach.com
     - +.macreach.net
     - +.mobileme.dk
-    - +.appleswift.com
+    - +.topbeatsdealer.com
     - +.mzstatic.com
     - +.newton.com
     - +.next.com
@@ -625,7 +626,7 @@ payload:
     - +.quatrowireless.com
     - +.quicktime.cc
     - +.quicktime.com
-    - +.swift.org
+    - +.topbeatsbydrdreoutlet.com
     - +.quicktime.eu
     - +.quicktime.net
     - +.quicktime.tv
@@ -640,7 +641,7 @@ payload:
     - +.tracking-location.com
     - +.truedepth3d.com
     - +.tryrating.com
-    - +.cups.org
+    - +.theuab.net
     - +.webobjects.de
     - +.webobjects.eu
     - +.webobjects.net
@@ -657,31 +658,36 @@ payload:
     - +.xn--hxtr4rozx.xn--czr694b
     - +.xn--kput3imi374g.xn--hxt814e
     - +.xn--ruq8a011kt6y.xn--hxt814e
-    - +.macruby.net
-    - +.applepodcasts.com
+    - +.thebeatsheadphonesale.com
     - +.macruby.com
-    - +.yourmonsterbeats.com
-    - +.worldcoinpay.com
-    - +.wholesaleonlinemart.com
-    - +.wholesalefine.com
-    - +.wholesalediscountpurses.com
-    - +.wholesale-exporter1.com
-    - +.wasdj.com
-    - +.vipshoes2.com
-    - +.vipheadphones.com
-    - +.vipbeatsbydre.com
-    - +.vip-beats.com
-    - +.v-has.com
-    - +.usa-beatsbydreheadphonesonsale.net
-    - +.unstyle.us
-    - +.ubnw.net
-    - +.tteshop.com
-    - +.tradevip1.com
-    - +.topbeatsforsale.com
-    - +.topbeatsdealer.com
-    - +.beatsbydrdredanmark.com
-    - +.topbeatsbydrdreoutlet.com
-    - +.theuab.net
+    - +.macruby.net
+    - +.cups.org
+    - +.swift.org
+    - +.appleswift.com
+    - +.webobjects.com
+    - +.wpewebkit.org
+    - +.calendarserver.org
+    - +.foundationdb.org
+    - +.macruby.org
+    - +.apple-cloudkit.com
+    - +.webkit.org
+    - +.macosforge.org
+    - +.webkitgtk.org
+    - +.carekit.org
+    - +.researchandcare.org
+    - +.researchkit.hk
+    - +.researchkit.net
+    - +.researchkit.org
+    - +.researchkit.tv
+    - +.beatsbydrdre-onsale.com
+    - +.thebeatsbydre.net
+    - +.thebeatsbydre.com
+    - +.the-monster-beats.com
+    - +.takegoto.com
+    - +.szwinnertechnology.com
+    - +.szcheapmonsterheadphones.com
+    - +.applepodcasts.com
+    - +.sverigebeatsbydrdre.com
     - +.100beatscheap.com
     - +.1monsterbeatsbydreus.com
     - +.2013beatsbydrdreonline.com
@@ -689,9 +695,9 @@ payload:
     - +.2013beatsbydreshop.com
     - +.2013beatshdcybermonday.com
     - +.2013cheapestbeats.com
-    - +.monsterbeatsbydrebilligde.com
-    - +.thebeatsbydre.com
-    - +.webkit.org
+    - +.2013newbeatsworld.com
+    - +.2013pascherbeatsbydre.com
+    - +.2014cheapbeatsbydre.com
     - +.2beatsdre.com
     - +.2buybeatsbydre.com
     - +.2drdrebeats.com
@@ -763,15 +769,15 @@ payload:
     - +.beatsblackfridayretails.com
     - +.beatsboxingdayuksale.com
     - +.beatsbydrdre-headphones.com
-    - +.beatsbydrdre-officials5.com
-    - +.beatsbydrdre-online.com
-    - +.beatsbydrdre-onsale.com
+    - +.monsterbydrebeat.com
+    - +.sustainthesound.com
+    - +.servicetalk.io
     - +.beatsbydrdre-store.com
     - +.beatsbydrdre-store.us
     - +.beatsbydrdre4sale.com
-    - +.monsterheadphone.net
-    - +.thebeatsheadphonesale.com
-    - +.thebeatsbydre.net
+    - +.beatsbydrdrebiz.com
+    - +.beatsbydrdrecustom.com
+    - +.beatsbydrdredanmark.com
     - +.beatsbydrdremall.com
     - +.beatsbydrdreoutlet.com
     - +.beatsbydrdres.com
@@ -1139,13 +1145,13 @@ payload:
     - +.drebeatscanada.com
     - +.drebeatsdeutschland.net
     - +.drebeatsforsaleus.com
-    - +.drebeatsheadphones-nz.com
+    - +.apple.ae
     - +.drebeatshome.com
-    - +.drebeatsoutletstore.com
+    - +.apple.at
     - +.drebeatsoldes.com
     - +.drebeatspill.com
     - +.drebeatssite.com
-    - +.apple.ae
+    - +.drebeatssolocybermondaysale.com
     - +.drebeatsstudio2013.com
     - +.drebeatstudio.com
     - +.drebyby.com
@@ -1244,7 +1250,7 @@ payload:
     - +.monsterbeatsbydre-usa.com
     - +.monsterbeatsbydre2015.com
     - +.monsterbeatsbydreaustraliacheap.com
-    - +.2013newbeatsworld.com
+    - +.monsterbeatsbydrebilligde.com
     - +.monsterbeatsbydrefactory.com
     - +.monsterbeatsbydrenew.com
     - +.monsterbeatsbydres.com
@@ -1269,17 +1275,17 @@ payload:
     - +.monsterbeatssales.com
     - +.monsterbeatsshops.net
     - +.monsterbeatsstore.com
-    - +.2013pascherbeatsbydre.com
+    - +.monsterbeatssydneyaustralia.com
     - +.monsterbeatstang.com
     - +.monsterbeatstienda.com
     - +.monsterbeatstudio.com
-    - +.monsterbydrebeat.com
+    - +.beatsbydrdre-officials5.com
     - +.monstercasquebeatspascher.net
     - +.monstercheapbeatss.com
     - +.monsterdrebeats-canada.net
     - +.monsterdrebeats-usa.com
     - +.monsterdrebeats-usa.net
-    - +.beatsbydrdrebiz.com
+    - +.monsterheadphone.net
     - +.monsterproduct.net
     - +.monstersbeatbydres.com
     - +.monstersdebea.com
@@ -1360,14 +1366,8 @@ payload:
     - +.sunglassessale2014.com
     - +.superearsenjoy.com
     - +.supplybestjerseys.com
-    - +.sustainthesound.com
-    - +.sverigebeatsbydrdre.com
-    - +.szcheapmonsterheadphones.com
-    - +.szwinnertechnology.com
-    - +.takegoto.com
-    - +.the-monster-beats.com
-    - +.macbookair.com.au
-    - +.ibook.co.nz
+    - +.appleshop.co.uk
+    - +.ipod.co.nz
     - +.webobjects.co.uk
     - +.quicktime.com.au
     - +.mr-apple.com.tw
@@ -1376,7 +1376,7 @@ payload:
     - +.ilecture.co.nz
     - +.ichat.co.in
     - +.emac.co.in
-    - +.appleshop.co.uk
+    - +.applestore.com.eg
     - +.applepremiumresellers.com.au
     - +.applepremiumreseller.com.au
     - +.applemalaysia.com.my
@@ -1390,14 +1390,14 @@ payload:
     - +.applecentre.com.au
     - +.applecentar.co.rs
     - +.appleaustralia.net.au
-    - +.appleaustralia.com.au
+    - +.applestore.com.gr
     - +.1to1conference.com.au
     - +.1to1computing.com.au
     - +.macos.com.au
     - +.macbookpro.com.au
     - +.macbookair.com.es
+    - +.macbookair.com.au
     - +.macbookair.co.uk
-    - +.applemusic.com.au
     - +.macbookair.co.kr
     - +.iphoneclaro.com.br
     - +.iphoneacessorios.com.br
@@ -1414,7 +1414,6 @@ payload:
     - +.ipod.com.au
     - +.ipod.co.za
     - +.ipod.co.uk
-    - +.ipod.co.nz
     - +.ipadmini.com.lk
     - +.ipadair.com.es
     - +.ipadair.com.br
@@ -1423,7 +1422,7 @@ payload:
     - +.apple-watch.com.ru
     - +.applestore.net.gr
     - +.applestore.com.tw
-    - +.applestore.com.sn
+    - +.ibook.co.nz
     - +.applestore.com.ru
     - +.applestore.com.ro
     - +.applestore.com.pt
@@ -1433,15 +1432,16 @@ payload:
     - +.applestore.com.jo
     - +.applestore.com.hr
     - +.applestore.com.hk
-    - +.applestore.com.gr
-    - +.applestore.com.eg
-    - +.applestore.com.ee
-    - +.applestore.com.bn
+    - +.appleaustralia.com.au
+    - +.applestore.com.sn
     - +.applestore.com.au
     - +.applestore.co.uk
     - +.applestore.co.ug
     - +.applestore.co.jp
     - +.applestore.co.hu
+    - +.applemusic.com.au
+    - +.applestore.com.bn
+    - +.applestore.com.ee
     - +.applepay.com.tw
     - +.applepay.co.rs
     - +.apple.comscoreresearch.com
@@ -1703,6 +1703,10 @@ payload:
     - +.iadsdk.apple.com
     - +.iad.apple.com
     - +.qwapi.com
+    - +.researchkit.cn
+    - +.researchkit.com.cn
+    - +.swiftui.cn
+    - +.swiftui.com.cn
     - amp-api.podcasts.apple.com
     - podcasts.apple.com
     - +.beats1.cn
@@ -1712,10 +1716,14 @@ payload:
     - +.beatsbydre.com
     - +.beatsbydre.com.cn
     - +.beatsep.cn
-    - +.researchkit.cn
-    - +.researchkit.com.cn
-    - +.swiftui.cn
-    - +.swiftui.com.cn
+    - +.apple-icloud.cn
+    - +.appleicloud.cn
+    - +.icloud-apple.cn
+    - +.icloud-content.com.cn
+    - +.icloud.cn
+    - +.icloud.com.cn
+    - +.icloud.net.cn
+    - +.icloudapple.cn
     - amp-api-edge.music.apple.com
     - amp-api.music.apple.com
     - js-cdn.music.apple.com
@@ -1731,14 +1739,6 @@ payload:
     - ocsp2.apple.com
     - valid.apple.com
     - valid.origin-apple.com.akadns.net
-    - +.apple-icloud.cn
-    - +.appleicloud.cn
-    - +.icloud-apple.cn
-    - +.icloud-content.com.cn
-    - +.icloud.cn
-    - +.icloud.com.cn
-    - +.icloud.net.cn
-    - +.icloudapple.cn
     - +.apple-itunes.cn
     - +.itunes-apple.cn
     - +.itunesapple.cn
