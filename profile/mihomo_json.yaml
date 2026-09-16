@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
-# Version: v1.19.28
-# Updated: 2026-08-19 01:59:00
+# Version: v1.19.31
+# Updated: 2026-09-16 17:32:00
 
 {
   "JNTM":
@@ -59,7 +59,8 @@
           "filter": "^(?!.*(114514))"
         },
 
-      # Node-3: 
+      # Node-3: 
+
 
       "LandNode":
         {
@@ -105,7 +106,7 @@
   "tun":
     {
       "enable": true,
-      "stack": "gvisor",
+      "stack": "mips",
       "mtu": 9000,
       "device": "mihomo",
       "auto-route": true,
@@ -155,10 +156,14 @@
               "https://dns.google/dns-query",
               "https://dns.alidns.com/dns-query"
             ]
-          # 'subscription domain': 
-          # - https://cloudflare-dns.com/dns-query
-          # - https://dns.google/dns-query
-          # - https://dns.alidns.com/dns-query
+          # 'subscription domain': 
+
+          # - https://cloudflare-dns.com/dns-query
+
+          # - https://dns.google/dns-query
+
+          # - https://dns.alidns.com/dns-query
+
 
         },
       "nameserver": [ "https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query" ]
@@ -866,7 +871,8 @@
           "icon": "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Airport.png"
         },
 
-      ### Hidden
+      ### Hidden
+
 
       { "name": "➡️直连", "type": "select", "proxies": [ "DIRECT" ], "hidden": true },
 
