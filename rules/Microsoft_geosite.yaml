@@ -6,8 +6,13 @@ payload:
     - statics-marketingsites-eas-ms-com.akamaized.net
     - statics-marketingsites-eus-ms-com.akamaized.net
     - statics-marketingsites-wcus-ms-com.akamaized.net
-    - flightsimulator.azureedge.net
+    - crl.microsoft.com
+    - mscrl.microsoft.com
+    - ocsp.microsoft.com
+    - oneocsp.microsoft.com
+    - www.microsoft.com
     - prodforza.blob.core.windows.net
+    - flightsimulator.azureedge.net
     - azure.microsoft.com
     - azuremarketplace.microsoft.com
     - location.microsoft.com
@@ -56,11 +61,6 @@ payload:
     - vscode.blob.core.windows.net
     - vscode.search.windows.net
     - vsmarketplacebadge.apphb.com
-    - crl.microsoft.com
-    - mscrl.microsoft.com
-    - ocsp.microsoft.com
-    - oneocsp.microsoft.com
-    - www.microsoft.com
     - +.microsoft
     - +.hotmail
     - +.office
@@ -71,11 +71,11 @@ payload:
     - +.xbox
     - +.onedriveupdater
     - +.onedrive
-    - +.microsoftnews.org
-    - +.visualstudio.eu
+    - +.microsoftnews.net
+    - +.visualstudio.com
     - +.microsoft.com
     - +.microsoft.cz
-    - +.microsoftnewskids.org
+    - +.microsoftnewskids.net
     - +.microsoft.dk
     - +.microsoft.ee
     - +.microsoft.es
@@ -251,7 +251,7 @@ payload:
     - +.powerautomate.com
     - +.powerbi.com
     - +.powershellgallery.com
-    - +.msnewskids.com
+    - +.msn.com
     - +.projectsangam.com
     - +.pxt.io
     - +.s-dc-msedge.net
@@ -304,20 +304,21 @@ payload:
     - +.winhec.com
     - +.winhec.net
     - +.yammer.com
-    - +.microsoftnews.cc
-    - +.microsoftnews.com
     - +.msocsp.com
+    - +.microsoftnews.cc
     - +.xamarin.com
-    - +.microsoftnews.net
+    - +.vscodeedu.com
+    - +.microsoftnews.com
     - +.microsoft.ch
+    - +.microsoftnews.org
     - +.microsoftnewsforkids.com
     - +.microsoftnewsforkids.net
     - +.microsoftnewsforkids.org
     - +.microsoftnewskids.com
-    - +.microsoftnewskids.net
     - +.microsoft.de
     - +.microsoft.cl
     - +.projectmurphy.net
+    - +.msnewskids.com
     - +.msnewskids.net
     - +.msnewskids.org
     - +.msnkids.com
@@ -329,7 +330,6 @@ payload:
     - +.sharepoint.cn
     - +.livefilestore.com
     - +.1drv.com
-    - +.vscodeedu.com
     - +.vscodeedu.app
     - +.vscode.dev
     - +.vscode-webview.net
@@ -337,7 +337,8 @@ payload:
     - +.vscode-cdn.net
     - +.vsassets.io
     - +.visualstudio.net
-    - +.msn.com
+    - +.visualstudio.eu
+    - +.microsoftnewskids.org
     - +.microsoft.by
     - +.gamepass.com
     - +.orithegame.com
@@ -362,14 +363,6 @@ payload:
     - +.xboxservices.com
     - +.xboxstudios.com
     - +.xbx.lv
-    - +.asobostudio.com
-    - +.flightsimulator.com
-    - +.beth.games
-    - +.bethesda.net
-    - +.bethesdagamestudios.com
-    - +.bethsoft.com
-    - +.doom.com
-    - +.elderscrolls.com
     - +.forza.net
     - +.forzamotorsport.net
     - +.forzaracingchampionship.com
@@ -380,6 +373,14 @@ payload:
     - +.minecraftservices.com
     - +.minecraftshop.com
     - +.mojang.com
+    - +.asobostudio.com
+    - +.flightsimulator.com
+    - +.beth.games
+    - +.bethesda.net
+    - +.bethesdagamestudios.com
+    - +.bethsoft.com
+    - +.doom.com
+    - +.elderscrolls.com
     - +.microsoft.be
     - +.aadrm.com
     - +.azure-api.net
@@ -468,8 +469,8 @@ payload:
     - +.sprinklesapp.com
     - +.copilot-stg.com
     - +.copilot.com
-    - +.visualstudio.com
     - +.visualstudio.co
+    - +.visualstudio-staging.com
     - +.atom.io
     - +.dependabot.com
     - +.gh.io
@@ -497,10 +498,10 @@ payload:
     - +.opensource.guide
     - +.repo.new
     - +.thegithubshop.com
+    - +.githubcopilot.com
     - +.npm.community
     - +.npmjs.com
     - +.npmjs.org
-    - +.githubcopilot.com
     - +.adaptivecards.io
     - +.api-extractor.com
     - +.apisof.net
@@ -541,10 +542,9 @@ payload:
     - +.uwpcommunitytoolkit.com
     - +.vfsforgit.com
     - +.vfsforgit.org
-    - +.visualstudio-staging.com
     - +.skypedata.akadns.net
-    - +.visualstudio.co.uk
     - +.live.com.au
+    - +.visualstudio.co.uk
     - +.spoprod-a.akamaihd.net
     - +.skype-edf.akadns.net
     - +.microsoftstore.com.hk
