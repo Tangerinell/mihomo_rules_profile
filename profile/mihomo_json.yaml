@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Version: v1.19.31
-# Updated: 2026-09-16 17:32:00
+# Updated: 2026-10-11 14:51:00
 
 {
   "JNTM":
@@ -131,7 +131,11 @@
       "fake-ip-range": "198.18.0.1/16",
       "fake-ip-range6": "fdfe:dcba:9876::1/64",
       "fake-ip-filter-mode": "rule",
-      "fake-ip-filter": [ "RULE-SET,private_geosite,real-ip", "MATCH,real-ip" ],
+      "fake-ip-filter": 
+        [
+          "RULE-SET,private_geosite,real-ip", 
+          "MATCH,real-ip" 
+        ],
 
       "default-nameserver":
         [
@@ -143,11 +147,20 @@
           "https://[2400:3200::1]/dns-query"
         ],
 
-      "proxy-server-nameserver": [ "https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query", "https://dns.alidns.com/dns-query" ],
+      "proxy-server-nameserver": 
+        [ 
+          "https://cloudflare-dns.com/dns-query", 
+          "https://dns.google/dns-query", 
+          "https://dns.alidns.com/dns-query" 
+        ],
 
       "nameserver-policy":
         {
-          "rule-set:CN_geosite": [ "https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query", "https://dns.alidns.com/dns-query" ],
+          "rule-set:CN_geosite": 
+            [ "https://cloudflare-dns.com/dns-query", 
+            "https://dns.google/dns-query", 
+            "https://dns.alidns.com/dns-query" 
+            ],
 
           "rule-set:private_geosite":
             [
@@ -155,18 +168,20 @@
               "https://cloudflare-dns.com/dns-query",
               "https://dns.google/dns-query",
               "https://dns.alidns.com/dns-query"
-            ]
-          # 'subscription domain': 
-
-          # - https://cloudflare-dns.com/dns-query
-
-          # - https://dns.google/dns-query
-
-          # - https://dns.alidns.com/dns-query
-
+            ],
+          #  "subscription domain": 
+          #   [
+          #     "https://cloudflare-dns.com/dns-query",
+          #     "https://dns.google/dns-query",
+          #     "https://dns.alidns.com/dns-query",
+          #   ],
 
         },
-      "nameserver": [ "https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query" ]
+      "nameserver": 
+        [ 
+          "https://cloudflare-dns.com/dns-query", 
+          "https://dns.google/dns-query" 
+        ]
     },
 
   # Sniffer Configuration
@@ -860,6 +875,7 @@
           "name": "中转",
           <<: *Dialer,
           "filter": *FilterAll,
+          "empty-fallback": "⛔阻断",
           "icon": "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Server.png"
         },
 
