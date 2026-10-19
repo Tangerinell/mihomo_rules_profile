@@ -6,12 +6,6 @@ payload:
     - statics-marketingsites-eas-ms-com.akamaized.net
     - statics-marketingsites-eus-ms-com.akamaized.net
     - statics-marketingsites-wcus-ms-com.akamaized.net
-    - crl.microsoft.com
-    - mscrl.microsoft.com
-    - ocsp.microsoft.com
-    - oneocsp.microsoft.com
-    - www.microsoft.com
-    - flightsimulator.azureedge.net
     - prodforza.blob.core.windows.net
     - azure.microsoft.com
     - azuremarketplace.microsoft.com
@@ -61,6 +55,11 @@ payload:
     - vscode.blob.core.windows.net
     - vscode.search.windows.net
     - vsmarketplacebadge.apphb.com
+    - crl.microsoft.com
+    - mscrl.microsoft.com
+    - ocsp.microsoft.com
+    - oneocsp.microsoft.com
+    - www.microsoft.com
     - +.microsoft
     - +.hotmail
     - +.office
@@ -71,11 +70,11 @@ payload:
     - +.xbox
     - +.onedriveupdater
     - +.onedrive
-    - +.microsoftnews.net
-    - +.visualstudio.com
+    - +.microsoftnews.org
+    - +.internetexplorer.com
     - +.microsoft.com
     - +.microsoft.cz
-    - +.microsoftnewskids.net
+    - +.microsoft.de
     - +.microsoft.dk
     - +.microsoft.ee
     - +.microsoft.es
@@ -157,7 +156,7 @@ payload:
     - +.imaginecup.pl
     - +.ingads.com
     - +.internetexplorer.co
-    - +.internetexplorer.com
+    - +.microsoftnewskids.net
     - +.intunewiki.com
     - +.iotinactionevents.com
     - +.kidgrid.tv
@@ -173,7 +172,7 @@ payload:
     - +.meetfasttrack.com
     - +.meetyourdevices.com
     - +.mepn.com
-    - +.microsoftedgeinsider.com
+    - +.microsoftnewskids.com
     - +.microsoft-falcon.io
     - +.microsoft-int.com
     - +.microsoft-ppe.com
@@ -251,7 +250,7 @@ payload:
     - +.powerautomate.com
     - +.powerbi.com
     - +.powershellgallery.com
-    - +.msn.com
+    - +.projectmurphy.net
     - +.projectsangam.com
     - +.pxt.io
     - +.s-dc-msedge.net
@@ -277,7 +276,7 @@ payload:
     - +.sway-cdn.com
     - +.sway.com
     - +.sysinternals.com
-    - +.t-msedge.net
+    - +.microsoftnewskids.org
     - +.tailwindtraders.com
     - +.techhub.ms
     - +.tfsallin.net
@@ -304,20 +303,19 @@ payload:
     - +.winhec.com
     - +.winhec.net
     - +.yammer.com
-    - +.msocsp.com
     - +.microsoftnews.cc
-    - +.xamarin.com
-    - +.vscodeedu.com
     - +.microsoftnews.com
+    - +.msocsp.com
+    - +.xamarin.com
+    - +.microsoftnews.net
     - +.microsoft.ch
-    - +.microsoftnews.org
     - +.microsoftnewsforkids.com
     - +.microsoftnewsforkids.net
     - +.microsoftnewsforkids.org
-    - +.microsoftnewskids.com
-    - +.microsoft.de
+    - +.microsoftedgeinsider.com
     - +.microsoft.cl
-    - +.projectmurphy.net
+    - +.t-msedge.net
+    - +.msn.com
     - +.msnewskids.com
     - +.msnewskids.net
     - +.msnewskids.org
@@ -330,6 +328,7 @@ payload:
     - +.sharepoint.cn
     - +.livefilestore.com
     - +.1drv.com
+    - +.vscodeedu.com
     - +.vscodeedu.app
     - +.vscode.dev
     - +.vscode-webview.net
@@ -338,7 +337,6 @@ payload:
     - +.vsassets.io
     - +.visualstudio.net
     - +.visualstudio.eu
-    - +.microsoftnewskids.org
     - +.microsoft.by
     - +.gamepass.com
     - +.orithegame.com
@@ -363,8 +361,6 @@ payload:
     - +.xboxservices.com
     - +.xboxstudios.com
     - +.xbx.lv
-    - +.asobostudio.com
-    - +.flightsimulator.com
     - +.beth.games
     - +.bethesda.net
     - +.bethesdagamestudios.com
@@ -469,8 +465,8 @@ payload:
     - +.sprinklesapp.com
     - +.copilot-stg.com
     - +.copilot.com
+    - +.visualstudio.com
     - +.visualstudio.co
-    - +.visualstudio-staging.com
     - +.atom.io
     - +.dependabot.com
     - +.gh.io
@@ -542,9 +538,10 @@ payload:
     - +.uwpcommunitytoolkit.com
     - +.vfsforgit.com
     - +.vfsforgit.org
+    - +.visualstudio-staging.com
     - +.skypedata.akadns.net
-    - +.live.com.au
     - +.visualstudio.co.uk
+    - +.live.com.au
     - +.spoprod-a.akamaihd.net
     - +.skype-edf.akadns.net
     - +.microsoftstore.com.hk
