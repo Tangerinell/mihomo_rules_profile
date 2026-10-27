@@ -5,6 +5,9 @@ payload:
     - webchannel-alkalimakersuite-pa.clients6.google.com
     - geminiweb-pa.clients.google.com
     - geminiweb-pa.clients6.google.com
+    - appsgenaiserver-pa.clients.google.com
+    - appsgenaiserver-pa.clients6.google.com
+    - appsgenaiserver-pa.googleapis.com
     - cloudaicompanion.googleapis.com
     - cloudcode-pa.googleapis.com
     - daily-cloudcode-pa.googleapis.com

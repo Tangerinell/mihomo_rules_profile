@@ -23,7 +23,6 @@ payload:
     - +.cloudflarechallenge.com
     - +.cloudflareclient.com
     - +.cloudflarecp.com
-    - +.cloudflareinsights.com
     - +.cloudflareok.com
     - +.cloudflarepartners.com
     - +.cloudflareportal.com
@@ -56,6 +55,7 @@ payload:
     - +.cf-ipfs.com
     - +.cloudflare-ipfs.com
     - +.one.one.one
+    - +.cloudflareinsights.com
     - +.cf-china.info
     - +.cf-ns.com
     - +.cf-ns.net

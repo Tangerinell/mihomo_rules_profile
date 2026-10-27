@@ -70,8 +70,8 @@ payload:
     - +.xbox
     - +.onedriveupdater
     - +.onedrive
-    - +.microsoftnews.net
-    - +.internetexplorer.com
+    - +.microsoftnews.org
+    - +.xbox.eu
     - +.microsoft.com
     - +.microsoft.cz
     - +.microsoft.de
@@ -108,9 +108,6 @@ payload:
     - +.a-msedge.net
     - +.aka.ms
     - +.ankarazirvesi2018.com
-    - +.applicationinsights.io
-    - +.applicationinsights.net
-    - +.aria.ms
     - +.asp.net
     - +.aspnetcdn.com
     - +.binads.com
@@ -156,7 +153,7 @@ payload:
     - +.imaginecup.pl
     - +.ingads.com
     - +.internetexplorer.co
-    - +.microsoftnewskids.com
+    - +.internetexplorer.com
     - +.intunewiki.com
     - +.iotinactionevents.com
     - +.kidgrid.tv
@@ -172,7 +169,7 @@ payload:
     - +.meetfasttrack.com
     - +.meetyourdevices.com
     - +.mepn.com
-    - +.microsoftnewsforkids.org
+    - +.microsoftedgeinsider.com
     - +.microsoft-falcon.io
     - +.microsoft-int.com
     - +.microsoft-ppe.com
@@ -266,7 +263,7 @@ payload:
     - +.signalr.net
     - +.skype.com
     - +.skype.net
-    - +.skypeassets.com
+    - +.microsoftnewskids.org
     - +.skypeassets.net
     - +.spo-msedge.net
     - +.staffhub.ms
@@ -276,7 +273,7 @@ payload:
     - +.sway-cdn.com
     - +.sway.com
     - +.sysinternals.com
-    - +.microsoftnewskids.net
+    - +.t-msedge.net
     - +.tailwindtraders.com
     - +.techhub.ms
     - +.tfsallin.net
@@ -308,14 +305,14 @@ payload:
     - +.xamarin.com
     - +.vscodeedu.com
     - +.microsoftnews.com
+    - +.microsoftnews.net
     - +.microsoft.ch
-    - +.microsoftnews.org
     - +.microsoftnewsforkids.com
     - +.microsoftnewsforkids.net
-    - +.microsoftedgeinsider.com
+    - +.microsoftnewsforkids.org
+    - +.xboxservices.com
     - +.microsoft.cl
-    - +.t-msedge.net
-    - +.microsoftnewskids.org
+    - +.skypeassets.com
     - +.msn.com
     - +.msnewskids.com
     - +.msnewskids.net
@@ -345,7 +342,7 @@ payload:
     - +.tellmewhygame.com
     - +.xbox.co
     - +.xbox.com
-    - +.xbox.eu
+    - +.microsoftnewskids.net
     - +.xbox.org
     - +.xbox360.co
     - +.xbox360.com
@@ -359,7 +356,7 @@ payload:
     - +.xboxone.com
     - +.xboxone.eu
     - +.xboxplayanywhere.com
-    - +.xboxservices.com
+    - +.microsoftnewskids.com
     - +.xboxstudios.com
     - +.xbx.lv
     - +.beth.games
@@ -545,6 +542,10 @@ payload:
     - +.spoprod-a.akamaihd.net
     - +.skype-edf.akadns.net
     - +.microsoftstore.com.hk
+    - +.applicationinsights.io
+    - +.applicationinsights.net
+    - +.aria.ms
+    - +.data.microsoft.com
     - +.dynamics.cn
     - +.engkoo.com
     - +.lync.cn
@@ -579,6 +580,7 @@ payload:
     - +.powerautomate.cn
     - +.powerbi.cn
     - +.sharepoint.cn
+    - +.telemetry.microsoft.com
     - +.clarity.ms
     - +.microsoftads.com
     - +.msads.net
@@ -678,6 +680,7 @@ payload:
     - +.chinacloudapp.cn
     - +.chinacloudsites.cn
     - +.hdinsightservices.cn
+    - +.in.applicationinsights.azure.com
     - +.management-azure-devices-provisioning.cn
     - +.management-azure-devices.cn
     - +.mcchcdn.com
@@ -717,6 +720,8 @@ payload:
     - +.azchcdnq.com
     - +.azchcdnr.com
     - +.azchcdns.com
+    - dc.applicationinsights.azure.com
+    - live.applicationinsights.azure.com
     - +.azure-dns.cn
     - +.azure-dns-1.cn
     - +.azure-dns-2.cn
@@ -744,4 +749,6 @@ payload:
     - +.microsoftreactor.cn
     - +.microsoftreactor.com.cn
     - +.reactorms.com.cn
+    - dc.services.visualstudio.com
     - download.visualstudio.microsoft.com
+    - rt.services.visualstudio.com
