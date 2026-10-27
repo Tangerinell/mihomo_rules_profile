@@ -4,7 +4,6 @@ payload:
     - cdn-spotify-experiments.conductrics.com
     - heads-ak-spotify-com.akamaized.net
     - heads4-ak-spotify-com.akamaized.net
-    - spotify.com.edgesuite.net
     - spotify.map.fastly.net
     - spotify.map.fastlylb.net
     - +.byspotify.com
@@ -24,6 +23,7 @@ payload:
     - +.spotifyforvendors.com
     - +.spotifyjobs.com
     - +.tospotify.com
+    - +.spotify.com.edgesuite.net
     - adeventtracker.spotify.com
     - adstudio-assets.scdn.co
     - bloodhound.spotify.com
