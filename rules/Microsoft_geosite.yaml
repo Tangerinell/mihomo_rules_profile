@@ -65,13 +65,15 @@ payload:
     - +.office
     - +.skype
     - +.windows
+    - +.onedrive
+    - +.onedriveupdater
     - +.bing
     - +.azure
     - +.xbox
-    - +.onedriveupdater
-    - +.onedrive
-    - +.microsoftnewsforkids.com
-    - +.xbox.org
+    - +.onedrive.com
+    - +.bethesda.net
+    - +.microsoft.ch
+    - +.microsoft.cl
     - +.microsoft.com
     - +.microsoft.cz
     - +.microsoft.de
@@ -261,9 +263,9 @@ payload:
     - +.sharepoint.com
     - +.sharepointonline.com
     - +.signalr.net
-    - +.skype.com
+    - +.start.com
     - +.skype.net
-    - +.msn.com
+    - +.skypeassets.com
     - +.skypeassets.net
     - +.spo-msedge.net
     - +.staffhub.ms
@@ -300,40 +302,21 @@ payload:
     - +.winhec.com
     - +.winhec.net
     - +.yammer.com
-    - +.microsoftnews.cc
-    - +.microsoftnews.com
-    - +.msocsp.com
-    - +.xamarin.com
-    - +.microsoftnews.net
-    - +.microsoftnews.org
-    - +.microsoft.ch
-    - +.microsoftnewsforkids.net
-    - +.microsoftnewsforkids.org
-    - +.microsoftnewskids.com
-    - +.xboxstudios.com
-    - +.microsoft.cl
-    - +.skypeassets.com
-    - +.msnewskids.com
-    - +.msnewskids.net
-    - +.msnewskids.org
-    - +.msnkids.com
     - +.microsoftstart.com
-    - +.start.com
-    - +.microsoft.cat
+    - +.msnkids.com
     - +.microsoft.ca
-    - +.onedrive.com
     - +.sharepoint.cn
     - +.livefilestore.com
-    - +.1drv.com
-    - +.vscodeedu.com
-    - +.vscodeedu.app
-    - +.vscode.dev
-    - +.vscode-webview.net
-    - +.vscode-unpkg.net
-    - +.vscode-cdn.net
-    - +.vsassets.io
-    - +.visualstudio.net
-    - +.visualstudio.eu
+    - +.mojang.com
+    - +.microsoft.cat
+    - +.skype.com
+    - +.msnewskids.org
+    - +.msnewskids.net
+    - +.msnewskids.com
+    - +.msn.com
+    - +.microsoftnewskids.org
+    - +.microsoftnewskids.net
+    - +.microsoftnewskids.com
     - +.microsoft.by
     - +.gamepass.com
     - +.orithegame.com
@@ -342,7 +325,7 @@ payload:
     - +.xbox.co
     - +.xbox.com
     - +.xbox.eu
-    - +.microsoftnewskids.org
+    - +.xbox.org
     - +.xbox360.co
     - +.xbox360.com
     - +.xbox360.eu
@@ -356,10 +339,10 @@ payload:
     - +.xboxone.eu
     - +.xboxplayanywhere.com
     - +.xboxservices.com
-    - +.microsoftnewskids.net
+    - +.xboxstudios.com
     - +.xbx.lv
     - +.beth.games
-    - +.bethesda.net
+    - +.microsoftnewsforkids.org
     - +.bethesdagamestudios.com
     - +.bethsoft.com
     - +.doom.com
@@ -373,7 +356,7 @@ payload:
     - +.minecraft.net
     - +.minecraftservices.com
     - +.minecraftshop.com
-    - +.mojang.com
+    - +.1drv.com
     - +.microsoft.be
     - +.aadrm.com
     - +.azure-api.net
@@ -462,8 +445,8 @@ payload:
     - +.sprinklesapp.com
     - +.copilot-stg.com
     - +.copilot.com
-    - +.visualstudio.com
-    - +.visualstudio.co
+    - +.microsoftnewsforkids.net
+    - +.microsoftnewsforkids.com
     - +.atom.io
     - +.dependabot.com
     - +.gh.io
@@ -536,11 +519,28 @@ payload:
     - +.vfsforgit.com
     - +.vfsforgit.org
     - +.visualstudio-staging.com
+    - +.visualstudio.co
+    - +.visualstudio.com
+    - +.visualstudio.eu
+    - +.visualstudio.net
+    - +.vsassets.io
+    - +.vscode-cdn.net
+    - +.vscode-unpkg.net
+    - +.vscode-webview.net
+    - +.vscode.dev
+    - +.vscodeedu.app
+    - +.vscodeedu.com
+    - +.xamarin.com
+    - +.microsoftnews.org
+    - +.msocsp.com
+    - +.microsoftnews.cc
+    - +.microsoftnews.com
+    - +.microsoftnews.net
+    - +.spoprod-a.akamaihd.net
+    - +.skype-edf.akadns.net
     - +.skypedata.akadns.net
     - +.visualstudio.co.uk
     - +.live.com.au
-    - +.spoprod-a.akamaihd.net
-    - +.skype-edf.akadns.net
     - +.microsoftstore.com.hk
     - +.applicationinsights.io
     - +.applicationinsights.net
@@ -636,10 +636,6 @@ payload:
     - vscode.download.prss.microsoft.com
     - vz.download.prss.microsoft.com
     - windbg.download.prss.microsoft.com
-    - +.microsoftnews.cn
-    - +.msn.cn
-    - +.browser.events.data.msn.cn
-    - +.browser.events.data.msn.com
     - +.xboxlive.cn
     - +.21vbc.com
     - +.21vbluecloud.com
@@ -752,3 +748,7 @@ payload:
     - dc.services.visualstudio.com
     - download.visualstudio.microsoft.com
     - rt.services.visualstudio.com
+    - +.microsoftnews.cn
+    - +.msn.cn
+    - +.browser.events.data.msn.cn
+    - +.browser.events.data.msn.com
