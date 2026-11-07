@@ -360,12 +360,6 @@ payload:
     - +.xboxservices.com
     - +.xboxstudios.com
     - +.xbx.lv
-    - +.callersbane.com
-    - +.minecraft-services.net
-    - +.minecraft.net
-    - +.minecraftservices.com
-    - +.minecraftshop.com
-    - +.mojang.com
     - +.beth.games
     - +.bethesda.net
     - +.bethesdagamestudios.com
@@ -376,6 +370,12 @@ payload:
     - +.forzamotorsport.net
     - +.forzaracingchampionship.com
     - +.forzarc.com
+    - +.callersbane.com
+    - +.minecraft-services.net
+    - +.minecraft.net
+    - +.minecraftservices.com
+    - +.minecraftshop.com
+    - +.mojang.com
     - +.microsoft.be
     - +.aadrm.com
     - +.azure-api.net
@@ -494,10 +494,10 @@ payload:
     - +.opensource.guide
     - +.repo.new
     - +.thegithubshop.com
+    - +.githubcopilot.com
     - +.npm.community
     - +.npmjs.com
     - +.npmjs.org
-    - +.githubcopilot.com
     - +.adaptivecards.io
     - +.api-extractor.com
     - +.apisof.net
