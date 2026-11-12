@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Version: v1.19.33 (lite)
-# Updated: 2026-11-07 03:21:00
+# Updated: 2026-11-12 16:23:00
 
 JNTM: &JNTM
     interval: 43200
@@ -33,18 +33,6 @@ proxy-providers:
         target: "🇹🇼"
       - pattern: "香港"
         target: "🇭🇰"
-      - pattern: "韩国"
-        target: "🇰🇷"
-      - pattern: "英国"
-        target: "🇬🇧"
-      - pattern: "澳大利亚"
-        target: "🇦🇺"
-      - pattern: "法国"
-        target: "🇫🇷"
-      - pattern: "德国"
-        target: "🇩🇪"
-      - pattern: "加拿大"
-        target: "🇨🇦"
     filter: "^(?!.*(剩余|到期|官网|迎面走来的你让我如此蠢蠢欲动))"
 
   Node-2:
@@ -138,14 +126,14 @@ dns:
     - https://[2606:4700:4700::1111]/dns-query
     - https://8.8.8.8/dns-query
     - https://[2001:4860:4860::8888]/dns-query
-    # CN DNS
+    # China DNS
     - https://223.5.5.5/dns-query
     - https://[2400:3200::1]/dns-query
     
   proxy-server-nameserver:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
-    # CN DNS
+    # China DNS
     - https://dns.alidns.com/dns-query
     
   nameserver-policy:
@@ -153,19 +141,19 @@ dns:
     - system
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
-    # CN DNS
+    # China DNS
     - https://dns.alidns.com/dns-query
 
     'rule-set:CN_geosite': 
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
-    # CN DNS
+    # China DNS
     - https://dns.alidns.com/dns-query
     
     # 'subscription domain': 
     # - https://cloudflare-dns.com/dns-query
     # - https://dns.google/dns-query
-    # # CN DNS
+    # # China DNS
     # - https://dns.alidns.com/dns-query
 
   nameserver:
@@ -253,14 +241,13 @@ Route: &Route
 
 
             🎯默认, 🌐其他,
-            ⛔阻断, ↩️绕过, 
+            ⛔阻断, 
 
             Pornhub, 
             PikPak, 
             TikTok, 
             Netflix, 
             YouTube, 
-            Emby, 
             OpenAI,
             Anthropic,
             xAI,
@@ -310,8 +297,7 @@ Select_Main: &Select_Main
             🇯🇵故障转移, 🇨🇳故障转移, 
             🧩故转其他, 📋故转全部, 
 
-            ➡️直连, 
-            ⛔阻断, ↩️绕过, 
+            ➡️直连, ⛔阻断 
             ]
 
 
@@ -324,8 +310,7 @@ Select_General: &Select_General
   proxies: [
 
             🎯默认, 🌐其他,
-            ➡️直连, 
-            ⛔阻断, ↩️绕过, 
+            ➡️直连, ⛔阻断, 
 
             🇸🇬手动选择, 🇺🇸手动选择, 
             🇭🇰手动选择, 🇹🇼手动选择, 
@@ -339,6 +324,7 @@ Select_General: &Select_General
             ]
 
 
+# China
 China: &China
   type: select
   disable-udp: false
@@ -348,8 +334,7 @@ China: &China
             🇨🇳手动选择, 🇨🇳故障转移, 
 
             🎯默认, 🌐其他,
-            ➡️直连, 
-            ⛔阻断, ↩️绕过, 
+            ➡️直连, ⛔阻断, 
 
             🇸🇬手动选择, 🇺🇸手动选择, 
             🇭🇰手动选择, 🇹🇼手动选择, 
@@ -374,8 +359,7 @@ Global: &Global
             ⚙️路由, 
 
             🎯默认, 🌐其他, 
-             ➡️直连, 
-            ⛔阻断, ↩️绕过, 
+            ➡️直连, ⛔阻断, 
 
 
             Pornhub, 
@@ -383,7 +367,6 @@ Global: &Global
             TikTok, 
             Netflix, 
             YouTube, 
-            Emby, 
             OpenAI,
             Anthropic,
             xAI,
@@ -452,11 +435,6 @@ proxy-groups:
     proxies: [DIRECT]
     hidden: true
 
-  - name: ↩️绕过
-    type: select
-    proxies: [PASS]
-    hidden: true
-
   - name: ⛔阻断
     type: select
     proxies: [REJECT]
@@ -487,11 +465,6 @@ proxy-groups:
     <<: *Select_General
     filter: *FilterAll
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/YouTube.png"
-
-  - name: Emby
-    <<: *Select_General
-    filter: *FilterAll
-    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Emby.png"
 
   - name: Cloudflare
     <<: *Select_General
