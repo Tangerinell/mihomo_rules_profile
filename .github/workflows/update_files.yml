@@ -186,13 +186,9 @@ jobs:
             
 
 
-            "other/geodata/geoip.dat|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
 
-            "other/geodata/geosite.dat|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
 
-            "other/geodata/geoip.metadb|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
 
-            "other/geodata/GeoLite2-ASN.mmdb|https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 
             "other/ui/dist.zip|https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
