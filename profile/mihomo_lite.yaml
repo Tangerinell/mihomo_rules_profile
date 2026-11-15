@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
-# Version: v1.19.33 (lite)
-# Updated: 2026-11-12 16:23:00
+# Minimum Core Version: v1.19.33 
+# Updated: 2026-11-12 22:00:00
 
 JNTM: &JNTM
     interval: 43200
