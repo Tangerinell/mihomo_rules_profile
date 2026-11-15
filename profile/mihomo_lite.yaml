@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
-# Minimum Core Version: v1.19.33 
-# Updated: 2026-11-16 00:34:00
+# Minimum Core Version: v1.19.33
+# Updated: 2026-11-16 01:21:00
 
 JNTM: &JNTM
     interval: 43200
@@ -23,16 +23,18 @@ proxy-providers:
     override:
       additional-prefix: "1🐔"
       proxy-name:
+      - pattern: "新加坡"
+        target: "🇸🇬"
       - pattern: "美国"
         target: "🇺🇸"
       - pattern: "日本"
         target: "🇯🇵"
-      - pattern: "新加坡"
-        target: "🇸🇬"
-      - pattern: "台湾"
-        target: "🇹🇼"
+      - pattern: "韩国"
+        target: "🇰🇷"
       - pattern: "香港"
         target: "🇭🇰"
+      - pattern: "台湾"
+        target: "🇹🇼"
     filter: "^(?!.*(剩余|到期|官网|迎面走来的你让我如此蠢蠢欲动))"
 
   Node-2:
@@ -45,8 +47,8 @@ proxy-providers:
       additional-prefix: "2🐒"
     filter: "^(?!.*(114514))"
 
-  # Node-3: 
-  # ... 
+  # Node-3:
+  # ...
 
   OtherNode:
     type: file
@@ -120,7 +122,7 @@ dns:
     - RULE-SET,private_geosite,real-ip
     - MATCH,real-ip
 
-  default-nameserver: 
+  default-nameserver:
     - https://1.1.1.1/dns-query
     - https://[2606:4700:4700::1111]/dns-query
     - https://8.8.8.8/dns-query
@@ -136,20 +138,20 @@ dns:
     - https://dns.alidns.com/dns-query
 
   nameserver-policy:
-    'rule-set:private_geosite': 
+    'rule-set:private_geosite':
     - system
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
     # China DNS
     - https://dns.alidns.com/dns-query
 
-    'rule-set:CN_geosite': 
+    'rule-set:CN_geosite':
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
     # China DNS
     - https://dns.alidns.com/dns-query
 
-    # 'subscription domain': 
+    # 'subscription domain':
     # - https://cloudflare-dns.com/dns-query
     # - https://dns.google/dns-query
     # # China DNS
@@ -186,28 +188,31 @@ ntp:
   dialer-proxy: DIRECT
 
 # Node Filters
-FilterCN: &FilterCN 
-  "^(?!.*(🔀规则|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(中国|🇨🇳)"
-
-FilterHK: &FilterHK 
-  "^(?!.*(🔀规则)).*(香港|🇭🇰)"
-
-FilterJP: &FilterJP 
-  "^(?!.*(🔀规则)).*(日本|🇯🇵)"
-
-FilterSG: &FilterSG 
+FilterSG: &FilterSG
   "^(?!.*(🔀规则)).*(新加坡|🇸🇬)"
 
-FilterUS: &FilterUS 
+FilterUS: &FilterUS
   "^(?!.*(🔀规则)).*(美国|🇺🇸)"
 
-FilterTW: &FilterTW 
+FilterJP: &FilterJP
+  "^(?!.*(🔀规则)).*(日本|🇯🇵)"
+
+FilterKR: &FilterKR
+  "^(?!.*(🔀规则)).*(韩国|🇰🇷)"
+
+FilterHK: &FilterHK
+  "^(?!.*(🔀规则)).*(香港|🇭🇰)"
+
+FilterTW: &FilterTW
   "^(?!.*(🔀规则)).*(台湾|🇹🇼)"
 
-FilterOthers: &FilterOthers 
-  "^(?!.*(🔀规则|中国|🇨🇳|香港|🇭🇰|台湾|🇹🇼|日本|🇯🇵|新加坡|🇸🇬|美国|🇺🇸))"
+FilterCN: &FilterCN
+  "^(?!.*(🔀规则|台湾|🇹🇼|香港|🇭🇰|澳门|🇲🇴)).*(中国|🇨🇳)"
 
-FilterAll: &FilterAll 
+FilterOthers: &FilterOthers
+  "^(?!.*(🔀规则|新加坡|🇸🇬|美国|🇺🇸|日本|🇯🇵|韩国|🇰🇷|香港|🇭🇰|台湾|🇹🇼|中国|🇨🇳))"
+
+FilterAll: &FilterAll
   "^(?!.*(🔀规则))"
 
 # Proxy Group Templates
@@ -216,6 +221,19 @@ Select: &Select
   disable-udp: false
   hidden: false
   include-all: true
+
+Auto: &Auto
+  type: url-test
+  url: "https://www.gstatic.com/generate_204"
+  expected-status: 204
+  interval: 300
+  timeout: 5000
+  lazy: true
+  disable-udp: false
+  hidden: false
+  include-all: true
+
+  tolerance: 50
 
 FallBack: &FallBack
   type: fallback
@@ -233,45 +251,56 @@ Route: &Route
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: [ 
-            🔀规则, ➡️直连, 
+  proxies: [
+            🔀规则, ➡️直连,
 
+            🟧A手动选择, 🟦B手动选择,
+            🟠A故障转移, 🔵B故障转移,
+            🔶A自动选择, 🔷B自动选择,
             🧩手动其他, 📋手动全部,
-            🎯默认, 
 
-            🌐其他, 
-            ⛔阻断, 
-            FCM, 
-            Steam, 
-            Telegram, 
+            🎯默认, 🌐其他,
+            ⛔阻断,
+
+            FCM,
+            Steam,
+            Telegram,
             Spotify,
             Instagram,
             GitHub,
-            PikPak, 
-            Discord, 
-            TikTok, 
-            Pornhub, 
-            Crypto, 
-            Gemini, 
-            xAI, 
-            Anthropic, 
+            PikPak,
+            Discord,
+            TikTok,
+            Pornhub,
+            Crypto,
+            Gemini,
+            xAI,
+            Anthropic,
             OpenAI,
-            YouTube, 
-            Netflix, 
-            Apple, 
-            Microsoft, 
+            YouTube,
+            Netflix,
+            Apple,
+            Microsoft,
+            Google,
+            Cloudflare,
 
-            Google, 
+            China,
 
-            Cloudflare, China, 
-            🇸🇬手动选择, 🇺🇸手动选择, 
-            🇯🇵手动选择, 🇭🇰手动选择, 
-            🇹🇼手动选择, 🇨🇳手动选择, 
+            🇸🇬手动选择, 🇺🇸手动选择,
+            🇯🇵手动选择, 🇰🇷手动选择,
+            🇭🇰手动选择, 🇹🇼手动选择,
+            🇨🇳手动选择,
 
-            🇸🇬故障转移, 🇺🇸故障转移, 
-            🇯🇵故障转移, 🇭🇰故障转移, 
-            🇹🇼故障转移, 🇨🇳故障转移, 
-            🧩故转其他, 📋故转全部
+            🇸🇬故障转移, 🇺🇸故障转移,
+            🇯🇵故障转移, 🇰🇷故障转移,
+            🇭🇰故障转移, 🇹🇼故障转移,
+            🇨🇳故障转移,
+            🧩故转其他, 📋故转全部,
+
+            🇸🇬自动选择, 🇺🇸自动选择,
+            🇯🇵自动选择, 🇰🇷自动选择,
+            🇭🇰自动选择, 🇹🇼自动选择,
+            🇨🇳自动选择
             ]
 
 Select_Main: &Select_Main
@@ -280,18 +309,29 @@ Select_Main: &Select_Main
   hidden: false
   include-all: true
   proxies: [
+            🟧A手动选择, 🟦B手动选择,
+            🟠A故障转移, 🔵B故障转移,
+            🔶A自动选择, 🔷B自动选择,
+            🧩手动其他, 📋手动全部,
 
-            🧩手动其他, 📋手动全部, 
-            ➡️直连, ⛔阻断, 
-            🇸🇬手动选择, 🇺🇸手动选择, 
-            🇯🇵手动选择, 🇭🇰手动选择, 
+            ➡️直连,
+            ⛔阻断,
 
-            🇹🇼手动选择, 🇨🇳手动选择, 
-            🇸🇬故障转移, 🇺🇸故障转移, 
-            🇯🇵故障转移, 🇭🇰故障转移, 
-            🇹🇼故障转移, 🇨🇳故障转移, 
+            🇸🇬手动选择, 🇺🇸手动选择,
+            🇯🇵手动选择, 🇰🇷手动选择,
+            🇭🇰手动选择, 🇹🇼手动选择,
+            🇨🇳手动选择,
 
-            🧩故转其他, 📋故转全部 
+            🇸🇬故障转移, 🇺🇸故障转移,
+            🇯🇵故障转移, 🇰🇷故障转移,
+            🇭🇰故障转移, 🇹🇼故障转移,
+            🇨🇳故障转移,
+            🧩故转其他, 📋故转全部,
+
+            🇸🇬自动选择, 🇺🇸自动选择,
+            🇯🇵自动选择, 🇰🇷自动选择,
+            🇭🇰自动选择, 🇹🇼自动选择,
+            🇨🇳自动选择
             ]
 
 Select_General: &Select_General
@@ -301,19 +341,30 @@ Select_General: &Select_General
   include-all: true
   default-selected: 🎯默认
   proxies: [
-
+            🟧A手动选择, 🟦B手动选择,
+            🟠A故障转移, 🔵B故障转移,
+            🔶A自动选择, 🔷B自动选择,
             🧩手动其他, 📋手动全部,
-            🎯默认, 🌐其他, 
 
-            ➡️直连, ⛔阻断, 
-            🇸🇬手动选择, 🇺🇸手动选择, 
-            🇯🇵手动选择, 🇭🇰手动选择, 
-            🇹🇼手动选择, 🇨🇳手动选择, 
+            🎯默认, 🌐其他,
+            ➡️直连,
+            ⛔阻断,
 
-            🇸🇬故障转移, 🇺🇸故障转移, 
-            🇯🇵故障转移, 🇭🇰故障转移, 
-            🇹🇼故障转移, 🇨🇳故障转移, 
-            🧩故转其他, 📋故转全部
+            🇸🇬手动选择, 🇺🇸手动选择,
+            🇯🇵手动选择, 🇰🇷手动选择,
+            🇭🇰手动选择, 🇹🇼手动选择,
+            🇨🇳手动选择,
+
+            🇸🇬故障转移, 🇺🇸故障转移,
+            🇯🇵故障转移, 🇰🇷故障转移,
+            🇭🇰故障转移, 🇹🇼故障转移,
+            🇨🇳故障转移,
+            🧩故转其他, 📋故转全部,
+
+            🇸🇬自动选择, 🇺🇸自动选择,
+            🇯🇵自动选择, 🇰🇷自动选择,
+            🇭🇰自动选择, 🇹🇼自动选择,
+            🇨🇳自动选择
             ]
 
 # China
@@ -323,20 +374,30 @@ China: &China
   hidden: false
   include-all: true
   proxies: [
-            🇨🇳手动选择, 🇨🇳故障转移, 
+            🇨🇳手动选择, 🇨🇳故障转移,
+            🇨🇳自动选择,
 
+            🟧A手动选择, 🟦B手动选择,
+            🟠A故障转移, 🔵B故障转移,
+            🔶A自动选择, 🔷B自动选择,
             🧩手动其他, 📋手动全部,
-            🎯默认, 🌐其他, 
 
-            ➡️直连, ⛔阻断, 
-            🇸🇬手动选择, 🇺🇸手动选择, 
-            🇯🇵手动选择,  
-            🇭🇰手动选择, 🇹🇼手动选择, 
+            🎯默认, 🌐其他,
+            ➡️直连,
+            ⛔阻断,
 
-            🇸🇬故障转移, 🇺🇸故障转移, 
-            🇯🇵故障转移, 🇭🇰故障转移, 
-            🇹🇼故障转移, 
-            🧩故转其他, 📋故转全部
+            🇸🇬手动选择, 🇺🇸手动选择,
+            🇯🇵手动选择, 🇰🇷手动选择,
+            🇭🇰手动选择, 🇹🇼手动选择,
+
+            🇸🇬故障转移, 🇺🇸故障转移,
+            🇯🇵故障转移, 🇰🇷故障转移,
+            🇭🇰故障转移, 🇹🇼故障转移,
+            🧩故转其他, 📋故转全部,
+
+            🇸🇬自动选择, 🇺🇸自动选择,
+            🇯🇵自动选择, 🇰🇷自动选择,
+            🇭🇰自动选择, 🇹🇼自动选择
             ]
 
 ### Determine the order of Proxy Groups
@@ -347,44 +408,56 @@ Global: &Global
   include-all: true
   default-selected: 🎯默认
   proxies: [
-            ⚙️路由, 
+            ⚙️路由,
 
-            🎯默认, 🌐其他, 
-            ➡️直连, ⛔阻断, 
+            🎯默认, 🌐其他,
+            ➡️直连,
+            ⛔阻断,
 
-            🧩手动其他, 
-            📋手动全部, 
-            FCM, 
-            Steam, 
-            Telegram, 
+            🟧A手动选择, 🟦B手动选择,
+            🟠A故障转移, 🔵B故障转移,
+            🔶A自动选择, 🔷B自动选择,
+            🧩手动其他, 📋手动全部,
+
+            FCM,
+            Steam,
+            Telegram,
             Spotify,
             Instagram,
             GitHub,
-            PikPak, 
-            Discord, 
-            TikTok, 
-            Pornhub, 
-            Crypto, 
-            Gemini, 
-            xAI, 
-            Anthropic, 
+            PikPak,
+            Discord,
+            TikTok,
+            Pornhub,
+            Crypto,
+            Gemini,
+            xAI,
+            Anthropic,
             OpenAI,
-            YouTube, 
-            Netflix, 
-            Apple, 
-            Microsoft, 
+            YouTube,
+            Netflix,
+            Apple,
+            Microsoft,
+            Google,
+            Cloudflare,
 
-            Google, 
+            China,
 
-            Cloudflare, China, 
-            🇸🇬手动选择, 🇺🇸手动选择, 
-            🇯🇵手动选择, 🇭🇰手动选择, 
-            🇹🇼手动选择, 🇨🇳手动选择, 
+            🇸🇬手动选择, 🇺🇸手动选择,
+            🇯🇵手动选择, 🇰🇷手动选择,
+            🇭🇰手动选择, 🇹🇼手动选择,
+            🇨🇳手动选择,
 
-            🇸🇬故障转移, 🇺🇸故障转移, 
-            🇯🇵故障转移, 🇭🇰故障转移, 
-            🇹🇼故障转移, 🇨🇳故障转移, 
-            🧩故转其他, 📋故转全部
+            🇸🇬故障转移, 🇺🇸故障转移,
+            🇯🇵故障转移, 🇰🇷故障转移,
+            🇭🇰故障转移, 🇹🇼故障转移,
+            🇨🇳故障转移,
+            🧩故转其他, 📋故转全部,
+
+            🇸🇬自动选择, 🇺🇸自动选择,
+            🇯🇵自动选择, 🇰🇷自动选择,
+            🇭🇰自动选择, 🇹🇼自动选择,
+            🇨🇳自动选择
             ]
 
 # REMATCH Proxy
@@ -395,7 +468,6 @@ proxies:
 
 # Proxy Groups
 proxy-groups:
-
   ### GLOBAL
   - name: GLOBAL
     <<: *Global
@@ -427,6 +499,70 @@ proxy-groups:
     type: select
     proxies: [REJECT]
     hidden: true
+
+  ### Selection Preset
+  - name: 🟧A手动选择
+    type: select
+    proxies: [
+              🇸🇬手动选择, 🇺🇸手动选择,
+              🇯🇵手动选择, 🇰🇷手动选择,
+              🇭🇰手动选择, 🇹🇼手动选择,
+              🇨🇳手动选择
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ji.png"
+
+  - name: 🟦B手动选择
+    type: select
+    default-selected: 🇺🇸手动选择
+    proxies: [
+              🇸🇬手动选择, 🇺🇸手动选择,
+              🇯🇵手动选择, 🇰🇷手动选择,
+              🇭🇰手动选择, 🇹🇼手动选择,
+              🇨🇳手动选择
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ni.png"
+
+  - name: 🟠A故障转移
+    type: select
+    proxies: [
+              🇸🇬故障转移, 🇺🇸故障转移,
+              🇯🇵故障转移, 🇰🇷故障转移,
+              🇭🇰故障转移, 🇹🇼故障转移,
+              🇨🇳故障转移
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/tai.png"
+
+  - name: 🔵B故障转移
+    type: select
+    default-selected: 🇺🇸故障转移
+    proxies: [
+              🇸🇬故障转移, 🇺🇸故障转移,
+              🇯🇵故障转移, 🇰🇷故障转移,
+              🇭🇰故障转移, 🇹🇼故障转移,
+              🇨🇳故障转移
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/mei.png"
+
+  - name: 🔶A自动选择
+    type: select
+    proxies: [
+              🇸🇬自动选择, 🇺🇸自动选择,
+              🇯🇵自动选择, 🇰🇷自动选择,
+              🇭🇰自动选择, 🇹🇼自动选择,
+              🇨🇳自动选择
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
+
+  - name: 🔷B自动选择
+    type: select
+    default-selected: 🇺🇸自动选择
+    proxies: [
+              🇸🇬自动选择, 🇺🇸自动选择,
+              🇯🇵自动选择, 🇰🇷自动选择,
+              🇭🇰自动选择, 🇹🇼自动选择,
+              🇨🇳自动选择
+              ]
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
 
   - name: 🧩手动其他
     <<: *Select
@@ -567,6 +703,11 @@ proxy-groups:
     filter: *FilterJP
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Japan.png"
 
+  - name: 🇰🇷手动选择
+    <<: *Select
+    filter: *FilterKR
+    icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Korea.png"
+
   - name: 🇭🇰手动选择
     <<: *Select
     filter: *FilterHK
@@ -595,6 +736,10 @@ proxy-groups:
     <<: *FallBack
     filter: *FilterJP
 
+  - name: 🇰🇷故障转移
+    <<: *FallBack
+    filter: *FilterKR
+
   - name: 🇭🇰故障转移
     <<: *FallBack
     filter: *FilterHK
@@ -614,6 +759,35 @@ proxy-groups:
   - name: 📋故转全部
     <<: *FallBack
     filter: *FilterAll
+
+  ### Auto
+  - name: 🇸🇬自动选择
+    <<: *Auto
+    filter: *FilterSG
+
+  - name: 🇺🇸自动选择
+    <<: *Auto
+    filter: *FilterUS
+
+  - name: 🇯🇵自动选择
+    <<: *Auto
+    filter: *FilterJP
+
+  - name: 🇰🇷自动选择
+    <<: *Auto
+    filter: *FilterKR
+
+  - name: 🇭🇰自动选择
+    <<: *Auto
+    filter: *FilterHK
+
+  - name: 🇹🇼自动选择
+    <<: *Auto
+    filter: *FilterTW
+
+  - name: 🇨🇳自动选择
+    <<: *Auto
+    filter: *FilterCN
 
 # Rule Providers
 rule-providers:
@@ -924,7 +1098,6 @@ rules:
 
 sub-rules:
   rematch_sub-rule:
-
     # private
     - RULE-SET,private_geosite,DIRECT
     - RULE-SET,private_geoip,DIRECT
