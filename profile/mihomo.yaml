@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Minimum Core Version: v1.19.33 
-# Updated: 2026-11-15 22:00:00 
+# Updated: 2026-11-15 22:52:00 
 
 JNTM: &JNTM
     interval: 43200
@@ -305,9 +305,9 @@ Route: &Route
   proxies: [ 
             🔀规则, ➡️直连, 
 
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             🎯默认, 🌐其他,
@@ -379,9 +379,9 @@ Select_Main: &Select_Main
   hidden: false
   include-all: true
   proxies: [
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             🔗链式代理, ➡️直连, 
@@ -427,9 +427,9 @@ Dialer: &Dialer
   hidden: false
   include-all: true
   proxies: [
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             ➡️直连, 
@@ -475,9 +475,9 @@ Select_General: &Select_General
   include-all: true
   default-selected: 🎯默认
   proxies: [
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             🎯默认, 🌐其他,
@@ -528,9 +528,9 @@ China: &China
             🇨🇳手动选择, 🇨🇳故障转移, 
             🇨🇳自动选择, 🇨🇳负载均衡, 
 
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             🎯默认, 🌐其他,
@@ -586,9 +586,9 @@ Global: &Global
             ⛔阻断, ⛔静默阻断, 
             ↩️绕过, ↩️单条绕过, 
 
-            🔵手动选择A, 🟦手动选择B, 
-            🟠故障转移A, 🟧故障转移B, 
-            🟣自动选择A, 🟪自动选择B, 
+            🟧A手动选择, 🟦B手动选择, 
+            🟠A故障转移, 🔵B故障转移, 
+            🔶A自动选择, 🔷B自动选择, 
             🧩手动其他, 📋手动全部, 
 
             中转, 落地, 
@@ -728,7 +728,7 @@ proxy-groups:
     proxies: 
       - 落地
 
-  - name: 🔵手动选择A
+  - name: 🟧A手动选择
     type: select
     proxies: [
               🇸🇬手动选择, 🇺🇸手动选择, 
@@ -740,7 +740,7 @@ proxy-groups:
               ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ji.png"
 
-  - name: 🟦手动选择B
+  - name: 🟦B手动选择
     type: select
     default-selected: 🇺🇸手动选择
     proxies: [
@@ -753,7 +753,7 @@ proxy-groups:
               ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ni.png"
 
-  - name: 🟠故障转移A
+  - name: 🟠A故障转移
     type: select
     proxies: [
               🇸🇬故障转移, 🇺🇸故障转移, 
@@ -765,7 +765,7 @@ proxy-groups:
               ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/tai.png"
 
-  - name: 🟧故障转移B
+  - name: 🔵B故障转移
     type: select
     default-selected: 🇺🇸故障转移
     proxies: [
@@ -778,7 +778,7 @@ proxy-groups:
               ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/mei.png"
 
-  - name: 🟣自动选择A
+  - name: 🔶A自动选择
     type: select
     proxies: [
               🇸🇬自动选择, 🇺🇸自动选择, 
@@ -790,7 +790,7 @@ proxy-groups:
               ]
     icon: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Static.png"
 
-  - name: 🟪自动选择B
+  - name: 🔷B自动选择
     type: select
     default-selected: 🇺🇸自动选择
     proxies: [
