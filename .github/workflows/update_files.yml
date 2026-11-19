@@ -103,13 +103,13 @@ jobs:
 
 
 
-            "rules/private_geoip.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"
+            "rules/Private_geoip.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/Private.mrs"
             
-            "rules/private_geoip.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.yaml"
+            "rules/Private_geoip.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/Private.yaml"
 
-            "rules/private_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"
+            "rules/Private_geosite.mrs|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/Private.mrs"
 
-            "rules/private_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.yaml"
+            "rules/Private_geosite.yaml|https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/Private.yaml"
 
 
 

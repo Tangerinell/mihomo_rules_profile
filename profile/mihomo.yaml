@@ -1,6 +1,6 @@
 # Clash.Meta(mihomo)
 # Minimum Core Version: v1.19.33
-# Updated: 2026-11-19 21:35:00
+# Updated: 2026-11-19 22:02:00
 
 JNTM: &JNTM
     interval: 43200
@@ -137,7 +137,7 @@ dns:
   fake-ip-range6: fdfe:dcba:9876::1/64
   fake-ip-filter-mode: rule
   fake-ip-filter:
-    - RULE-SET,private_geosite,real-ip
+    - RULE-SET,Private_geosite,real-ip
     - MATCH,real-ip
 
   default-nameserver:
@@ -156,7 +156,7 @@ dns:
     - https://dns.alidns.com/dns-query
 
   nameserver-policy:
-    'rule-set:private_geosite':
+    'rule-set:Private_geosite':
     - system
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
@@ -1147,25 +1147,25 @@ proxy-groups:
 # Rule Providers
 rule-providers:
   # LAN
-  private_geosite:
+  Private_geosite:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
     proxy: 🎯默认
-    path-in-bundle: "private_geosite.mrs"
-    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/private_geosite.mrs"
-    path: "./rule_set/private_geosite.mrs"
+    path-in-bundle: "Private_geosite.mrs"
+    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Private_geosite.mrs"
+    path: "./rule_set/Private_geosite.mrs"
 
-  private_geoip:
+  Private_geoip:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
     proxy: 🎯默认
-    path-in-bundle: "private_geoip.mrs"
-    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/private_geoip.mrs"
-    path: "./rule_set/private_geoip.mrs"
+    path-in-bundle: "Private_geoip.mrs"
+    url: "https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Private_geoip.mrs"
+    path: "./rule_set/Private_geoip.mrs"
 
   # Other
   GoogleFCM_geosite:
@@ -1454,9 +1454,9 @@ rules:
 sub-rules:
   rematch_sub-rule:
 
-    # private
-    - RULE-SET,private_geosite,DIRECT
-    - RULE-SET,private_geoip,DIRECT
+    # Private
+    - RULE-SET,Private_geosite,DIRECT
+    - RULE-SET,Private_geoip,DIRECT
 
     # FCM
     - RULE-SET,GoogleFCM_geosite,FCM
